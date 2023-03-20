@@ -18,12 +18,7 @@ public class OOP_Template {
         
         //Roy was here
         //Ana was here
-        // Hi there Ana - Testing
-        //
-        //
-        //
-        //
-
+        // Martin was here
     }
     
 }
