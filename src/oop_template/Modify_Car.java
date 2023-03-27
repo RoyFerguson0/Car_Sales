@@ -4,6 +4,8 @@
  */
 package oop_template;
 
+import javax.swing.*;
+
 /**
  *
  * @author 50004216
@@ -15,6 +17,35 @@ public class Modify_Car extends javax.swing.JFrame {
      */
     public Modify_Car() {
         initComponents();
+         setLocationRelativeTo(null);
+    }
+    
+    public void inputValidation_NoNumber(java.awt.event.KeyEvent evt){
+        char c = evt.getKeyChar();
+        if(Character.isDigit(c)){
+            // Can't be able to enter in text filed if enter char is not number
+            txtMake.setEditable(false);
+            // Set error message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtMake.setText("");
+            txtMake.grabFocus();
+        }else{
+            txtMake.setEditable(true);
+        }
+    }
+    
+    public void inputValidation_NoLetters(java.awt.event.KeyEvent evt){
+        char c = evt.getKeyChar();
+        if(Character.isAlphabetic(c)){
+            // Can't be able to enter in text filed if enter char is not number
+            txtMake.setEditable(false);
+            // Set error message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtMake.setText("");
+            txtMake.grabFocus();
+        }else{
+            txtMake.setEditable(true);
+        }
     }
 
     /**
@@ -49,6 +80,7 @@ public class Modify_Car extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnEmpMenu = new javax.swing.JButton();
+        lblTesting = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,23 +104,29 @@ public class Modify_Car extends javax.swing.JFrame {
 
         lblFinance.setText("Finance Options:");
 
-        txtRegistration.setText("jTextField1");
+        txtMake.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMakeKeyReleased(evt);
+            }
+        });
 
-        txtMake.setText("jTextField2");
+        txtColour.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtColourKeyReleased(evt);
+            }
+        });
 
-        txtModel.setText("jTextField3");
+        txtDoors.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDoorsKeyReleased(evt);
+            }
+        });
 
-        txtColour.setText("jTextField4");
-
-        txtDoors.setText("jTextField5");
-
-        txtEngine.setText("jTextField6");
-
-        txtDescription.setText("jTextField7");
-
-        txtPrice.setText("jTextField8");
-
-        txtFinance.setText("jTextField9");
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPriceKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlModifyCarLayout = new javax.swing.GroupLayout(pnlModifyCar);
         pnlModifyCar.setLayout(pnlModifyCarLayout);
@@ -106,18 +144,18 @@ public class Modify_Car extends javax.swing.JFrame {
                     .addComponent(lblModel)
                     .addComponent(lblMake)
                     .addComponent(lblRegistration))
-                .addGap(52, 52, 52)
-                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFinance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFinance, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         pnlModifyCarLayout.setVerticalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,10 +189,10 @@ public class Modify_Car extends javax.swing.JFrame {
                     .addComponent(lblDescription)
                     .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrice)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblFinance)
                     .addComponent(txtFinance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,6 +203,11 @@ public class Modify_Car extends javax.swing.JFrame {
         lblModifyCar.setText("Modify Car");
 
         btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         btnSave.setText("Save");
 
@@ -175,17 +218,22 @@ public class Modify_Car extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(lblModifyCar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(lblTesting, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(btnReset)
-                        .addGap(88, 88, 88)
-                        .addComponent(btnSave)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(lblModifyCar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(btnReset)
+                                .addGap(88, 88, 88)
+                                .addComponent(btnSave)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,19 +244,59 @@ public class Modify_Car extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(lblModifyCar)
-                .addGap(18, 18, 18)
-                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReset)
                     .addComponent(btnSave))
                 .addGap(18, 18, 18)
-                .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        txtMake.setText("");
+        txtModel.setText("");
+        txtColour.setText("");
+        txtDoors.setText("");
+        txtEngine.setText("");
+        txtDescription.setText("");
+        txtPrice.setText("");
+        txtFinance.setText("");
+
+        
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void txtMakeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMakeKeyReleased
+        // TODO add your handling code here:
+        inputValidation_NoNumber(evt);
+    }//GEN-LAST:event_txtMakeKeyReleased
+
+    private void txtColourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColourKeyReleased
+        // TODO add your handling code here:
+        inputValidation_NoNumber(evt);
+    }//GEN-LAST:event_txtColourKeyReleased
+
+    private void txtDoorsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoorsKeyReleased
+        // TODO add your handling code here:
+        
+        inputValidation_NoLetters(evt);
+        
+    }//GEN-LAST:event_txtDoorsKeyReleased
+
+    private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
+        inputValidation_NoLetters(evt);
+    }//GEN-LAST:event_txtPriceKeyReleased
 
     /**
      * @param args the command line arguments
@@ -259,6 +347,7 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JLabel lblModifyCar;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblRegistration;
+    private javax.swing.JLabel lblTesting;
     private javax.swing.JPanel pnlModifyCar;
     private javax.swing.JTextField txtColour;
     private javax.swing.JTextField txtDescription;

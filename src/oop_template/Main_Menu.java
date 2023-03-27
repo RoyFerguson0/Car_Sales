@@ -4,6 +4,10 @@
  */
 package oop_template;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Roy Ferguson
@@ -15,6 +19,13 @@ public class Main_Menu extends javax.swing.JFrame {
      */
     public Main_Menu() {
         initComponents();
+        
+        ImageIcon icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/RJFMotorsLogo.jpeg")));
+
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(lblLogoImage.getWidth(), lblLogoImage.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        lblLogoImage.setIcon(scaledIcon);
     }
 
     /**
@@ -37,8 +48,6 @@ public class Main_Menu extends javax.swing.JFrame {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblTitle.setText("RJA Motors");
-
-        lblLogoImage.setText("lblLogoImage");
 
         btnCustomerView.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnCustomerView.setText("View Available Motors");
@@ -66,27 +75,27 @@ public class Main_Menu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(lblTitle)
-                        .addGap(62, 62, 62)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(343, 343, 343)
                         .addComponent(btnShutDown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogoImage)
-                    .addComponent(lblTitle))
-                .addGap(32, 32, 32)
+                    .addComponent(lblTitle)
+                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnCustomerView)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLogon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnContactUs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(btnShutDown, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
