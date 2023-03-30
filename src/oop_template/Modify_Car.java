@@ -280,6 +280,7 @@ public class Modify_Car extends javax.swing.JFrame {
     private void txtMakeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMakeKeyReleased
         // TODO add your handling code here:
         inputValidation_NoNumber(evt);
+        appData.Car_Details.setMake(txtMake.getText());
     }//GEN-LAST:event_txtMakeKeyReleased
 
     private void txtColourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColourKeyReleased
