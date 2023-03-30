@@ -5,6 +5,7 @@
 package oop_template;
 
 import javax.swing.*;
+import oop_template.appData;
 
 /**
  *
@@ -17,34 +18,38 @@ public class Modify_Car extends javax.swing.JFrame {
      */
     public Modify_Car() {
         initComponents();
+        // Setting Form Position to Center
          setLocationRelativeTo(null);
     }
-    
-    public void inputValidation_NoNumber(java.awt.event.KeyEvent evt){
+
+    // Validating inputted Text Fields - No Digits allowed
+    public void inputValidation_NoNumber(java.awt.event.KeyEvent evt, JTextField userInput){
         char c = evt.getKeyChar();
         if(Character.isDigit(c)){
             // Can't be able to enter in text filed if enter char is not number
-            txtMake.setEditable(false);
+            userInput.setEditable(false);
             // Set error message
             JOptionPane.showMessageDialog(null, "Cannot Enter Digits?", "Error Message",JOptionPane.PLAIN_MESSAGE);
-            txtMake.setText("");
-            txtMake.grabFocus();
+            userInput.setText("");
+            userInput.grabFocus();
         }else{
-            txtMake.setEditable(true);
+            userInput.setEditable(true);
         }
     }
-    
-    public void inputValidation_NoLetters(java.awt.event.KeyEvent evt){
+
+    // Validating inputted Text Fields - No Letters allowed
+    public void inputValidation_NoLetters(java.awt.event.KeyEvent evt, JTextField userInput){
         char c = evt.getKeyChar();
         if(Character.isAlphabetic(c)){
             // Can't be able to enter in text filed if enter char is not number
-            txtMake.setEditable(false);
+            userInput.setEditable(false);
             // Set error message
             JOptionPane.showMessageDialog(null, "Cannot Enter Letters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
-            txtMake.setText("");
-            txtMake.grabFocus();
+            userInput.setText("");
+            userInput.grabFocus();
         }else{
-            txtMake.setEditable(true);
+
+            userInput.setEditable(true);
         }
     }
 
@@ -125,6 +130,12 @@ public class Modify_Car extends javax.swing.JFrame {
         txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPriceKeyReleased(evt);
+            }
+        });
+
+        txtFinance.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFinanceKeyReleased(evt);
             }
         });
 
@@ -210,6 +221,11 @@ public class Modify_Car extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -263,8 +279,9 @@ public class Modify_Car extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Reset Button - Method
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
+        // Resetting All Text Boxes to Empty
         txtMake.setText("");
         txtModel.setText("");
         txtColour.setText("");
@@ -277,27 +294,51 @@ public class Modify_Car extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnResetActionPerformed
 
+    // Make - Text Field
     private void txtMakeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMakeKeyReleased
         // TODO add your handling code here:
-        inputValidation_NoNumber(evt);
-        appData.Car_Details.setMake(txtMake.getText());
+        inputValidation_NoNumber(evt, txtMake);
+    //    appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
+ //       txtMake.getText().replace(" ", "");
+        System.out.println(appData.Car_Details.getMake());
+
     }//GEN-LAST:event_txtMakeKeyReleased
 
+    // Colour - Text Field
     private void txtColourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColourKeyReleased
         // TODO add your handling code here:
-        inputValidation_NoNumber(evt);
+        inputValidation_NoNumber(evt, txtColour);
+
     }//GEN-LAST:event_txtColourKeyReleased
 
+    // Doors - Text Field
     private void txtDoorsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoorsKeyReleased
         // TODO add your handling code here:
         
-        inputValidation_NoLetters(evt);
+        inputValidation_NoLetters(evt, txtDoors);
         
     }//GEN-LAST:event_txtDoorsKeyReleased
 
+    // Price - Text Field
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
-        inputValidation_NoLetters(evt);
+        inputValidation_NoLetters(evt, txtPrice);
     }//GEN-LAST:event_txtPriceKeyReleased
+
+    // Finance - Text Field
+    private void txtFinanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFinanceKeyReleased
+        // TODO add your handling code here:
+        inputValidation_NoLetters(evt, txtPrice);
+    }//GEN-LAST:event_txtFinanceKeyReleased
+
+    // Save Button - Method
+    // Hi there
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
+        appData.Car_Details.setMake(txtMake.getText());
+        System.out.println(appData.Car_Details.getMake());
+
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,6 +365,9 @@ public class Modify_Car extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Modify_Car.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

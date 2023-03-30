@@ -255,6 +255,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFinance">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFinanceKeyReleased"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -278,6 +281,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEmpMenu">
     </Component>
