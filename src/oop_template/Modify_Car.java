@@ -7,11 +7,18 @@ package oop_template;
 import javax.swing.*;
 import oop_template.appData;
 
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.regex.Pattern;
+
+
 /**
  *
  * @author 50004216
  */
 public class Modify_Car extends javax.swing.JFrame {
+
 
     /**
      * Creates new form Modify_Car
@@ -22,36 +29,17 @@ public class Modify_Car extends javax.swing.JFrame {
          setLocationRelativeTo(null);
     }
 
-    // Validating inputted Text Fields - No Digits allowed
-    public void inputValidation_NoNumber(java.awt.event.KeyEvent evt, JTextField userInput){
-        char c = evt.getKeyChar();
-        if(Character.isDigit(c)){
-            // Can't be able to enter in text filed if enter char is not number
-            userInput.setEditable(false);
-            // Set error message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Digits?", "Error Message",JOptionPane.PLAIN_MESSAGE);
-            userInput.setText("");
-            userInput.grabFocus();
-        }else{
-            userInput.setEditable(true);
-        }
+    // Validation input Text Fields - No Digits or Special Characters
+    public static boolean isAlpha(String s) {
+        return s != null && s.chars().allMatch(Character::isLetter);
     }
 
-    // Validating inputted Text Fields - No Letters allowed
-    public void inputValidation_NoLetters(java.awt.event.KeyEvent evt, JTextField userInput){
-        char c = evt.getKeyChar();
-        if(Character.isAlphabetic(c)){
-            // Can't be able to enter in text filed if enter char is not number
-            userInput.setEditable(false);
-            // Set error message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Letters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
-            userInput.setText("");
-            userInput.grabFocus();
-        }else{
-
-            userInput.setEditable(true);
-        }
+   //  Validation input Text Fields - No Letters allowed or special characters
+    public static boolean isNumeric(String str) {
+        return str != null && str.chars().allMatch(Character::isDigit);
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,7 +59,6 @@ public class Modify_Car extends javax.swing.JFrame {
         lblEngine = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblPrice = new javax.swing.JLabel();
-        lblFinance = new javax.swing.JLabel();
         txtRegistration = new javax.swing.JTextField();
         txtMake = new javax.swing.JTextField();
         txtModel = new javax.swing.JTextField();
@@ -80,7 +67,6 @@ public class Modify_Car extends javax.swing.JFrame {
         txtEngine = new javax.swing.JTextField();
         txtDescription = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
-        txtFinance = new javax.swing.JTextField();
         lblModifyCar = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -107,8 +93,6 @@ public class Modify_Car extends javax.swing.JFrame {
 
         lblPrice.setText("Price:");
 
-        lblFinance.setText("Finance Options:");
-
         txtMake.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtMakeKeyReleased(evt);
@@ -133,20 +117,13 @@ public class Modify_Car extends javax.swing.JFrame {
             }
         });
 
-        txtFinance.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtFinanceKeyReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout pnlModifyCarLayout = new javax.swing.GroupLayout(pnlModifyCar);
         pnlModifyCar.setLayout(pnlModifyCarLayout);
         pnlModifyCarLayout.setHorizontalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(52, 52, 52)
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblFinance)
                     .addComponent(lblPrice)
                     .addComponent(lblDescription)
                     .addComponent(lblEngine)
@@ -157,16 +134,15 @@ public class Modify_Car extends javax.swing.JFrame {
                     .addComponent(lblRegistration))
                 .addGap(18, 18, 18)
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFinance, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         pnlModifyCarLayout.setVerticalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,11 +179,7 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrice)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblFinance)
-                    .addComponent(txtFinance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         lblModifyCar.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -237,23 +209,20 @@ public class Modify_Car extends javax.swing.JFrame {
                         .addGap(98, 98, 98)
                         .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(lblTesting, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
+                        .addComponent(lblTesting, javax.swing.GroupLayout.DEFAULT_SIZE, 9, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(180, 180, 180)
-                                .addComponent(lblModifyCar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(btnReset)
-                                .addGap(88, 88, 88)
-                                .addComponent(btnSave)))
+                        .addGap(180, 180, 180)
+                        .addComponent(lblModifyCar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addComponent(btnReset)
+                .addGap(88, 88, 88)
+                .addComponent(btnSave)
+                .addGap(176, 176, 176)
+                .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,18 +231,22 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addComponent(lblModifyCar)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReset)
-                    .addComponent(btnSave))
-                .addGap(18, 18, 18)
-                .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReset)
+                            .addComponent(btnSave))
+                        .addContainerGap(55, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
 
         pack();
@@ -289,7 +262,7 @@ public class Modify_Car extends javax.swing.JFrame {
         txtEngine.setText("");
         txtDescription.setText("");
         txtPrice.setText("");
-        txtFinance.setText("");
+
 
         
     }//GEN-LAST:event_btnResetActionPerformed
@@ -297,17 +270,40 @@ public class Modify_Car extends javax.swing.JFrame {
     // Make - Text Field
     private void txtMakeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMakeKeyReleased
         // TODO add your handling code here:
-        inputValidation_NoNumber(evt, txtMake);
+        //inputValidation_NoNumber(evt, txtMake);
     //    appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
  //       txtMake.getText().replace(" ", "");
-        System.out.println(appData.Car_Details.getMake());
+        String make = txtMake.getText().replace(" ","");
+        if(isAlpha(make)){
+            txtMake.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtMake.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtMake.setText("");
+            txtMake.grabFocus();
+        }
+
 
     }//GEN-LAST:event_txtMakeKeyReleased
 
     // Colour - Text Field
     private void txtColourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColourKeyReleased
         // TODO add your handling code here:
-        inputValidation_NoNumber(evt, txtColour);
+        String colour = txtColour.getText().replace(" ","");
+        if(isAlpha(colour)){
+            txtColour.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtColour.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtColour.setText("");
+            txtColour.grabFocus();
+        }
 
     }//GEN-LAST:event_txtColourKeyReleased
 
@@ -315,28 +311,80 @@ public class Modify_Car extends javax.swing.JFrame {
     private void txtDoorsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoorsKeyReleased
         // TODO add your handling code here:
         
-        inputValidation_NoLetters(evt, txtDoors);
-        
+
+        String doors = txtDoors.getText().replace(" ", "");
+        if(isNumeric(doors)){
+            txtDoors.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a letter or special character
+            txtDoors.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtDoors.setText("");
+            txtDoors.grabFocus();
+
+        }
+
+
     }//GEN-LAST:event_txtDoorsKeyReleased
 
     // Price - Text Field
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
-        inputValidation_NoLetters(evt, txtPrice);
-    }//GEN-LAST:event_txtPriceKeyReleased
 
-    // Finance - Text Field
-    private void txtFinanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFinanceKeyReleased
-        // TODO add your handling code here:
-        inputValidation_NoLetters(evt, txtPrice);
-    }//GEN-LAST:event_txtFinanceKeyReleased
+        String price = txtPrice.getText().replace(" ", "");
+        if(isNumeric(price)){
+            txtPrice.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a letter or special character
+            txtPrice.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtPrice.setText("");
+            txtPrice.grabFocus();
+        }
+    }//GEN-LAST:event_txtPriceKeyReleased
 
     // Save Button - Method
     // Hi there
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+
+        // Saving Data to Objects
         appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
-        appData.Car_Details.setMake(txtMake.getText());
-        System.out.println(appData.Car_Details.getMake());
+        appData.Car_Details.setModel(txtModel.getText().replace(" ", ""));
+        appData.Car_Details.setColour(txtColour.getText().replace(" ", ""));
+        appData.Car_Details.setDoors(Integer.parseInt(txtDoors.getText().replace(" ", "")));
+        appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
+        appData.Car_Details.setDescription(txtDescription.getText().replace(" ", ""));
+        appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
+
+        // Convert the Numbers to string
+        String Doors = String.valueOf(appData.Car_Details.getDoors());
+        String Price = String.valueOf(appData.Car_Details.getPrice());
+
+        // Checking Text Boxes aren't Empty
+        if(appData.Car_Details.getMake().equalsIgnoreCase("") || appData.Car_Details.getModel().equalsIgnoreCase("") ||
+                appData.Car_Details.getColour().equalsIgnoreCase("") || Doors.equalsIgnoreCase("")||
+                appData.Car_Details.getEngine_size().equalsIgnoreCase("") || appData.Car_Details.getDescription().equalsIgnoreCase("") ||
+                Price.equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Fill all Fields in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+        }else {
+            // Creating a file
+            try {
+                File carTextFile = new File("D:\\Users\\Roy Ferguson\\Documents\\FDSE\\Odject_Oriented_Programming\\IdeaProjects\\Assignment\\OOP-GP-MINE\\oop-group-project-roy_ana_jack_group_3\\src\\storage\\Car_Details.txt");
+                if (carTextFile.createNewFile()) {
+                    System.out.println("File Created" + carTextFile.getName());
+                } else {
+                    System.out.println("File aleardy exists");
+                }
+            } catch (IOException e) {
+                System.out.println("An error occurred");
+                e.printStackTrace();
+            }
+        }
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -386,7 +434,6 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDoors;
     private javax.swing.JLabel lblEngine;
-    private javax.swing.JLabel lblFinance;
     private javax.swing.JLabel lblMake;
     private javax.swing.JLabel lblModel;
     private javax.swing.JLabel lblModifyCar;
@@ -398,7 +445,6 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JTextField txtDescription;
     private javax.swing.JTextField txtDoors;
     private javax.swing.JTextField txtEngine;
-    private javax.swing.JTextField txtFinance;
     private javax.swing.JTextField txtMake;
     private javax.swing.JTextField txtModel;
     private javax.swing.JTextField txtPrice;

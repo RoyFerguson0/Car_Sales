@@ -21,7 +21,7 @@ public class Car_Details {
     private String engine_size;
     private String description;
     private int price;
-    private int finance;
+
 
 
     // Objects Behaviours
@@ -72,10 +72,8 @@ public class Car_Details {
         this.price = price;
     }
 
-    // Set Finance -int
-    public void setFinance(int finance){
-        this.finance = finance;
-    }
+
+
 
 
     ///////////////////////////////
@@ -122,10 +120,8 @@ public class Car_Details {
         return price;
     }
 
-    // Get Finance Options
-    public int getFinance(){
-        return finance;
-    }
+
+
 
 
 
