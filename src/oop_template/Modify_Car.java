@@ -8,7 +8,9 @@ import javax.swing.*;
 import oop_template.appData;
 
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
@@ -204,17 +206,9 @@ public class Modify_Car extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(lblTesting, javax.swing.GroupLayout.DEFAULT_SIZE, 9, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(lblModifyCar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(180, 180, 180)
+                .addComponent(lblModifyCar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnReset)
@@ -223,30 +217,31 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addGap(176, 176, 176)
                 .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(lblModifyCar)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnReset)
-                            .addComponent(btnSave))
-                        .addContainerGap(55, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))))
+                .addGap(18, 18, 18)
+                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReset)
+                    .addComponent(btnSave))
+                .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -360,34 +355,54 @@ public class Modify_Car extends javax.swing.JFrame {
         appData.Car_Details.setDescription(txtDescription.getText().replace(" ", ""));
         appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
 
-        // Convert the Numbers to string
+        // Convert the Numbers to string can saving text to string objects
+        String Make = appData.Car_Details.getMake();
+        String Model = appData.Car_Details.getModel();
+        String Colour = appData.Car_Details.getColour();
         String Doors = String.valueOf(appData.Car_Details.getDoors());
+        String EngineSize = appData.Car_Details.getEngine_size();
+        String Description = appData.Car_Details.getDescription();
         String Price = String.valueOf(appData.Car_Details.getPrice());
 
         // Checking Text Boxes aren't Empty
-        if(appData.Car_Details.getMake().equalsIgnoreCase("") || appData.Car_Details.getModel().equalsIgnoreCase("") ||
-                appData.Car_Details.getColour().equalsIgnoreCase("") || Doors.equalsIgnoreCase("")||
-                appData.Car_Details.getEngine_size().equalsIgnoreCase("") || appData.Car_Details.getDescription().equalsIgnoreCase("") ||
+        if(Make.equalsIgnoreCase("") || Model.equalsIgnoreCase("") ||
+                Colour.equalsIgnoreCase("") || Doors.equalsIgnoreCase("")||
+                EngineSize.equalsIgnoreCase("") || Description.equalsIgnoreCase("") ||
                 Price.equalsIgnoreCase(""))
         {
             JOptionPane.showMessageDialog(null, "Fill all Fields in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
         }else {
             // Creating a file
             try {
-                File carTextFile = new File("D:\\Users\\Roy Ferguson\\Documents\\FDSE\\Odject_Oriented_Programming\\IdeaProjects\\Assignment\\OOP-GP-MINE\\oop-group-project-roy_ana_jack_group_3\\src\\storage\\Car_Details.txt");
+                File carTextFile = new File("storage/Car_Details.txt");
                 if (carTextFile.createNewFile()) {
                     System.out.println("File Created" + carTextFile.getName());
                 } else {
                     System.out.println("File aleardy exists");
                 }
+
+                // write data
+                // Creating the File Writer and Buffer Writer
+                FileWriter carFile = new FileWriter("storage/Car_Details.txt",true);
+                BufferedWriter output = new BufferedWriter(carFile);
+
+                // Write String to Text File - Next Empty Line
+                output.write(Doors);
+                output.newLine();
+                output.write(Model);
+                output.newLine();
+                lblTesting.setText("Write Successful");
+
+                output.close();
+
+
             } catch (IOException e) {
                 System.out.println("An error occurred");
                 e.printStackTrace();
             }
         }
 
-        // write data
-        // Testing - Don't Think it uploaded Before Not sure
+
 
 
 
