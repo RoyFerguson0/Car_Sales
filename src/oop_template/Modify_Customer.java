@@ -26,17 +26,176 @@ public class Modify_Customer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblModifyCustomer = new javax.swing.JLabel();
+        pnlModifyCustomer = new javax.swing.JPanel();
+        lblCustomerID = new javax.swing.JLabel();
+        lblCustTitle = new javax.swing.JLabel();
+        lblCustForename = new javax.swing.JLabel();
+        lblCustSurname = new javax.swing.JLabel();
+        lblCustGender = new javax.swing.JLabel();
+        lblCustMobile = new javax.swing.JLabel();
+        lblCustAddress = new javax.swing.JLabel();
+        txtCustomerID = new javax.swing.JTextField();
+        txtCustTitle = new javax.swing.JTextField();
+        txtCustForename = new javax.swing.JTextField();
+        txtCustSurname = new javax.swing.JTextField();
+        txtCustGender = new javax.swing.JTextField();
+        txtCustMobile = new javax.swing.JTextField();
+        txtCustAddress = new javax.swing.JTextField();
+        btnEmpMenu = new javax.swing.JButton();
+        btnCustReset = new javax.swing.JButton();
+        btnCustSave = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblModifyCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        lblModifyCustomer.setText("Modify Customer");
+
+        pnlModifyCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 12))); // NOI18N
+
+        lblCustomerID.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustomerID.setText("Customer ID:");
+
+        lblCustTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustTitle.setText("Title:");
+
+        lblCustForename.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustForename.setText("Forename:");
+
+        lblCustSurname.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustSurname.setText("Surname:");
+
+        lblCustGender.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustGender.setText("Gender:");
+
+        lblCustMobile.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustMobile.setText("Mobile:");
+
+        lblCustAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustAddress.setText("Address:");
+
+        txtCustomerID.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustForename.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustSurname.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustGender.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustMobile.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        txtCustAddress.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+
+        btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        btnEmpMenu.setText("->");
+
+        btnCustReset.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnCustReset.setText("Reset");
+
+        btnCustSave.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnCustSave.setText("Save");
+
+        javax.swing.GroupLayout pnlModifyCustomerLayout = new javax.swing.GroupLayout(pnlModifyCustomer);
+        pnlModifyCustomer.setLayout(pnlModifyCustomerLayout);
+        pnlModifyCustomerLayout.setHorizontalGroup(
+            pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCustomerID)
+                    .addComponent(lblCustTitle)
+                    .addComponent(lblCustForename)
+                    .addComponent(lblCustSurname)
+                    .addComponent(lblCustGender)
+                    .addComponent(lblCustMobile)
+                    .addComponent(lblCustAddress)
+                    .addComponent(btnCustReset))
+                .addGap(77, 77, 77)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                        .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCustomerID)
+                            .addComponent(txtCustTitle)
+                            .addComponent(txtCustForename)
+                            .addComponent(txtCustSurname)
+                            .addComponent(txtCustGender)
+                            .addComponent(txtCustMobile)
+                            .addComponent(txtCustAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                        .addComponent(btnCustSave)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        pnlModifyCustomerLayout.setVerticalGroup(
+            pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustomerID)
+                    .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustTitle)
+                    .addComponent(txtCustTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustForename)
+                    .addComponent(txtCustForename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustSurname)
+                    .addComponent(txtCustSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustGender)
+                    .addComponent(txtCustGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustMobile)
+                    .addComponent(txtCustMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCustAddress)
+                    .addComponent(txtCustAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCustReset)
+                            .addComponent(btnCustSave))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(lblModifyCustomer))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblModifyCustomer)
+                .addGap(30, 30, 30)
+                .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +237,24 @@ public class Modify_Customer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCustReset;
+    private javax.swing.JButton btnCustSave;
+    private javax.swing.JButton btnEmpMenu;
+    private javax.swing.JLabel lblCustAddress;
+    private javax.swing.JLabel lblCustForename;
+    private javax.swing.JLabel lblCustGender;
+    private javax.swing.JLabel lblCustMobile;
+    private javax.swing.JLabel lblCustSurname;
+    private javax.swing.JLabel lblCustTitle;
+    private javax.swing.JLabel lblCustomerID;
+    private javax.swing.JLabel lblModifyCustomer;
+    private javax.swing.JPanel pnlModifyCustomer;
+    private javax.swing.JTextField txtCustAddress;
+    private javax.swing.JTextField txtCustForename;
+    private javax.swing.JTextField txtCustGender;
+    private javax.swing.JTextField txtCustMobile;
+    private javax.swing.JTextField txtCustSurname;
+    private javax.swing.JTextField txtCustTitle;
+    private javax.swing.JTextField txtCustomerID;
     // End of variables declaration//GEN-END:variables
 }
