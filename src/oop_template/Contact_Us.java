@@ -153,7 +153,7 @@ public class Contact_Us extends javax.swing.JFrame {
 
     private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed
         this.dispose();
-        
+        new Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnReturnMenuActionPerformed
 
     /**
