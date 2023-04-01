@@ -42,7 +42,7 @@
               <Component id="lblModifyEmployee" min="-2" pref="37" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="pnlModifyEmployee" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,7 +122,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="192" max="32767" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <Component id="btnEmpMenu" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -173,6 +175,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnEmpSave" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEmpReset1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEmpMenu" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
@@ -224,6 +227,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpSaveActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnEmpReset1">
           <Properties>
@@ -268,6 +274,14 @@
         <Component class="javax.swing.JTextField" name="txtEmpHourlyRate">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpHourlyRateActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEmpMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Return Menu"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpMenuActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

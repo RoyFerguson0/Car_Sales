@@ -5,6 +5,8 @@
 package oop_template;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -84,6 +86,7 @@ public class Modify_Employee extends javax.swing.JFrame {
         txtEmpJobTitle = new javax.swing.JTextField();
         txtEmpContract = new javax.swing.JTextField();
         txtEmpHourlyRate = new javax.swing.JTextField();
+        btnEmpMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +112,11 @@ public class Modify_Employee extends javax.swing.JFrame {
         lblEmpHourlyRate.setText("Hourly Rate:");
 
         btnEmpSave.setText("Save");
+        btnEmpSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpSaveActionPerformed(evt);
+            }
+        });
 
         btnEmpReset1.setText("Reset");
         btnEmpReset1.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +167,13 @@ public class Modify_Employee extends javax.swing.JFrame {
             }
         });
 
+        btnEmpMenu.setText("Return Menu");
+        btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpMenuActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlModifyEmployeeLayout = new javax.swing.GroupLayout(pnlModifyEmployee);
         pnlModifyEmployee.setLayout(pnlModifyEmployeeLayout);
         pnlModifyEmployeeLayout.setHorizontalGroup(
@@ -202,7 +217,9 @@ public class Modify_Employee extends javax.swing.JFrame {
                         .addGroup(pnlModifyEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnEmpSave)
                             .addComponent(txtEmpHourlyRate))))
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(btnEmpMenu)
+                .addGap(48, 48, 48))
         );
         pnlModifyEmployeeLayout.setVerticalGroup(
             pnlModifyEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +259,8 @@ public class Modify_Employee extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlModifyEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEmpSave)
-                    .addComponent(btnEmpReset1))
+                    .addComponent(btnEmpReset1)
+                    .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -266,7 +284,7 @@ public class Modify_Employee extends javax.swing.JFrame {
                 .addComponent(lblModifyEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlModifyEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -318,6 +336,40 @@ public class Modify_Employee extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnEmpReset1ActionPerformed
 
+    private void btnEmpSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpSaveActionPerformed
+        // TODO add your handling code here:
+         // Check if all text fields are filled
+    if(txtEmployeeID.getText().isEmpty() || txtEmpTitle.getText().isEmpty() || txtEmpForename.getText().isEmpty()
+            || txtEmpSurname.getText().isEmpty() || txtEmpGender.getText().isEmpty() || txtEmpJobTitle.getText().isEmpty()
+            || txtEmpContract.getText().isEmpty() || txtEmpHourlyRate.getText().isEmpty()) {
+        // Display a pop-up message if any text field is empty
+        JOptionPane.showMessageDialog(null, "Please fill in all fields.");
+    } else {
+       try {
+            // Create a FileWriter object that writes to a file called "employee_data.txt"
+            FileWriter emptxtfile = new FileWriter("employee_data.txt", true);
+            // Write the data to the file
+            emptxtfile.write(txtEmployeeID.getText() + "," + txtEmpTitle.getText() + "," + txtEmpForename.getText() + ","
+                    + txtEmpSurname.getText() + "," + txtEmpGender.getText() + "," + txtEmpJobTitle.getText() + ","
+                    + txtEmpContract.getText() + "," + txtEmpHourlyRate.getText() + "\n");
+            // Close the FileWriter object
+            emptxtfile.close();
+            // Display a pop-up message to confirm the data has been saved
+            JOptionPane.showMessageDialog(null, "Employee data saved to file.");
+        } catch(IOException ex) {
+            // Display a pop-up message if there was an error writing to the file
+            JOptionPane.showMessageDialog(null, "Error writing to file.");
+        }
+    
+
+    }
+
+    }//GEN-LAST:event_btnEmpSaveActionPerformed
+
+    private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmpMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -354,6 +406,7 @@ public class Modify_Employee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnEmpReset1;
     private javax.swing.JButton btnEmpSave;
     private javax.swing.JLabel lblEmpContract;
