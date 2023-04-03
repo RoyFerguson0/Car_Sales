@@ -101,6 +101,11 @@ public class Modify_Customer extends javax.swing.JFrame {
 
         btnCustSave.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         btnCustSave.setText("Save");
+        btnCustSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlModifyCustomerLayout = new javax.swing.GroupLayout(pnlModifyCustomer);
         pnlModifyCustomer.setLayout(pnlModifyCustomerLayout);
@@ -216,6 +221,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         txtCustMobile.setText("");
         txtCustAddress.setText("");
     }//GEN-LAST:event_btnCustResetActionPerformed
+
+    private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
+        // Save all inputs to text file and clear the text fields
+        
+    }//GEN-LAST:event_btnCustSaveActionPerformed
 
     /**
      * @param args the command line arguments
