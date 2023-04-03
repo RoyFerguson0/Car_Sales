@@ -93,6 +93,11 @@ public class Modify_Customer extends javax.swing.JFrame {
 
         btnCustReset.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         btnCustReset.setText("Reset");
+        btnCustReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustResetActionPerformed(evt);
+            }
+        });
 
         btnCustSave.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         btnCustSave.setText("Save");
@@ -200,6 +205,17 @@ public class Modify_Customer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCustResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustResetActionPerformed
+        // Clear all text fields
+        txtCustomerID.setText("");
+        txtCustTitle.setText("");
+        txtCustForename.setText("");
+        txtCustSurname.setText("");
+        txtCustGender.setText("");
+        txtCustMobile.setText("");
+        txtCustAddress.setText("");
+    }//GEN-LAST:event_btnCustResetActionPerformed
 
     /**
      * @param args the command line arguments
