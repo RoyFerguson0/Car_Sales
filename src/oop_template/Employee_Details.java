@@ -74,34 +74,42 @@ public void setHourlyRate(int hourly_rate){
 
 //Getters
 
+//EmployeeID
 public int getEmployeeID() {
     return employeeID;
 }
 
+//Title
 public String getTitle() {
     return title;
 }
 
+//Forename
 public String getForename() {
     return forename;
 }
 
+//Surname
 public String getSurname() {
     return surname;
 }
 
+//Gender
 public String getGender() {
     return gender;
 }
 
+//Job Title
 public String getJobTitle() {
     return job_title;
 }
 
+//Contracted Hours
 public int getContractedHours() {
     return contracted_hours;
 }
 
+//Hourly Rate
 public int getHourlyRate() {
     return hourly_rate;
 }
