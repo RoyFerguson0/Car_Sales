@@ -281,7 +281,9 @@ public class Modify_Customer extends javax.swing.JFrame {
 
     private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
         if(isCustomerIDValid && isCustomerTitleValid){
-            //all valid, saving to file, then clearing text fields
+            //all valid, saving to appData, file, then clearing text fields
+            //appData.Customer_Details.setCustomerID(txtCustomerID());
+            
             try{
                 File customerTextFile = new File("storage/Customer_Details.txt");
                 if (customerTextFile.createNewFile()) {
