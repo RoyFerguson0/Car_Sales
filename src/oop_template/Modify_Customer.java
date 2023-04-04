@@ -4,12 +4,16 @@
  */
 package oop_template;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author anastasiaridge
  */
 public class Modify_Customer extends javax.swing.JFrame {
-
+    private boolean isCustomerIDValid = false;
+    private boolean isCustomerTitleValid = false;
+    
     /**
      * Creates new form Modify_Customer
      */
@@ -45,6 +49,13 @@ public class Modify_Customer extends javax.swing.JFrame {
         btnEmpMenu = new javax.swing.JButton();
         btnCustReset = new javax.swing.JButton();
         btnCustSave = new javax.swing.JButton();
+        lblCustomerIDValidation = new javax.swing.JLabel();
+        lblCustomerTitleValidation = new javax.swing.JLabel();
+        lblCustomerForenameValidation = new javax.swing.JLabel();
+        lblCustomerSurnameValidation = new javax.swing.JLabel();
+        lblCustomerGenderValidation = new javax.swing.JLabel();
+        lblCustomerMobileValidation = new javax.swing.JLabel();
+        lblCustomerAddressValidation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,8 +86,18 @@ public class Modify_Customer extends javax.swing.JFrame {
         lblCustAddress.setText("Address:");
 
         txtCustomerID.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustomerID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustomerIDKeyReleased(evt);
+            }
+        });
 
         txtCustTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustTitle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustTitleKeyReleased(evt);
+            }
+        });
 
         txtCustForename.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
 
@@ -107,6 +128,20 @@ public class Modify_Customer extends javax.swing.JFrame {
             }
         });
 
+        lblCustomerIDValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerTitleValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerForenameValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerSurnameValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerGenderValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerMobileValidation.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCustomerAddressValidation.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout pnlModifyCustomerLayout = new javax.swing.GroupLayout(pnlModifyCustomer);
         pnlModifyCustomer.setLayout(pnlModifyCustomerLayout);
         pnlModifyCustomerLayout.setHorizontalGroup(
@@ -124,20 +159,24 @@ public class Modify_Customer extends javax.swing.JFrame {
                     .addComponent(btnCustReset))
                 .addGap(77, 77, 77)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
-                        .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCustomerID)
-                            .addComponent(txtCustTitle)
-                            .addComponent(txtCustForename)
-                            .addComponent(txtCustSurname)
-                            .addComponent(txtCustGender)
-                            .addComponent(txtCustMobile)
-                            .addComponent(txtCustAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblCustomerMobileValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCustomerGenderValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCustomerSurnameValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCustomerTitleValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCustomerIDValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCustomerID)
+                    .addComponent(txtCustTitle)
+                    .addComponent(txtCustForename)
+                    .addComponent(txtCustSurname)
+                    .addComponent(txtCustGender)
+                    .addComponent(txtCustMobile, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblCustomerAddressValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
                         .addComponent(btnCustSave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCustomerForenameValidation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCustAddress, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         pnlModifyCustomerLayout.setVerticalGroup(
@@ -147,37 +186,51 @@ public class Modify_Customer extends javax.swing.JFrame {
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustomerID)
                     .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerIDValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustTitle)
                     .addComponent(txtCustTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerTitleValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustForename)
                     .addComponent(txtCustForename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerForenameValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustSurname)
                     .addComponent(txtCustSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerSurnameValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustGender)
                     .addComponent(txtCustGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerGenderValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustMobile)
                     .addComponent(txtCustMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerMobileValidation)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustAddress)
                     .addComponent(txtCustAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerAddressValidation)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(11, 11, 11)
                         .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(7, 7, 7)
                         .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCustReset)
                             .addComponent(btnCustSave))
@@ -196,7 +249,7 @@ public class Modify_Customer extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +258,7 @@ public class Modify_Customer extends javax.swing.JFrame {
                 .addComponent(lblModifyCustomer)
                 .addGap(30, 30, 30)
                 .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,9 +276,41 @@ public class Modify_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCustResetActionPerformed
 
     private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
-        // Save all inputs to text file and clear the text fields
+        if(isCustomerIDValid && isCustomerTitleValid){
+            //all valid, saving to file, then clearing text fields
+        }
+        else{
+            //show error message
+            JOptionPane.showMessageDialog(null, "Please enter all fields correctly.");
+        }
         
     }//GEN-LAST:event_btnCustSaveActionPerformed
+
+    private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
+        String text = txtCustomerID.getText();
+        Boolean isOnlyNumbers = text.matches("^[0-9]*$");
+        if(isOnlyNumbers){
+            lblCustomerIDValidation.setText("");
+            isCustomerIDValid = true;
+        }
+        else{
+            lblCustomerIDValidation.setText("Please enter only numbers.");
+            isCustomerIDValid = false;
+        }
+    }//GEN-LAST:event_txtCustomerIDKeyReleased
+
+    private void txtCustTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustTitleKeyReleased
+        String text = txtCustTitle.getText();
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if(isOnlyLetters){
+            lblCustomerTitleValidation.setText("");
+            isCustomerTitleValid = true;
+        }
+        else{
+            lblCustomerTitleValidation.setText("Please enter only letters.");
+            isCustomerTitleValid = false;
+        }
+    }//GEN-LAST:event_txtCustTitleKeyReleased
 
     /**
      * @param args the command line arguments
@@ -272,7 +357,14 @@ public class Modify_Customer extends javax.swing.JFrame {
     private javax.swing.JLabel lblCustMobile;
     private javax.swing.JLabel lblCustSurname;
     private javax.swing.JLabel lblCustTitle;
+    private javax.swing.JLabel lblCustomerAddressValidation;
+    private javax.swing.JLabel lblCustomerForenameValidation;
+    private javax.swing.JLabel lblCustomerGenderValidation;
     private javax.swing.JLabel lblCustomerID;
+    private javax.swing.JLabel lblCustomerIDValidation;
+    private javax.swing.JLabel lblCustomerMobileValidation;
+    private javax.swing.JLabel lblCustomerSurnameValidation;
+    private javax.swing.JLabel lblCustomerTitleValidation;
     private javax.swing.JLabel lblModifyCustomer;
     private javax.swing.JPanel pnlModifyCustomer;
     private javax.swing.JTextField txtCustAddress;

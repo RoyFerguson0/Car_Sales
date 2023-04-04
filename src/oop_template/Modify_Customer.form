@@ -34,7 +34,7 @@
                       <Component id="pnlModifyCustomer" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +45,7 @@
               <Component id="lblModifyCustomer" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="pnlModifyCustomer" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,23 +87,25 @@
                   </Group>
                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtCustomerID" max="32767" attributes="0"/>
-                              <Component id="txtCustTitle" max="32767" attributes="0"/>
-                              <Component id="txtCustForename" max="32767" attributes="0"/>
-                              <Component id="txtCustSurname" max="32767" attributes="0"/>
-                              <Component id="txtCustGender" max="32767" attributes="0"/>
-                              <Component id="txtCustMobile" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCustAddress" pref="184" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="lblCustomerMobileValidation" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCustomerGenderValidation" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCustomerSurnameValidation" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCustomerTitleValidation" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCustomerIDValidation" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtCustomerID" max="32767" attributes="0"/>
+                      <Component id="txtCustTitle" max="32767" attributes="0"/>
+                      <Component id="txtCustForename" max="32767" attributes="0"/>
+                      <Component id="txtCustSurname" max="32767" attributes="0"/>
+                      <Component id="txtCustGender" max="32767" attributes="0"/>
+                      <Component id="txtCustMobile" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lblCustomerAddressValidation" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="btnCustSave" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="70" max="32767" attributes="0"/>
+                          <EmptySpace pref="116" max="32767" attributes="0"/>
                           <Component id="btnEmpMenu" min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="lblCustomerForenameValidation" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtCustAddress" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -117,44 +119,58 @@
                       <Component id="lblCustomerID" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustomerID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerIDValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerTitleValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustForename" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustForename" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerForenameValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustSurname" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustSurname" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerSurnameValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustGender" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustGender" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerGenderValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustMobile" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustMobile" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerMobileValidation" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCustAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCustAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblCustomerAddressValidation" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="btnEmpMenu" pref="44" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnCustReset" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCustSave" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -229,6 +245,9 @@
               <Font name="Helvetica Neue" size="14" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCustomerIDKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCustTitle">
           <Properties>
@@ -236,6 +255,9 @@
               <Font name="Helvetica Neue" size="14" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCustTitleKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCustForename">
           <Properties>
@@ -301,6 +323,55 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCustSaveActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerIDValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerTitleValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerForenameValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerSurnameValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerGenderValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerMobileValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCustomerAddressValidation">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
