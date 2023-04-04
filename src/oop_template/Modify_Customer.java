@@ -4,6 +4,10 @@
  */
 package oop_template;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -278,6 +282,38 @@ public class Modify_Customer extends javax.swing.JFrame {
     private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
         if(isCustomerIDValid && isCustomerTitleValid){
             //all valid, saving to file, then clearing text fields
+            try{
+                File customerTextFile = new File("storage/Customer_Details.txt");
+                if (customerTextFile.createNewFile()) {
+                    System.out.println("File has been created " + customerTextFile.getName() + ".");
+                } else {
+                    System.out.println("This file already exists.");
+                }
+                //always has to end with a line break
+                String line = txtCustomerID.getText() + "," 
+                            + txtCustTitle.getText();
+                
+                FileWriter customerDetailsFile = new FileWriter("storage/Customer_Details.txt",true);
+                BufferedWriter bWriter = new BufferedWriter(customerDetailsFile);
+                bWriter.write(line);
+                bWriter.newLine();
+                bWriter.close();
+                
+                
+                // Clear all text fields
+                 txtCustomerID.setText("");
+                 txtCustTitle.setText("");
+                 txtCustForename.setText("");
+                 txtCustSurname.setText("");
+                 txtCustGender.setText("");
+                 txtCustMobile.setText("");
+                 txtCustAddress.setText("");
+                
+            }
+            catch(IOException e){
+                System.out.println("Issues saving customer file.");
+                e.printStackTrace();
+            }
         }
         else{
             //show error message
@@ -289,7 +325,11 @@ public class Modify_Customer extends javax.swing.JFrame {
     private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
         String text = txtCustomerID.getText();
         Boolean isOnlyNumbers = text.matches("^[0-9]*$");
-        if(isOnlyNumbers){
+        if(text.isBlank()){
+            isCustomerIDValid = false;
+            lblCustomerIDValidation.setText("Please enter a value (numbers).");
+        }
+        else if(isOnlyNumbers){
             lblCustomerIDValidation.setText("");
             isCustomerIDValid = true;
         }
