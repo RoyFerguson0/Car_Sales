@@ -145,6 +145,11 @@ public class Modify_Customer extends javax.swing.JFrame {
 
         btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnEmpMenu.setText("->");
+        btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpMenuActionPerformed(evt);
+            }
+        });
 
         btnCustReset.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
         btnCustReset.setText("Reset");
@@ -460,6 +465,12 @@ public class Modify_Customer extends javax.swing.JFrame {
             isCustomerAddressValid = true;
         }
     }//GEN-LAST:event_txtCustAddressKeyReleased
+
+    private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
+        //return to employee menu
+        this.dispose();
+        new Employee_Main_Menu().setVisible(true);
+    }//GEN-LAST:event_btnEmpMenuActionPerformed
 
     /**
      * @param args the command line arguments
