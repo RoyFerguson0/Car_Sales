@@ -17,6 +17,11 @@ import javax.swing.JOptionPane;
 public class Modify_Customer extends javax.swing.JFrame {
     private boolean isCustomerIDValid = false;
     private boolean isCustomerTitleValid = false;
+    private boolean isCustomerForenameValid = false;
+    private boolean isCustomerSurnameValid = false;
+    private boolean isCustomerGenderValid = false;
+    private boolean isCustomerMobileValid = false;
+    private boolean isCustomerAddressValid = false;
     
     /**
      * Creates new form Modify_Customer
@@ -104,14 +109,39 @@ public class Modify_Customer extends javax.swing.JFrame {
         });
 
         txtCustForename.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustForename.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustForenameKeyReleased(evt);
+            }
+        });
 
         txtCustSurname.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustSurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustSurnameKeyReleased(evt);
+            }
+        });
 
         txtCustGender.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustGender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustGenderKeyReleased(evt);
+            }
+        });
 
         txtCustMobile.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustMobile.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustMobileKeyReleased(evt);
+            }
+        });
 
         txtCustAddress.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustAddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustAddressKeyReleased(evt);
+            }
+        });
 
         btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnEmpMenu.setText("->");
@@ -325,6 +355,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCustSaveActionPerformed
 
     private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
+        //validating input: only numbers allowed
         String text = txtCustomerID.getText();
         Boolean isOnlyNumbers = text.matches("^[0-9]*$");
         if(text.isBlank()){
@@ -342,6 +373,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
     private void txtCustTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustTitleKeyReleased
+        //validating input: only letters allowed
         String text = txtCustTitle.getText();
         Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
         if(isOnlyLetters){
@@ -353,6 +385,75 @@ public class Modify_Customer extends javax.swing.JFrame {
             isCustomerTitleValid = false;
         }
     }//GEN-LAST:event_txtCustTitleKeyReleased
+
+    private void txtCustForenameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustForenameKeyReleased
+        //validating input: only letters allowed
+        String text = txtCustForename.getText();
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if(isOnlyLetters){
+            lblCustomerForenameValidation.setText("");
+            isCustomerForenameValid = true;
+        }
+        else{
+            lblCustomerForenameValidation.setText("Please enter only letters.");
+            isCustomerForenameValid = false;
+        }
+    }//GEN-LAST:event_txtCustForenameKeyReleased
+
+    private void txtCustSurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustSurnameKeyReleased
+        //validating input: only letters allowed
+        String text = txtCustSurname.getText();
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if(isOnlyLetters){
+            lblCustomerSurnameValidation.setText("");
+            isCustomerSurnameValid = true;
+        }
+        else{
+            lblCustomerSurnameValidation.setText("Please enter only letters.");
+            isCustomerSurnameValid = false;
+        }
+    }//GEN-LAST:event_txtCustSurnameKeyReleased
+
+    private void txtCustGenderKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustGenderKeyReleased
+        //validating input: only letters allowed
+        String text = txtCustGender.getText();
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if(isOnlyLetters){
+            lblCustomerGenderValidation.setText("");
+            isCustomerGenderValid = true;
+        }
+        else{
+            lblCustomerGenderValidation.setText("Please enter only letters.");
+            isCustomerGenderValid = false;
+        }
+    }//GEN-LAST:event_txtCustGenderKeyReleased
+
+    private void txtCustMobileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustMobileKeyReleased
+        //validating input: a string to allow for area codes 
+        String text = txtCustMobile.getText();
+        Boolean isOnlyNumbers = text.matches("^[0-9]*$");
+        if(isOnlyNumbers){
+            lblCustomerMobileValidation.setText("");
+            isCustomerMobileValid = true;
+        }
+        else{
+            lblCustomerMobileValidation.setText("Please enter mobile number.");
+            isCustomerMobileValid = false;
+        }
+    }//GEN-LAST:event_txtCustMobileKeyReleased
+
+    private void txtCustAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustAddressKeyReleased
+        //validating input: must allow for both letters and numbers
+        String text = txtCustAddress.getText();
+        if(text.isBlank()){
+            isCustomerAddressValid = false;
+            lblCustomerAddressValidation.setText("Please enter your address.");
+        }
+        else{
+            lblCustomerAddressValidation.setText("");
+            isCustomerAddressValid = true;
+        }
+    }//GEN-LAST:event_txtCustAddressKeyReleased
 
     /**
      * @param args the command line arguments
