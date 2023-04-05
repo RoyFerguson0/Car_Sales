@@ -46,6 +46,11 @@ public class Main_Menu extends javax.swing.JFrame {
 
         btnContactUs.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnContactUs.setText("Contact Us");
+        btnContactUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContactUsActionPerformed(evt);
+            }
+        });
 
         btnShutDown.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
 
@@ -91,6 +96,12 @@ public class Main_Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
+        //close main menu, open contact us page
+        this.dispose();
+        new Contact_Us().setVisible(true);
+    }//GEN-LAST:event_btnContactUsActionPerformed
 
     /**
      * @param args the command line arguments
