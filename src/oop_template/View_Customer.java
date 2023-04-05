@@ -44,8 +44,10 @@ public class View_Customer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lstCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(lstCustomer);
+        lstCustomer.getAccessibleContext().setAccessibleParent(lstCustomer);
 
         lblViewCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblViewCustomer.setText("Customer Details:");
@@ -73,10 +75,11 @@ public class View_Customer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoadCustomerDetails)
-                    .addComponent(lblViewCustomer))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(lblViewCustomer)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnLoadCustomerDetails)))
+                .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,12 +105,11 @@ public class View_Customer extends javax.swing.JFrame {
     private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed
         //load data from customer details text file
         BufferedReader reader;
-        lstCustomer.setModel(customerList);
         try{
             reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            int lines = Integer.parseInt(reader.readLine());
+            //int lines = reader.readLine();
             
-            for(int count = 0; count<lines; count++){
+            for(int count = 0; count<3; count++){
                 String read = reader.readLine();
                 customerList.addElement(read);
             }
