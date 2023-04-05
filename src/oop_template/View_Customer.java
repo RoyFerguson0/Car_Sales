@@ -4,17 +4,27 @@
  */
 package oop_template;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author anastasiaridge
  */
 public class View_Customer extends javax.swing.JFrame {
 
-    /**
-     * Creates new form View_Customer
-     */
+    //declare customerList variable to be read later
+    DefaultListModel<String> customerList;
+    
+    
+    
+    
+    
     public View_Customer() {
         initComponents();
+        customerList = new DefaultListModel<>();
     }
 
     /**
@@ -27,21 +37,34 @@ public class View_Customer extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        lstCustomer = new javax.swing.JList<>();
         lblViewCustomer = new javax.swing.JLabel();
+        btnLoadCustomerDetails = new javax.swing.JButton();
+        btnReturnEmpMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList2);
+        lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jScrollPane2.setViewportView(lstCustomer);
 
         lblViewCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblViewCustomer.setText("Customer Details:");
+
+        btnLoadCustomerDetails.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnLoadCustomerDetails.setText("Load Customer Details");
+        btnLoadCustomerDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoadCustomerDetailsActionPerformed(evt);
+            }
+        });
+
+        btnReturnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        btnReturnEmpMenu.setText("->");
+        btnReturnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnEmpMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,22 +73,57 @@ public class View_Customer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblViewCustomer)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoadCustomerDetails)
+                    .addComponent(lblViewCustomer))
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(lblViewCustomer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLoadCustomerDetails)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed
+        //load data from customer details text file
+        BufferedReader reader;
+        lstCustomer.setModel(customerList);
+        try{
+            reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
+            int lines = Integer.parseInt(reader.readLine());
+            
+            for(int count = 0; count<lines; count++){
+                String read = reader.readLine();
+                customerList.addElement(read);
+            }
+            lstCustomer.setModel(customerList);
+        }
+        catch(IOException e){
+            System.out.println("");
+        }
+    }//GEN-LAST:event_btnLoadCustomerDetailsActionPerformed
+
+    private void btnReturnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnEmpMenuActionPerformed
+        //return to employee enu, close view customer
+        this.dispose();
+        new Employee_Main_Menu().setVisible(true);
+             
+    }//GEN-LAST:event_btnReturnEmpMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,8 +161,10 @@ public class View_Customer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JButton btnLoadCustomerDetails;
+    private javax.swing.JButton btnReturnEmpMenu;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblViewCustomer;
+    private javax.swing.JList<String> lstCustomer;
     // End of variables declaration//GEN-END:variables
 }
