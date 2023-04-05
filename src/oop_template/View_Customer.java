@@ -57,8 +57,8 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
-        btnReturnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        btnReturnEmpMenu.setText("->");
+        btnReturnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        btnReturnEmpMenu.setText("⬅");
         btnReturnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReturnEmpMenuActionPerformed(evt);
@@ -73,53 +73,57 @@ public class View_Customer extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblViewCustomer)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnLoadCustomerDetails)))
+                    .addComponent(btnLoadCustomerDetails)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(49, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(lblViewCustomer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLoadCustomerDetails)
                 .addGap(12, 12, 12)
+                .addComponent(btnLoadCustomerDetails)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReturnEmpMenu)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed
-        //load data from customer details text file
+        /* declaring variable
+           load data from customer details text file
+        */
         BufferedReader reader;
+        //clearing the list so that duplicate data doesn't occur
+        customerList.clear();
         try{
+            //load the file
             reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            //iterate through file using while loop
-            String read = "";
+            
+            String currentLine = "";
             
             //https://stackoverflow.com/questions/62614024/how-to-implement-hasnext-method-with-bufferedreader-stringtokenizer
             
-            while((read = reader.readLine()) != null){
+            //iterate through file line by line using while loop until last line which will be null, loop stops
+            while((currentLine = reader.readLine()) != null){
                 
-                String[] customerParts = read.split(",");
+                String[] customerParts = currentLine.split(",");
                 
                 Customer_Details customer = new Customer_Details();
                 customer.setCustomerID(Integer.parseInt(customerParts[0]));
-                customer.setCustomerForename(customerParts[1]);
-                customer.setCustomerSurname(customerParts[2]);
-                customer.setCustomerGender(customerParts[3]);
-                customer.setCustomerMobile(Integer.parseInt(customerParts[4]));
-                customer.setCustomerAddress(customerParts[5]);
+                customer.setCustomerTitle(customerParts[1]);
+                customer.setCustomerForename(customerParts[2]);
+                customer.setCustomerSurname(customerParts[3]);
+                customer.setCustomerGender(customerParts[4]);
+                customer.setCustomerMobile(customerParts[5]);
+                customer.setCustomerAddress(customerParts[6]);
                 
                 
                 customerList.addElement(customer);

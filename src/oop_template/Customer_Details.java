@@ -15,7 +15,7 @@ public class Customer_Details {
     private String cForename;
     private String cSurname;
     private String cGender;
-    private int cMobile;
+    private String cMobile;
     private String cAddress;
     
     //create method
@@ -72,10 +72,10 @@ public class Customer_Details {
     }
     
     //setter & getter cMobile
-    public void setCustomerMobile(int cMobile){
+    public void setCustomerMobile(String cMobile){
         this.cMobile = cMobile;
     }
-    public int getCustomerMobile(){
+    public String getCustomerMobile(){
         return cMobile;
     }
     
