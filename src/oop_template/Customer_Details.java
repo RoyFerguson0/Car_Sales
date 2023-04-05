@@ -23,6 +23,12 @@ public class Customer_Details {
         
     }
     
+    @Override
+    public String toString(){
+        //Override the toString method so that I can show just the name on the list screen
+        return cTitle + " " + cForename + " " + cSurname;
+    }
+    
     //create setters & getters for each variable
     
     //setter & getter customerID

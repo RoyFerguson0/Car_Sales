@@ -82,7 +82,7 @@
             </Property>
           </AccessibilityProperties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Customer_Details&gt;"/>
           </AuxValues>
         </Component>
       </SubComponents>

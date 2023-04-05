@@ -328,7 +328,7 @@ public class Modify_Customer extends javax.swing.JFrame {
                     System.out.println("This file already exists.");
                 }
                 //always has to end with a line break
-                String line = txtCustomerID.getText() + ", " 
+                String line = txtCustomerID.getText() + "," 
                             + txtCustTitle.getText() + ", "
                             + txtCustForename.getText() + ", "
                             + txtCustSurname.getText() + ", "

@@ -16,7 +16,7 @@ import javax.swing.DefaultListModel;
 public class View_Customer extends javax.swing.JFrame {
 
     //declare customerList variable to be read later
-    DefaultListModel<String> customerList;
+    DefaultListModel<Customer_Details> customerList;
     
     
     public View_Customer() {
@@ -104,10 +104,25 @@ public class View_Customer extends javax.swing.JFrame {
         BufferedReader reader;
         try{
             reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            //iterate through file using for loop
-            for(int count = 0; count<10; count++){
-                String read = reader.readLine();
-                customerList.addElement(read);
+            //iterate through file using while loop
+            String read = "";
+            
+            //https://stackoverflow.com/questions/62614024/how-to-implement-hasnext-method-with-bufferedreader-stringtokenizer
+            
+            while((read = reader.readLine()) != null){
+                
+                String[] customerParts = read.split(",");
+                
+                Customer_Details customer = new Customer_Details();
+                customer.setCustomerID(Integer.parseInt(customerParts[0]));
+                customer.setCustomerForename(customerParts[1]);
+                customer.setCustomerSurname(customerParts[2]);
+                customer.setCustomerGender(customerParts[3]);
+                customer.setCustomerMobile(Integer.parseInt(customerParts[4]));
+                customer.setCustomerAddress(customerParts[5]);
+                
+                
+                customerList.addElement(customer);
             }
             lstCustomer.setModel(customerList);
         }
@@ -164,6 +179,6 @@ public class View_Customer extends javax.swing.JFrame {
     private javax.swing.JButton btnReturnEmpMenu;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblViewCustomer;
-    private javax.swing.JList<String> lstCustomer;
+    private javax.swing.JList<Customer_Details> lstCustomer;
     // End of variables declaration//GEN-END:variables
 }
