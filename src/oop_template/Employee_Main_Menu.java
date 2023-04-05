@@ -47,7 +47,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         pnlCustomer = new javax.swing.JPanel();
         btnModifyCustomer = new javax.swing.JButton();
         btnViewCustomer = new javax.swing.JButton();
-        lblCustomerImage = new javax.swing.JLabel();
+        btnSearchCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,13 +118,14 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        lblCustomerImage.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        lblCustomerImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CustomerImage.png"))); // NOI18N
-        lblCustomerImage.setText("jLabel2");
-        lblCustomerImage.setMaximumSize(new java.awt.Dimension(138, 81));
-        lblCustomerImage.setMinimumSize(new java.awt.Dimension(138, 81));
-        lblCustomerImage.setPreferredSize(new java.awt.Dimension(138, 81));
-        lblCustomerImage.setSize(new java.awt.Dimension(138, 81));
+        btnSearchCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnSearchCustomer.setText("<html>\nSearch <br>Customer\n</html>");
+        btnSearchCustomer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSearchCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCustomerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCustomerLayout = new javax.swing.GroupLayout(pnlCustomer);
         pnlCustomer.setLayout(pnlCustomerLayout);
@@ -132,14 +133,12 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCustomerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCustomerLayout.createSequentialGroup()
-                        .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnViewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnModifyCustomer, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lblCustomerImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnViewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModifyCustomer, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCustomerLayout.setVerticalGroup(
             pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,9 +147,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addComponent(btnModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnViewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCustomerImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -188,7 +187,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,6 +223,12 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.dispose();
         new View_Customer().setVisible(true);
     }//GEN-LAST:event_btnViewCustomerActionPerformed
+
+    private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
+        // close main menu, open search customer page
+        this.dispose();
+        new Search_Customer().setVisible(true);
+    }//GEN-LAST:event_btnSearchCustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,10 +268,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnModifyCustomer;
     private javax.swing.JButton btnModifyEmployee;
+    private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JButton btnViewCustomer;
     private javax.swing.JButton btnViewEmployee;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblCustomerImage;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlCustomer;
