@@ -28,9 +28,16 @@ public class Modify_Customer extends javax.swing.JFrame {
      */
     public Modify_Customer() {
         initComponents();
+        //change customerID from int to string
         String customerID = Integer.toString(appData.Customer_Details.getCustomerID());
+        //use getters and setters to fill text boxes with data from the text file
         txtCustomerID.setText(customerID);
         txtCustTitle.setText(appData.Customer_Details.getCustomerTitle());
+        txtCustForename.setText(appData.Customer_Details.getCustomerForename());
+        txtCustSurname.setText(appData.Customer_Details.getCustomerSurname());
+        txtCustGender.setText(appData.Customer_Details.getCustomerGender());
+        txtCustMobile.setText(appData.Customer_Details.getCustomerMobile());
+        txtCustAddress.setText(appData.Customer_Details.getCustomerAddress());
     }
 
     /**
