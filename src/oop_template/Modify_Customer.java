@@ -310,7 +310,8 @@ public class Modify_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCustResetActionPerformed
 
     private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
-        if(isCustomerIDValid && isCustomerTitleValid){
+        if(isCustomerIDValid && isCustomerTitleValid && isCustomerForenameValid && isCustomerSurnameValid
+                             && isCustomerGenderValid && isCustomerMobileValid && isCustomerAddressValid){
             //all valid, saving to appData, file, then clearing text fields
             //appData.Customer_Details.setCustomerID(txtCustomerID());
             
@@ -323,7 +324,12 @@ public class Modify_Customer extends javax.swing.JFrame {
                 }
                 //always has to end with a line break
                 String line = txtCustomerID.getText() + "," 
-                            + txtCustTitle.getText();
+                            + txtCustTitle.getText() + ","
+                            + txtCustForename.getText() + ","
+                            + txtCustSurname.getText() + ","
+                            + txtCustGender.getText() + ","
+                            + txtCustMobile.getText() + ","
+                            + txtCustAddress.getText();
                 
                 FileWriter customerDetailsFile = new FileWriter("storage/Customer_Details.txt",true);
                 BufferedWriter bWriter = new BufferedWriter(customerDetailsFile);
