@@ -19,9 +19,6 @@ public class View_Customer extends javax.swing.JFrame {
     DefaultListModel<String> customerList;
     
     
-    
-    
-    
     public View_Customer() {
         initComponents();
         customerList = new DefaultListModel<>();
@@ -45,7 +42,7 @@ public class View_Customer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lstCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jScrollPane2.setViewportView(lstCustomer);
         lstCustomer.getAccessibleContext().setAccessibleParent(lstCustomer);
 
@@ -107,14 +104,14 @@ public class View_Customer extends javax.swing.JFrame {
         BufferedReader reader;
         try{
             reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            //int lines = reader.readLine();
-            
-            for(int count = 0; count<3; count++){
+            //iterate through file using for loop
+            for(int count = 0; count<10; count++){
                 String read = reader.readLine();
                 customerList.addElement(read);
             }
             lstCustomer.setModel(customerList);
         }
+        //if error occurs, nothing will print
         catch(IOException e){
             System.out.println("");
         }
