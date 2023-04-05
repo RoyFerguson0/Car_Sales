@@ -38,6 +38,7 @@ public class View_Customer extends javax.swing.JFrame {
         lblViewCustomer = new javax.swing.JLabel();
         btnLoadCustomerDetails = new javax.swing.JButton();
         btnReturnEmpMenu = new javax.swing.JButton();
+        btnEditCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +66,13 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
+        btnEditCustomer.setText("jButton1");
+        btnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCustomerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,12 +80,17 @@ public class View_Customer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblViewCustomer)
-                    .addComponent(btnLoadCustomerDetails)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnReturnEmpMenu, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblViewCustomer)
+                            .addComponent(btnLoadCustomerDetails)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(49, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnReturnEmpMenu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEditCustomer)
+                        .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +102,9 @@ public class View_Customer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnReturnEmpMenu)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnReturnEmpMenu)
+                    .addComponent(btnEditCustomer))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -143,6 +158,13 @@ public class View_Customer extends javax.swing.JFrame {
              
     }//GEN-LAST:event_btnReturnEmpMenuActionPerformed
 
+    private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
+        //update appData with selected customer, close view customer, open modify customer
+        appData.Customer_Details = lstCustomer.getSelectedValue();
+        this.dispose();
+        new Modify_Customer().setVisible(true);
+    }//GEN-LAST:event_btnEditCustomerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -179,6 +201,7 @@ public class View_Customer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditCustomer;
     private javax.swing.JButton btnLoadCustomerDetails;
     private javax.swing.JButton btnReturnEmpMenu;
     private javax.swing.JScrollPane jScrollPane2;

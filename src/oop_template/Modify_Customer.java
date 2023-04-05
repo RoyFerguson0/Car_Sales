@@ -28,6 +28,9 @@ public class Modify_Customer extends javax.swing.JFrame {
      */
     public Modify_Customer() {
         initComponents();
+        String customerID = Integer.toString(appData.Customer_Details.getCustomerID());
+        txtCustomerID.setText(customerID);
+        txtCustTitle.setText(appData.Customer_Details.getCustomerTitle());
     }
 
     /**
