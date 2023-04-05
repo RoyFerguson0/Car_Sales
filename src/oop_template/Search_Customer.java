@@ -10,6 +10,8 @@ package oop_template;
  */
 public class Search_Customer extends javax.swing.JFrame {
 
+    private boolean isCustomerIDValid = false;
+    
     /**
      * Creates new form Search_Customer
      */
@@ -32,6 +34,7 @@ public class Search_Customer extends javax.swing.JFrame {
         lblCustomerID = new javax.swing.JLabel();
         txtCustomerID = new javax.swing.JTextField();
         btnCustomerSearch = new javax.swing.JButton();
+        lblCustomerIDCheck = new javax.swing.JLabel();
         btnEmpMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,7 +44,6 @@ public class Search_Customer extends javax.swing.JFrame {
 
         lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
         lblLogoImage.setText("(logo)");
-        lblLogoImage.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         pnlCustomerSearch.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 14))); // NOI18N
 
@@ -49,21 +51,39 @@ public class Search_Customer extends javax.swing.JFrame {
         lblCustomerID.setText("Customer ID:");
 
         txtCustomerID.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustomerID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustomerIDKeyReleased(evt);
+            }
+        });
 
         btnCustomerSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnCustomerSearch.setText("Search");
+        btnCustomerSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomerSearchActionPerformed(evt);
+            }
+        });
+
+        lblCustomerIDCheck.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblCustomerIDCheck.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout pnlCustomerSearchLayout = new javax.swing.GroupLayout(pnlCustomerSearch);
         pnlCustomerSearch.setLayout(pnlCustomerSearchLayout);
         pnlCustomerSearchLayout.setHorizontalGroup(
             pnlCustomerSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomerSearchLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(lblCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addGroup(pnlCustomerSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCustomerSearch))
+                    .addGroup(pnlCustomerSearchLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCustomerIDCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCustomerSearchLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(lblCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                        .addGroup(pnlCustomerSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCustomerSearch))))
                 .addGap(27, 27, 27))
         );
         pnlCustomerSearchLayout.setVerticalGroup(
@@ -73,7 +93,9 @@ public class Search_Customer extends javax.swing.JFrame {
                 .addGroup(pnlCustomerSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCustomerID)
                     .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerIDCheck)
+                .addGap(12, 12, 12)
                 .addComponent(btnCustomerSearch)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
@@ -131,6 +153,30 @@ public class Search_Customer extends javax.swing.JFrame {
         //new Employee_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
+    private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
+        //input validation: only allow for numbers
+        String text = txtCustomerID.getText();
+        Boolean isOnlyNumbers = text.matches("^[0-9]*$");
+        if(text.isBlank()){
+            isCustomerIDValid = false;
+            lblCustomerIDCheck.setText("Please enter a value (numbers).");
+        }
+        else if(isOnlyNumbers){
+            lblCustomerIDCheck.setText("");
+            isCustomerIDValid = true;
+        }
+        else{
+            lblCustomerIDCheck.setText("Please enter only numbers.");
+            isCustomerIDValid = false;
+        }
+    }//GEN-LAST:event_txtCustomerIDKeyReleased
+
+    private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
+        //close search frame and open view customer frame
+        this.dispose();
+        new View_Customer().setVisible(true);
+    }//GEN-LAST:event_btnCustomerSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,6 +216,7 @@ public class Search_Customer extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomerSearch;
     private javax.swing.JButton btnEmpMenu;
     private javax.swing.JLabel lblCustomerID;
+    private javax.swing.JLabel lblCustomerIDCheck;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlCustomerSearch;
