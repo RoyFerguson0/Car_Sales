@@ -4,17 +4,70 @@
  */
 package oop_template;
 
+import javax.swing.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /**
  *
  * @author 50004216
  */
 public class View_Car extends javax.swing.JFrame {
-
+    private javax.swing.DefaultListModel listCars;
     /**
      * Creates new form View_Car
      */
     public View_Car() {
         initComponents();
+        setLocationRelativeTo(null);
+
+        listCars = new javax.swing.DefaultListModel();
+        String eachLine;
+        int numberLinesFile = 0;
+        int numberLines = 1;
+
+        try {
+            File carTextFile = new File("storage/Car_Details.txt");
+            if (carTextFile.createNewFile()) {
+                System.out.println("File Created" + carTextFile.getName());
+                JOptionPane.showMessageDialog(null, "The Text File created is: " + carTextFile, "Text File Created?",JOptionPane.PLAIN_MESSAGE);
+            } else {
+                System.out.println("File aleardy exists");
+                JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?",JOptionPane.PLAIN_MESSAGE);
+            }
+        FileReader fr = null;
+        try {
+            fr = new FileReader("storage/Car_Details.txt");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        BufferedReader line = new BufferedReader(fr);
+        while(true) {
+            try {
+                if (!((eachLine=line.readLine())!=null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            numberLinesFile++;
+        }
+        System.out.println(numberLines);
+        for(int i = 0; i < numberLinesFile; i++){
+            String line32 = null;
+            try {
+                line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numberLines-1));
+                listCars.addElement(line32);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println(line32);
+            numberLines++;
+        }
+        lstCarDetails.setModel(listCars);
+        } catch (IOException e) {
+            System.out.println("An error occurred");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -27,32 +80,50 @@ public class View_Car extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lstCarDetails = new javax.swing.JList<>();
+        lblViewCarsTitle = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        lstCarDetails.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(lstCarDetails);
+
+        lblViewCarsTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblViewCarsTitle.setText("Available Motors");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(lblViewCarsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addComponent(lblViewCarsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -84,17 +155,21 @@ public class View_Car extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(View_Car.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new View_Car().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblViewCarsTitle;
+    private javax.swing.JList<String> lstCarDetails;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,0 +1,88 @@
+Registration: REG1
+Make: Ford
+Model: Fiesta
+Colour: Blue
+Number of Doors: 5
+Engine Size: 1.6L
+Description: Lovely Car to Drive
+Price: 4000
+
+
+
+Registration: REG2
+Make: Ford
+Model: CorrolaSR
+Colour: Black
+Number of Doors: 5
+Engine Size: 1.6L
+Description: There has been no Faults with this Motor
+Price: 4000
+
+
+
+Registration: REG3
+Make: Lambo
+Model: Zitron
+Colour: Pink
+Number of Doors: 3
+Engine Size: 1.2L
+Description: Sweet Ride
+Price: 543543
+
+
+
+Registration: REG4
+Make: Fiearri
+Model: SportRS
+Colour: Purple
+Number of Doors: 2
+Engine Size: 2.3L
+Description: Hottest Ride about No Lie?
+Price: 900000
+
+
+
+Registration: REG5
+Make: Audi
+Model: Sport M8
+Colour: Cyan
+Number of Doors: 3
+Engine Size: 1.5L
+Description: Fast Motor
+Price: 2300
+
+
+
+Registration: REG6
+Make: Toyota
+Model: Corolla SR
+Colour: Black
+Number of Doors: 5
+Engine Size: 1.6L
+Description: Fastest Motor on the Road. Better Get Out the Way????
+Price: 4350
+
+
+
+Registration: REG7
+Make: Nissan
+Model: Sport Mode
+Colour: Silver
+Number of Doors: 3
+Engine Size: 1.8L
+Description: New Motor? Fresh on the Market
+Price: 654000
+
+
+
+Registration: REG8
+Make: Mini
+Model: Cooper
+Colour: Green
+Number of Doors: 2
+Engine Size: 2.0L
+Description: Old Motor?
+Price: 0
+
+
+
