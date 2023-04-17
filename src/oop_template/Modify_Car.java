@@ -140,6 +140,7 @@ public class Modify_Car extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         cboCarImage = new javax.swing.JComboBox<>();
         lblPic = new javax.swing.JLabel();
+        btnSold = new javax.swing.JButton();
         lblModifyCar = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -201,43 +202,51 @@ public class Modify_Car extends javax.swing.JFrame {
             }
         });
 
+        btnSold.setText("Sold");
+        btnSold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSoldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlModifyCarLayout = new javax.swing.GroupLayout(pnlModifyCar);
         pnlModifyCar.setLayout(pnlModifyCarLayout);
         pnlModifyCarLayout.setHorizontalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(52, 52, 52)
+                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
                         .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblPrice)
-                                    .addComponent(lblDescription)
-                                    .addComponent(lblEngine)
-                                    .addComponent(lblDoors)
-                                    .addComponent(lblColour)
-                                    .addComponent(lblModel)
-                                    .addComponent(lblMake)
-                                    .addComponent(lblRegistration))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(cboCarImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblPrice)
+                            .addComponent(lblDescription)
+                            .addComponent(lblEngine)
+                            .addComponent(lblDoors)
+                            .addComponent(lblColour)
+                            .addComponent(lblModel)
+                            .addComponent(lblMake)
+                            .addComponent(lblRegistration))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(cboCarImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSold)
+                .addGap(17, 17, 17))
         );
         pnlModifyCarLayout.setVerticalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,9 +287,15 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cboCarImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlModifyCarLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSold)
+                        .addGap(50, 50, 50))))
         );
 
         lblModifyCar.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -842,9 +857,9 @@ public class Modify_Car extends javax.swing.JFrame {
         // TODO add your handling code here:
         int index = cboCarImage.getSelectedIndex();
         Image pic;
-        String picSrc[] = {"no image","images/FordRanger2022.jpeg",
+        String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
         "/pkgPictures/millfield.jpg", "/pkgPictures/TQ.jpg"};
-        
+        System.out.println(index);
         switch (index) {
             case 1:
                 pic =
@@ -869,6 +884,526 @@ public class Modify_Car extends javax.swing.JFrame {
 //        }
         lblPic.setIcon(new ImageIcon(pic));
     }//GEN-LAST:event_cboCarImageActionPerformed
+
+    private void btnSoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoldActionPerformed
+        // TODO add your handling code here:
+        
+        // Checking Text Boxes aren't Empty
+        if(txtRegistration.getText().equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Fill all Fields in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+        }else {
+
+
+            // Saving Data to Objects
+            appData.Car_Details.setRegistration(txtRegistration.getText().replace(" ", ""));
+            appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
+            appData.Car_Details.setModel(txtModel.getText().trim());
+            appData.Car_Details.setColour(txtColour.getText().replace(" ", ""));
+            appData.Car_Details.setDoors(Integer.parseInt(txtDoors.getText().replace(" ", "")));
+            appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
+            appData.Car_Details.setDescription(txtDescription.getText().trim());
+            appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
+
+            // Convert the Numbers to string can saving text to string objects
+            String Reg = appData.Car_Details.getRegistration();
+            String Make = appData.Car_Details.getMake();
+            String Model = appData.Car_Details.getModel();
+            String Colour = appData.Car_Details.getColour();
+            String Doors = String.valueOf(appData.Car_Details.getDoors());
+            String EngineSize = appData.Car_Details.getEngine_size();
+            String Description = appData.Car_Details.getDescription();
+            String Price = String.valueOf(appData.Car_Details.getPrice());
+
+
+
+                // Creating a file
+                try {
+                    File carTextFile = new File("storage/Cars_Sold.txt");
+                    if (carTextFile.createNewFile()) {
+                        System.out.println("File Created " + carTextFile.getName());
+                        JOptionPane.showMessageDialog(null, "The Text File created is: " + carTextFile, "Text File Created?", JOptionPane.PLAIN_MESSAGE);
+                    } else {
+                        System.out.println("File aleardy exists");
+                        JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?", JOptionPane.PLAIN_MESSAGE);
+                    }
+
+                    // Check if Reg Already Exists in Text File
+
+                    String[] words = null;
+                    String eachLine;
+                    int count = 0;
+                    int lines = 0;
+                    int RegistationLine = 0;
+
+                    // Creating File and Buffer Reader
+                    FileReader fr = new FileReader("storage/Car_Details.txt");
+                    BufferedReader line = new BufferedReader(fr);
+                    while ((eachLine = line.readLine()) != null) {
+                        lines++;
+
+                        // System.out.println("Each Line of Data \n" + eachLine);
+                        words = eachLine.split("\n");
+                        for (String word : words) {
+
+                            if (word.equals("Registration: " + Reg)) {
+                                count++;
+
+                                RegistationLine = lines;
+
+                            }
+                        }
+                    }
+                    int value = 0;
+                    if (count != 0) {
+                        System.out.println("The given word is present");
+                        value = JOptionPane.showConfirmDialog(null, "The Registration: " + Reg + " is in Text File, Do you wish to continue?", "Question", JOptionPane.YES_NO_OPTION);
+                        System.out.println(value);
+                        // Need to add an JOptionPane asking if they want to rewrite data
+                        // ReWriting The Exact lines of Code
+//                Scanner input = new Scanner(System.in);
+//                int value = input.nextInt();
+                        if (value == 0) {
+
+                            
+
+                            String lineReg = "";
+                            String lineMake = "";
+                            String lineModel = "";
+                            String lineColour = "";
+                            String lineDoors = "";
+                            String lineEngine = "";
+                            String lineDescription = "";
+                            String linePrice = "";
+
+
+//                    BufferedReader reader;
+//
+//                    try {
+//                        reader = new BufferedReader(new FileReader("storage/Car_Details.txt"));
+//                        String line3 = reader.readLine();
+//
+//                        while (line3 != null) {
+//                            System.out.println(line3);
+//                            // read next line
+//
+//                            line3 = reader.readLine();
+//                        }
+//
+//                        reader.close();
+//
+//
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
+
+//
+//                    Path path = Paths.get("storage/Car_Details.txt");
+//                    List<String> lines1 = null;
+//                    try {
+//                        lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
+//                    } catch (IOException e) {
+//                        throw new RuntimeException(e);
+//                    }
+////                    lines1.set(numLines + 1, txtModel.getText());
+////                    System.out.println("Output for Make: " + lines1);
+//                    System.out.println(lines1);
+//                    String part1 = lines1.get(0);
+//                    String part2 = lines1.get(1);
+////
+//                    System.out.println("Part1 " + part1);
+//                    System.out.println("Part2 " + part2);
+//
+//                    String[] output0 = new String[lines];
+//
+//                    String[] output = new String[lines];
+//                    String line5 = lines1.toString();
+//                    if(line5.contains(":")){
+//                        output = line5.split(":");
+//                    }
+//                    System.out.println("array output is: ");
+//                    System.out.println(Arrays.toString(output));
+//                    System.out.println();
+//                    System.out.println();
+//                    int position = 1;
+//
+//                    for(int i = 0; i <output.length; i ++){
+//                        output0[0] = output[i];
+//                        System.out.println(output0[0]);
+//                    }
+//                    System.out.println("array zero");
+//                    System.out.println(Arrays.toString(output0));
+//                    System.out.println();
+//                    System.out.println("Clean Array");
+//                    String[] cleanedAray = Arrays.stream(output0).filter(Objects::nonNull).toArray(String[]::new);
+//                    System.out.println(Arrays.toString(cleanedAray));
+//
+//                    String reg = "";
+
+
+//                    try (Stream<String> all_lines = Files.lines(Paths.get("storage/Car_Details.txt"))) {
+//                        reg = all_lines.skip(newlines-1).findFirst().get(); // Reg
+////                        make = all_lines.skip(newlines).findFirst().get();  // Make
+////                        model = all_lines.skip(newlines+1).findFirst().get();
+////                        colour = all_lines.skip(newlines+2).findFirst().get();
+////                        doors = all_lines.skip(newlines+3).findFirst().get();
+////                        enginesize = all_lines.skip(newlines+4).findFirst().get();
+////                        description = all_lines.skip(newlines+5).findFirst().get();
+////                        price = all_lines.skip(newlines+6).findFirst().get();
+//
+////                        System.out.println("\n");
+////                        System.out.println(reg);
+////                        System.out.println(make);
+////                        System.out.println(model);
+////                        System.out.println(colour);
+////                        System.out.println(doors);
+////                        System.out.println(enginesize);
+////                        System.out.println(description);
+////                        System.out.println(price);
+////                        output1 = new String[]{reg, make, model, colour, doors, enginesize, description, price};
+////                        System.out.println("\n");
+////                        System.out.println(Arrays.toString(output1));
+//                    } catch (IOException e) {
+//                        throw new RuntimeException(e);
+//                    }
+                            try {
+                                // Reading the specific lines from the Registration id already in Text File
+                                lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
+                                lineMake = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine);  // Make
+                                lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Make
+                                lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Make
+                                lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Make
+                                lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Make
+                                lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Make
+                                linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Make
+
+                                // Putting the Lines in the Arrays so that i can split the value from it.
+                                String[] regRegistration = lineReg.split(": ");
+                                String[] regMake = lineMake.split(": ");
+                                String[] regModel = lineModel.split(": ");
+                                String[] regColour = lineColour.split(": ");
+                                String[] regDoors = lineDoors.split(": ");
+                                String[] regEngine = lineEngine.split(": ");
+                                String[] regDescription = lineDescription.split(": ");
+                                String[] regPrice = linePrice.split(": ");
+
+                                System.out.println(regMake[1]);
+
+                                // Setting the Car Details
+                                appData.Car_Details.setRegistration(regRegistration[1]);
+                                appData.Car_Details.setMake(regMake[1]);
+                                appData.Car_Details.setModel(regModel[1]);
+                                appData.Car_Details.setColour(regColour[1]);
+                                appData.Car_Details.setDoors(Integer.parseInt(regDoors[1]));
+                                appData.Car_Details.setEngine_size(regEngine[1]);
+                                appData.Car_Details.setDescription(regDescription[1]);
+                                appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
+
+
+                                // write data
+                                // Creating the File Writer and Buffer Writer
+                                FileWriter carFile = new FileWriter("storage/Cars_Sold.txt", true);
+                                BufferedWriter output = new BufferedWriter(carFile);
+
+                                // Write String to Text File - Next Empty Line
+                                output.write("Registration: " + appData.Car_Details.getRegistration() + "\nMake: " +
+                                        appData.Car_Details.getMake() + "\nModel: " + appData.Car_Details.getModel() + "\nColour: " +
+                                        appData.Car_Details.getColour() + "\nNumber of Doors: " + appData.Car_Details.getDoors() +
+                                        "\nEngine Size: " + appData.Car_Details.getEngine_size() + "\nDescription: " +
+                                        appData.Car_Details.getDescription() + "\nPrice: " + appData.Car_Details.getPrice() + "\n\n\n\n");
+
+                                lblTesting.setText("Write Successful");
+                                JOptionPane.showMessageDialog(null, "Write Successful?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
+                                txtRegistration.setText("");
+                                txtMake.setText("");
+                                txtModel.setText("");
+                                txtColour.setText("");
+                                txtDoors.setText("");
+                                txtEngine.setText("");
+                                txtDescription.setText("");
+                                txtPrice.setText("");
+
+                                output.close();
+
+                                Path path = Paths.get("storage/Car_Details.txt");
+                                List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
+                                // Reg
+                                lines1.set(RegistationLine - 1, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Make
+                                lines1.set(RegistationLine, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Model
+                                lines1.set(RegistationLine + 1, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Colour
+                                lines1.set(RegistationLine + 2, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Number of Doors
+                                lines1.set(RegistationLine + 3, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Engine Size
+                                lines1.set(RegistationLine + 4, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Description
+                                lines1.set(RegistationLine + 5, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+                                // Price
+                                lines1.set(RegistationLine + 6, "");
+                                Files.write(path, lines1, StandardCharsets.UTF_8);
+
+                                System.out.println(lines1);
+
+                                JOptionPane.showMessageDialog(null, "Deleted Lines?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
+                                txtRegistration.setText("");
+                                txtMake.setText("");
+                                txtModel.setText("");
+                                txtColour.setText("");
+                                txtDoors.setText("");
+                                txtEngine.setText("");
+                                txtDescription.setText("");
+                                txtPrice.setText("");
+
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+
+
+//                    int lineNumber = 0;
+//                    String regTest = "";
+//                    String makeTest = "";
+//                    String modelTest = "";
+//                    String colourTest = "";
+//                    String doorsTest = "";
+//                    String enginesizeTest = "";
+//                    String descriptionTest = "";
+//                    String priceTest = "";
+//                    String testError = "";
+//                    try {
+//                        FileReader readfile = new FileReader("storage/Car_Details.txt");
+//                        BufferedReader readbuffer = new BufferedReader(readfile);
+//                        for (lineNumber = newlines; lineNumber < (newlines+8); lineNumber++) {
+//                            if (lineNumber == newlines) {
+//                                regTest = readbuffer.readLine();
+//                            } else if(lineNumber == newlines+1){
+//                                makeTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+2){
+//                                modelTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+3){
+//                                colourTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+4){
+//                                doorsTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+5){
+//                                enginesizeTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+6){
+//                                descriptionTest = readbuffer.readLine();
+//                            }else if (lineNumber == newlines+7){
+//                                priceTest = readbuffer.readLine();
+//                            }else{
+//                                testError = "Errors";
+//                            }
+//
+//                        }
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                    System.out.println(" The specific Line is: " + regTest);
+//                    System.out.println(" The specific Line is: " + makeTest);
+//                    System.out.println(" The specific Line is: " + modelTest);
+//                    System.out.println(" The specific Line is: " + colourTest);
+//                    System.out.println(" The specific Line is: " + doorsTest);
+//                    System.out.println(" The specific Line is: " + enginesizeTest);
+//                    System.out.println(" The specific Line is: " + descriptionTest);
+//                    System.out.println(" The specific Line is: " + priceTest);
+//                    System.out.println(" The specific Line is: " + testError);
+//
+//                    String[] outputTestArray = new String[]{regTest,makeTest,modelTest,colourTest,doorsTest,enginesizeTest,descriptionTest,priceTest};
+//                    System.out.println(Arrays.toString(outputTestArray));
+//                    String convertArray = Arrays.toString(outputTestArray);
+//                    System.out.println("Conver Array");
+//                    System.out.println(convertArray);
+//                    String[] newArray = convertArray.split(": ");
+//                    String convertArray2 = Arrays.toString(newArray);
+//                    System.out.println("Conver Array 22222");
+//                    System.out.println(convertArray2);
+//                    String[] secondNewArray = convertArray.split(",");
+//                    System.out.println(secondNewArray[0]);
+//                    System.out.println(secondNewArray[1]);
+////                    String[] newArray = new String[16];
+////                    for(int j = 0; j < 16; j++){
+////                        newArray = convertArray.split(": ");
+////                    }
+//                    for (String s : newArray) {
+//                        System.out.println("Testing: ==== " + s);
+//                    }
+//                    System.out.println("New Array");
+//                    System.out.println(Arrays.toString(newArray));
+//
+//                    System.out.println(newArray[0]);
+//                    System.out.println(newArray[1]);
+//                    System.out.println(newArray[2]);
+//                    appData.Car_Details.setMake(newArray[3]);
+//                    System.out.println(appData.Car_Details.getMake());
+                            //     System.out.println(Arrays.toString(output1));
+
+
+//                    Files.write(path, lines1, StandardCharsets.UTF_8);
+//                    lines1.set(numLines + 1, txtModel.getText());
+//                    Files.write(path, lines1, StandardCharsets.UTF_8);
+//                    lines1.set(numLines + 2, txtColour.getText());
+//                    Files.write(path, lines1, StandardCharsets.UTF_8);
+                        }
+                        ////////////////////////////////
+                        ///////// This Works - Reading Lines///////////
+                        ////////////////////////////////
+//                    System.out.println(numLines);
+//                    for(int i = 0; i < 8; i++){
+//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
+//                        System.out.println(line32);
+//                        numLines++;
+//                    }
+
+//                    String strLine = "";
+//                    ArrayList <String> list = new ArrayList<String>();
+//                    for(int j = numLines; j < (numLines + 8); j++){
+//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
+//                        while(strLine == Reg){
+//                            strLine = br.readLine();
+//                            list.add(strLine);
+//                        }
+//                    }
+//                    System.out.println(list);
+                        //   fr.close();
+                    } else if (value == 1) {
+
+                    }else{
+
+                        System.out.println("New Word");
+                        appData.Car_Details.setRegistration(Reg);
+                        appData.Car_Details.setMake("null");
+                        appData.Car_Details.setModel("null");
+                        appData.Car_Details.setColour("null");
+                        appData.Car_Details.setDoors(-1);
+                        appData.Car_Details.setEngine_size("null");
+                        appData.Car_Details.setDescription("null");
+                        appData.Car_Details.setPrice(-1);
+
+                        this.dispose();
+                        new Modify_Car().setVisible(true);
+                        // write data
+                        // Creating the File Writer and Buffer Writer
+                        //      FileWriter carFile = new FileWriter("storage/Car_Details.txt",true);
+                        //     BufferedWriter output = new BufferedWriter(carFile);
+
+                        // Write String to Text File - Next Empty Line
+                        //       output.write(Reg + "\n" + Make + "\n" + Model + "\n" + Colour + "\n" + Doors + "\n" + EngineSize + "\n" + Description + "\n" + Price + "\n");
+
+                        //       lblTesting.setText("Write Successful");
+
+                        //        output.close();
+                    }
+//                    if (count != 0) {
+//                        System.out.println("The given word is present");
+//                        // Need to add an JOptionPane asking if they want to rewrite data
+//                        // ReWriting The Exact lines of Code
+////                    Scanner input = new Scanner(System.in);
+////                    int value = input.nextInt();
+//
+//
+//
+//                            // write data
+//                            // Creating the File Writer and Buffer Writer
+//                            FileWriter carFile = new FileWriter("storage/Cars_Sold.txt", true);
+//                            BufferedWriter output = new BufferedWriter(carFile);
+//
+//                            // Write String to Text File - Next Empty Line
+//                            output.write("Registration: " + Reg + "\nMake: " + Make + "\nModel: " + Model + "\nColour: " + Colour + "\nNumber of Doors: " + Doors +
+//                                    "\nEngine Size: " + EngineSize + "\nDescription: " + Description + "\nPrice: " + Price + "\n\n\n\n");
+//
+//                            lblTesting.setText("Write Successful");
+//                            JOptionPane.showMessageDialog(null, "Write Successful?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
+//                            txtRegistration.setText("");
+//                            txtMake.setText("");
+//                            txtModel.setText("");
+//                            txtColour.setText("");
+//                            txtDoors.setText("");
+//                            txtEngine.setText("");
+//                            txtDescription.setText("");
+//                            txtPrice.setText("");
+//
+//                            output.close();
+//
+////                            Path path = Paths.get("storage/Cars_Sold.txt");
+////                            List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
+////                            // Make
+////                            lines1.set(numLines, "Make: " + txtMake.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Model
+////                            lines1.set(numLines + 1, "Model: " + txtModel.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Colour
+////                            lines1.set(numLines + 2, "Colour: " + txtColour.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Number of Doors
+////                            lines1.set(numLines + 3, "Number of Doors: " + txtDoors.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Engine Size
+////                            lines1.set(numLines + 4, "Engine Size: " + txtEngine.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Description
+////                            lines1.set(numLines + 5, "Description: " + txtDescription.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////                            // Price
+////                            lines1.set(numLines + 6, "Price: " + txtPrice.getText());
+////                            Files.write(path, lines1, StandardCharsets.UTF_8);
+////
+////                            System.out.println(lines1);
+////
+////                            JOptionPane.showMessageDialog(null, "Write Successful?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
+////                            txtRegistration.setText("");
+////                            txtMake.setText("");
+////                            txtModel.setText("");
+////                            txtColour.setText("");
+////                            txtDoors.setText("");
+////                            txtEngine.setText("");
+////                            txtDescription.setText("");
+////                            txtPrice.setText("");
+//                        }
+
+
+                        ////////////////////////////////
+                        ///////// This Works - Reading Lines///////////
+                        ////////////////////////////////
+//                    System.out.println(numLines);
+//                    for(int i = 0; i < 8; i++){
+//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
+//                        System.out.println(line32);
+//                        numLines++;
+//                    }
+
+//                    String strLine = "";
+//                    ArrayList <String> list = new ArrayList<String>();
+//                    for(int j = numLines; j < (numLines + 8); j++){
+//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
+//                        while(strLine == Reg){
+//                            strLine = br.readLine();
+//                            list.add(strLine);
+//                        }
+//                    }
+//                    System.out.println(list);
+                    //    fr.close();
+
+
+
+
+                } catch (IOException e) {
+                    System.out.println("An error occurred");
+                    e.printStackTrace();
+                }
+
+        }
+    }//GEN-LAST:event_btnSoldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -917,6 +1452,7 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnSold;
     private javax.swing.JComboBox<String> cboCarImage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblColour;
