@@ -50,6 +50,7 @@ public class Login extends javax.swing.JFrame {
         btnReturnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblEmployeeLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmployeeLogin.setText("Login:");
@@ -122,6 +123,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed

@@ -77,6 +77,7 @@ public class Modify_Customer extends javax.swing.JFrame {
         lblCustomerAddressValidation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblModifyCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblModifyCustomer.setText("Modify Customer");
@@ -311,6 +312,7 @@ public class Modify_Customer extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCustResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustResetActionPerformed

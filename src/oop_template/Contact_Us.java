@@ -39,6 +39,7 @@ public class Contact_Us extends javax.swing.JFrame {
         btnReturnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblContactUs.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         lblContactUs.setText("Contact Us");
@@ -149,6 +150,7 @@ public class Contact_Us extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed

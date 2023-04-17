@@ -41,6 +41,7 @@ public class View_Customer extends javax.swing.JFrame {
         btnEditCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lstCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -107,6 +108,7 @@ public class View_Customer extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed

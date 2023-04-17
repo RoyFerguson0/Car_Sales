@@ -32,6 +32,7 @@ public class View_Employee extends javax.swing.JFrame {
         btnEmpReturnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblEmployeeList.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblEmployeeList.setText("Employee List");
@@ -78,6 +79,7 @@ public class View_Employee extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEmpReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpReturnMenuActionPerformed

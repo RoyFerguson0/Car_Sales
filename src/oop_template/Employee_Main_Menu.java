@@ -50,6 +50,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         btnSearchCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblTitle.setText("RJA Motors");
@@ -197,9 +198,8 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        pnlEmployeeImage.getAccessibleContext().setAccessibleName("Employee Menu");
-
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyEmployeeActionPerformed
