@@ -140,6 +140,7 @@ public class Modify_Car extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnEmpMenu = new javax.swing.JButton();
         lblTesting = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -268,6 +269,13 @@ public class Modify_Car extends javax.swing.JFrame {
             }
         });
 
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -277,11 +285,17 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addComponent(lblModifyCar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnReset)
-                .addGap(88, 88, 88)
-                .addComponent(btnSave)
-                .addGap(176, 176, 176)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnReset)
+                        .addGap(88, 88, 88)
+                        .addComponent(btnSave)
+                        .addGap(176, 176, 176))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addGroup(layout.createSequentialGroup()
@@ -302,7 +316,9 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReset)
                     .addComponent(btnSave))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnDelete)
+                .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -619,6 +635,177 @@ public class Modify_Car extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        
+        // Checking Text Boxes aren't Empty
+        if(txtRegistration.getText().equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Fill Registration in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+        }else {
+
+
+            // Saving Data to Objects
+            appData.Car_Details.setRegistration(txtRegistration.getText().replace(" ", ""));
+            appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
+            appData.Car_Details.setModel(txtModel.getText().trim());
+            appData.Car_Details.setColour(txtColour.getText().replace(" ", ""));
+            appData.Car_Details.setDoors(Integer.parseInt(txtDoors.getText().replace(" ", "")));
+            appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
+            appData.Car_Details.setDescription(txtDescription.getText().trim());
+            appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
+
+            // Convert the Numbers to string can saving text to string objects
+            String Reg = appData.Car_Details.getRegistration();
+            String Make = appData.Car_Details.getMake();
+            String Model = appData.Car_Details.getModel();
+            String Colour = appData.Car_Details.getColour();
+            String Doors = String.valueOf(appData.Car_Details.getDoors());
+            String EngineSize = appData.Car_Details.getEngine_size();
+            String Description = appData.Car_Details.getDescription();
+            String Price = String.valueOf(appData.Car_Details.getPrice());
+            
+            
+                // Creating a file
+                try {
+                    File carTextFile = new File("storage/Car_Details.txt");
+                    if (carTextFile.createNewFile()) {
+                        System.out.println("File Created" + carTextFile.getName());
+                        JOptionPane.showMessageDialog(null, "The Text File created is: " + carTextFile, "Text File Created?", JOptionPane.PLAIN_MESSAGE);
+                    } else {
+                        System.out.println("File aleardy exists");
+                        JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?", JOptionPane.PLAIN_MESSAGE);
+                    }
+
+                    // Check if Reg Already Exists in Text File
+
+                    String[] words = null;
+                    String eachLine;
+                    int count = 0;
+                    int lines = 0;
+                    int numLines = 0;
+
+                    // Creating File and Buffer Reader
+                    FileReader fr = new FileReader("storage/Car_Details.txt");
+                    BufferedReader line = new BufferedReader(fr);
+                    while ((eachLine = line.readLine()) != null) {
+                        lines++;
+
+                        // System.out.println("Each Line of Data \n" + eachLine);
+                        words = eachLine.split("\n");
+                        for (String word : words) {
+
+                            if (word.equals("Registration: " + Reg)) {
+                                count++;
+
+                                numLines = lines;
+//                            int takeaway = numLines + 8;
+//                            System.out.println(takeaway);
+//                            while (numLines != takeaway){
+//                                System.out.println("This line is: " + numLines);
+//                                System.out.println("Word" + eachLine);
+//                            }
+//                            for(int i = numLines; i < takeaway; i++){
+//                                System.out.println("This line is: " + numLines);
+//                                System.out.println("Word" + eachLine);
+//                            }
+                            }
+                        }
+                    }
+
+                    if (count != 0) {
+                        System.out.println("The given word is present");
+                        int reWriteLinesValue = JOptionPane.showConfirmDialog(null, Reg + " Exists Delete Car Details?", "Important Question?", JOptionPane.YES_NO_OPTION);
+                        // Need to add an JOptionPane asking if they want to rewrite data
+                        // ReWriting The Exact lines of Code
+                        
+//                                    List<String> lines = FileUtils.readLines(file);
+//                                    List<String> updatedLines = lines.stream().filter(s -> !s.contains(searchString)).collect(Collectors.toList());
+//                                    FileUtils.writeLines(file, updatedLines, false);
+
+//                    Scanner input = new Scanner(System.in);
+//                    int value = input.nextInt();
+                        if (reWriteLinesValue == 0) {
+                            Path path = Paths.get("storage/Car_Details.txt");                          
+                            List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
+                            // Reg
+                            lines1.set(numLines - 1, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Make
+                            lines1.set(numLines, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Model
+                            lines1.set(numLines + 1, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Colour
+                            lines1.set(numLines + 2, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Number of Doors
+                            lines1.set(numLines + 3, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Engine Size
+                            lines1.set(numLines + 4, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Description
+                            lines1.set(numLines + 5, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Price
+                            lines1.set(numLines + 6, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+
+                            System.out.println(lines1);
+
+                            JOptionPane.showMessageDialog(null, "Deleted Lines?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
+                            txtRegistration.setText("");
+                            txtMake.setText("");
+                            txtModel.setText("");
+                            txtColour.setText("");
+                            txtDoors.setText("");
+                            txtEngine.setText("");
+                            txtDescription.setText("");
+                            txtPrice.setText("");
+                        }
+
+
+                        ////////////////////////////////
+                        ///////// This Works - Reading Lines///////////
+                        ////////////////////////////////
+//                    System.out.println(numLines);
+//                    for(int i = 0; i < 8; i++){
+//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
+//                        System.out.println(line32);
+//                        numLines++;
+//                    }
+
+//                    String strLine = "";
+//                    ArrayList <String> list = new ArrayList<String>();
+//                    for(int j = numLines; j < (numLines + 8); j++){
+//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
+//                        while(strLine == Reg){
+//                            strLine = br.readLine();
+//                            list.add(strLine);
+//                        }
+//                    }
+//                    System.out.println(list);
+                        fr.close();
+                    } else {
+                        System.out.println("New Word");
+                        JOptionPane.showMessageDialog(null, "Regstration doesn't exist in file?", "Important?", JOptionPane.PLAIN_MESSAGE);
+                        
+                    }
+                    // fr.close();
+
+
+                } catch (IOException e) {
+                    System.out.println("An error occurred");
+                    e.printStackTrace();
+                }
+            
+        }
+        
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -662,6 +849,7 @@ public class Modify_Car extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSave;
