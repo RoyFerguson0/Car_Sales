@@ -101,6 +101,11 @@ public class Search_Employee extends javax.swing.JFrame {
         );
 
         btnEmpMenu.setText("Return Menu");
+        btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +148,16 @@ public class Search_Employee extends javax.swing.JFrame {
     private void txtEmployeeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmployeeIDActionPerformed
+
+    private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
+        Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
+        // Makes the Employee_Main_Menu frame visible
+        
+        employeeMenu.setVisible(true);
+        // Makes the current frame invisible if needed
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnEmpMenuActionPerformed
 
     /**
      * @param args the command line arguments

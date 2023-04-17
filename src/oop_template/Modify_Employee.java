@@ -347,7 +347,7 @@ public class Modify_Employee extends javax.swing.JFrame {
     } else {
        try {
             // Create a FileWriter object that writes to a file called "employee_data.txt"
-            FileWriter emptxtfile = new FileWriter("employee_data.txt", true);
+            FileWriter emptxtfile = new FileWriter("storage/employee_data.txt", true);
             // Write the data to the file
             emptxtfile.write(txtEmployeeID.getText() + "," + txtEmpTitle.getText() + "," + txtEmpForename.getText() + ","
                     + txtEmpSurname.getText() + "," + txtEmpGender.getText() + "," + txtEmpJobTitle.getText() + ","
@@ -367,7 +367,13 @@ public class Modify_Employee extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEmpSaveActionPerformed
 
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
-        // TODO add your handling code here:
+        Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
+        // Makes the View_Employee frame visible
+        
+        employeeMenu.setVisible(true);
+        // Makes the current frame invisible if needed
+        
+        this.setVisible(false);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
     /**

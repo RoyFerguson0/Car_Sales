@@ -43,7 +43,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         pnlEmployeeImage = new javax.swing.JPanel();
         btnModifyEmployee = new javax.swing.JButton();
         btnViewEmployee = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnSearchEmployee = new javax.swing.JButton();
         pnlCustomer = new javax.swing.JPanel();
         btnModifyCustomer = new javax.swing.JButton();
         btnViewCustomer = new javax.swing.JButton();
@@ -57,7 +57,8 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
         lblLogoImage.setToolTipText("");
 
-        pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createTitledBorder("Employee Menu"));
+        pnlEmployeeImage.setName(""); // NOI18N
 
         btnModifyEmployee.setText("Modify Employee");
         btnModifyEmployee.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
@@ -75,16 +76,27 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             }
         });
 
+        btnSearchEmployee.setText("Search Employee");
+        btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchEmployeeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlEmployeeImageLayout = new javax.swing.GroupLayout(pnlEmployeeImage);
         pnlEmployeeImage.setLayout(pnlEmployeeImageLayout);
         pnlEmployeeImageLayout.setHorizontalGroup(
             pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnViewEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnModifyEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
+                        .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnViewEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnModifyEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnlEmployeeImageLayout.setVerticalGroup(
             pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,12 +105,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addComponent(btnModifyEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Employee Menu");
 
         pnlCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Customer Menu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 0, 14))); // NOI18N
 
@@ -157,11 +167,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+                .addContainerGap(141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
@@ -174,7 +183,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,12 +192,12 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
+
+        pnlEmployeeImage.getAccessibleContext().setAccessibleName("Employee Menu");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -230,6 +239,16 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         new Search_Customer().setVisible(true);
     }//GEN-LAST:event_btnSearchCustomerActionPerformed
 
+    private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
+        Search_Employee searchEmployee = new Search_Employee();
+        // Makes the View_Employee frame visible
+        
+        searchEmployee.setVisible(true);
+        // Makes the current frame invisible if needed
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSearchEmployeeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -269,9 +288,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnModifyCustomer;
     private javax.swing.JButton btnModifyEmployee;
     private javax.swing.JButton btnSearchCustomer;
+    private javax.swing.JButton btnSearchEmployee;
     private javax.swing.JButton btnViewCustomer;
     private javax.swing.JButton btnViewEmployee;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlCustomer;
