@@ -4,6 +4,8 @@
  */
 package oop_template;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.*;
 import oop_template.appData;
 
@@ -135,6 +137,9 @@ public class Modify_Car extends javax.swing.JFrame {
         txtEngine = new javax.swing.JTextField();
         txtDescription = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        cboCarImage = new javax.swing.JComboBox<>();
+        lblPic = new javax.swing.JLabel();
         lblModifyCar = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -187,32 +192,52 @@ public class Modify_Car extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Image:");
+
+        cboCarImage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Image", "Ford Ranger 2022", "Millfield", "TQ" }));
+        cboCarImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboCarImageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlModifyCarLayout = new javax.swing.GroupLayout(pnlModifyCar);
         pnlModifyCar.setLayout(pnlModifyCarLayout);
         pnlModifyCarLayout.setHorizontalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlModifyCarLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblPrice)
-                    .addComponent(lblDescription)
-                    .addComponent(lblEngine)
-                    .addComponent(lblDoors)
-                    .addComponent(lblColour)
-                    .addComponent(lblModel)
-                    .addComponent(lblMake)
-                    .addComponent(lblRegistration))
-                .addGap(18, 18, 18)
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(159, Short.MAX_VALUE))
+                    .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblPrice)
+                                    .addComponent(lblDescription)
+                                    .addComponent(lblEngine)
+                                    .addComponent(lblDoors)
+                                    .addComponent(lblColour)
+                                    .addComponent(lblModel)
+                                    .addComponent(lblMake)
+                                    .addComponent(lblRegistration))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEngine, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtColour, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDoors, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboCarImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlModifyCarLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         pnlModifyCarLayout.setVerticalGroup(
             pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +274,13 @@ public class Modify_Car extends javax.swing.JFrame {
                 .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrice)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlModifyCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cboCarImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblModifyCar.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -307,23 +338,24 @@ public class Modify_Car extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblModifyCar)
-                .addGap(18, 18, 18)
-                .addComponent(pnlModifyCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReset)
-                    .addComponent(btnSave))
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(lblModifyCar)
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlModifyCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReset)
+                            .addComponent(btnSave))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelete))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17))
         );
 
@@ -806,6 +838,38 @@ public class Modify_Car extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void cboCarImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCarImageActionPerformed
+        // TODO add your handling code here:
+        int index = cboCarImage.getSelectedIndex();
+        Image pic;
+        String picSrc[] = {"no image","images/FordRanger2022.jpeg",
+        "/pkgPictures/millfield.jpg", "/pkgPictures/TQ.jpg"};
+        
+        switch (index) {
+            case 1:
+                pic =
+                Toolkit.getDefaultToolkit().getImage(getClass().getResource(picSrc[index]));
+                break;
+            case 2:
+                pic =
+                Toolkit.getDefaultToolkit().getImage(getClass().getResource(picSrc[index]));
+                break;
+            case 3:
+                pic =
+                Toolkit.getDefaultToolkit().getImage(getClass().getResource(picSrc[index]));
+                break;
+            default:
+                lblPic.setIcon(null);
+            return;
+        }
+        
+//        if(chkResize.isSelected())
+//        {
+//        pic = pic.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), 2);
+//        }
+        lblPic.setIcon(new ImageIcon(pic));
+    }//GEN-LAST:event_cboCarImageActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -853,6 +917,8 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSave;
+    private javax.swing.JComboBox<String> cboCarImage;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblColour;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDoors;
@@ -860,6 +926,7 @@ public class Modify_Car extends javax.swing.JFrame {
     private javax.swing.JLabel lblMake;
     private javax.swing.JLabel lblModel;
     private javax.swing.JLabel lblModifyCar;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblRegistration;
     private javax.swing.JLabel lblTesting;
