@@ -10,7 +10,7 @@ Price: 4000
 
 
 Registration: REG2
-Make: Ford
+Make: Toyota
 Model: CorrolaSR
 Colour: Black
 Number of Doors: 5
@@ -42,14 +42,14 @@ Price: 900000
 
 
 
-
-
-
-
-
-
-
-
+Registration: REG5
+Make: Audi
+Model: Sport M8
+Colour: Cyan
+Number of Doors: 3
+Engine Size: 1.5L
+Description: Fast Motor
+Price: 2300
 
 
 
@@ -64,14 +64,14 @@ Price: 4350
 
 
 
-
-
-
-
-
-
-
-
+Registration: REG7
+Make: Nissan
+Model: Sport Mode
+Colour: Silver
+Number of Doors: 3
+Engine Size: 1.8L
+Description: New Motor? Fresh on the Market
+Price: 654000
 
 
 

@@ -9,6 +9,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static javax.swing.JOptionPane.QUESTION_MESSAGE;
+
 /**
  *
  * @author 50004216
@@ -26,6 +28,7 @@ public class View_Car_Customer extends javax.swing.JFrame {
         String eachLine;
         int numberLinesFile = 0;
         int numberLines = 1;
+        String answer = (String) JOptionPane.showInputDialog(null, "Enter Customer ID: ", "Customer ID", JOptionPane.PLAIN_MESSAGE);
 
         try {
             File carTextFile = new File("storage/Car_Details.txt");
