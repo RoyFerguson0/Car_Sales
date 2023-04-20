@@ -75,6 +75,7 @@ public class Modify_Customer extends javax.swing.JFrame {
         lblCustomerGenderValidation = new javax.swing.JLabel();
         lblCustomerMobileValidation = new javax.swing.JLabel();
         lblCustomerAddressValidation = new javax.swing.JLabel();
+        jcbTitle = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -287,6 +288,14 @@ public class Modify_Customer extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
+        jcbTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jcbTitle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Title)", "Miss", "Mrs", "Ms", "Mr" }));
+        jcbTitle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jcbTitleKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -294,21 +303,29 @@ public class Modify_Customer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(lblModifyCustomer))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(lblModifyCustomer))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jcbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblModifyCustomer)
-                .addGap(30, 30, 30)
+                .addGap(1, 1, 1)
+                .addComponent(jcbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -485,6 +502,20 @@ public class Modify_Customer extends javax.swing.JFrame {
         new Employee_Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
+    private void jcbTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcbTitleKeyReleased
+        //validating input: only letters allowed
+      /*  String text = jcbTitle.getSelectedItem().toString();
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if(isOnlyLetters){
+            lblCustomerTitleValidation.setText("");
+            isCustomerTitleValid = true;
+        }
+        else{
+            lblCustomerTitleValidation.setText("Please enter only letters.");
+            isCustomerTitleValid = false;
+      //  }*/
+    }//GEN-LAST:event_jcbTitleKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -524,6 +555,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     private javax.swing.JButton btnCustReset;
     private javax.swing.JButton btnCustSave;
     private javax.swing.JButton btnEmpMenu;
+    private javax.swing.JComboBox<String> jcbTitle;
     private javax.swing.JLabel lblCustAddress;
     private javax.swing.JLabel lblCustForename;
     private javax.swing.JLabel lblCustGender;
