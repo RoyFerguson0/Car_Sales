@@ -4,17 +4,25 @@
  */
 package oop_template;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Jackh
  */
 public class View_Employee extends javax.swing.JFrame {
-
+    //declare customerList variable to be read later
+    DefaultListModel<Employee_Details> employeeList;
+    
     /**
      * Creates new form View_Employee
      */
     public View_Employee() {
         initComponents();
+        employeeList = new DefaultListModel<>();
     }
 
     /**
@@ -30,19 +38,16 @@ public class View_Employee extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstEmployee = new javax.swing.JList<>();
         btnEmpReturnMenu = new javax.swing.JButton();
+        btnLoadEmpDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         lblEmployeeList.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        lblEmployeeList.setText("Employee List");
+        lblEmployeeList.setText("Employee Details:");
 
-        lstEmployee.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstEmployee);
+        lstEmployee.getAccessibleContext().setAccessibleParent(lstEmployee);
 
         btnEmpReturnMenu.setText("Return Menu");
         btnEmpReturnMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -51,31 +56,42 @@ public class View_Employee extends javax.swing.JFrame {
             }
         });
 
+        btnLoadEmpDetails.setText("Load Employee Details");
+        btnLoadEmpDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoadEmpDetailsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblEmployeeList, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(123, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEmpReturnMenu)
-                .addGap(85, 85, 85))
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(224, 224, 224)
+                                .addComponent(btnEmpReturnMenu))
+                            .addComponent(lblEmployeeList)))
+                    .addComponent(btnLoadEmpDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(28, 28, 28)
                 .addComponent(lblEmployeeList, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLoadEmpDetails)
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEmpReturnMenu)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,6 +107,47 @@ public class View_Employee extends javax.swing.JFrame {
         
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpReturnMenuActionPerformed
+
+    private void btnLoadEmpDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadEmpDetailsActionPerformed
+        /* declaring variable
+           load data from customer details text file
+        */
+        BufferedReader reader;
+        //clearing the list so that duplicate data doesn't occur
+        employeeList.clear();
+        try{
+            //load the file
+            reader = new BufferedReader (new FileReader("storage/employee_data.txt"));
+            
+            String currentLine = "";
+            
+            //https://stackoverflow.com/questions/62614024/how-to-implement-hasnext-method-with-bufferedreader-stringtokenizer
+            
+            //iterate through file line by line using while loop until last line which will be null, loop stops
+            while((currentLine = reader.readLine()) != null){
+                
+                String[] employeeParts = currentLine.split(",");
+                
+                Employee_Details employee = new Employee_Details();
+                employee.setEmployeeID(Integer.parseInt(employeeParts[0]));
+                employee.setTitle(employeeParts[1]);
+                employee.setForename(employeeParts[2]);
+                employee.setSurname(employeeParts[3]);
+                employee.setGender(employeeParts[4]);
+                employee.setJobTitle(employeeParts[5]);
+                employee.setContractedHours(Integer.parseInt(employeeParts[6]));
+                employee.setHourlyRate(Integer.parseInt(employeeParts[7]));
+                
+                
+                employeeList.addElement(employee);
+            }
+            lstEmployee.setModel(employeeList);
+        }
+        //if error occurs, nothing will print
+        catch(IOException e){
+            System.out.println("");
+        }
+    }//GEN-LAST:event_btnLoadEmpDetailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,8 +186,9 @@ public class View_Employee extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmpReturnMenu;
+    private javax.swing.JButton btnLoadEmpDetails;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEmployeeList;
-    private javax.swing.JList<String> lstEmployee;
+    private javax.swing.JList<Employee_Details> lstEmployee;
     // End of variables declaration//GEN-END:variables
 }

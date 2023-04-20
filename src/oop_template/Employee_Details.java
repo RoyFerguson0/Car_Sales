@@ -26,7 +26,11 @@ public class Employee_Details {
 
 
 //Setting Objects
-
+ @Override
+public String toString(){
+        //Override the toString method so that I can show just the name on the list screen
+        return title + " " + forename + " " + surname;
+    }
         
 //Employee ID      
 public void setEmployeeID(int employeeID) {
