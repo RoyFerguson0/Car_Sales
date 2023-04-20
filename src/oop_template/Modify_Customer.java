@@ -455,8 +455,8 @@ public class Modify_Customer extends javax.swing.JFrame {
         //validating input: a string to allow for area codes 
         String text = txtCustMobile.getText();
         Boolean isOnlyNumbers = text.matches("^[0-9]*$");
-       // Boolean maxPhoneLength = text.matches();
-        if(isOnlyNumbers ){
+        int length = text.length();
+        if(isOnlyNumbers && length == 11){
             lblCustomerMobileValidation.setText("");
             isCustomerMobileValid = true;
         }
