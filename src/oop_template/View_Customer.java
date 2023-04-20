@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -160,9 +161,14 @@ public class View_Customer extends javax.swing.JFrame {
 
     private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         //update appData with selected customer, close view customer, open modify customer
-        appData.Customer_Details = lstCustomer.getSelectedValue();
+        if(lstCustomer.getSelectedValue() != null){
+            appData.Customer_Details = lstCustomer.getSelectedValue();
         this.dispose();
         new Modify_Customer().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please select a customer before continuing.", "Error",JOptionPane.PLAIN_MESSAGE);
+        }
     }//GEN-LAST:event_btnEditCustomerActionPerformed
 
     /**
