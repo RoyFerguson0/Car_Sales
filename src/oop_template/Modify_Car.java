@@ -1007,12 +1007,7 @@ public class Modify_Car extends javax.swing.JFrame {
 //                                    customer.setCustomerMobile(customerParts[5]);
 //                                    customer.setCustomerAddress(customerParts[6]);
 
-                                    try{
-
-                                    lineCustomerId = Files.readAllLines(Paths.get("storage/Customer_Details.txt")).get(customerid -1);
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
-                                }
+                                    
                                     System.out.println("line " + lineCustomerId);
 
                                 }
@@ -1023,7 +1018,13 @@ public class Modify_Car extends javax.swing.JFrame {
                             }
                             System.out.println("Testing " + lineCustomerId);
                             if (counter != 0) {
+                                
+                                try{
 
+                                    lineCustomerId = Files.readAllLines(Paths.get("storage/Customer_Details.txt")).get(customerid -1);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
 
                                 String lineReg = "";
                                 String lineMake = "";
@@ -1311,6 +1312,8 @@ public class Modify_Car extends javax.swing.JFrame {
 //                    Files.write(path, lines1, StandardCharsets.UTF_8);
 //                    lines1.set(numLines + 2, txtColour.getText());
 //                    Files.write(path, lines1, StandardCharsets.UTF_8);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Customer Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
                             }
                             ////////////////////////////////
                             ///////// This Works - Reading Lines///////////
@@ -1453,7 +1456,7 @@ public class Modify_Car extends javax.swing.JFrame {
                         //    fr.close();
 
 
-                    }
+                    } // Here
                 } catch (IOException e) {
                     System.out.println("An error occurred");
                     e.printStackTrace();

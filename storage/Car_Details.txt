@@ -1,11 +1,11 @@
-Registration: REG1
-Make: Ford
-Model: Fiesta
-Colour: Blue
-Number of Doors: 5
-Engine Size: 1.6L
-Description: Lovely Car to Drive
-Price: 4000
+
+
+
+
+
+
+
+
 
 
 
@@ -20,14 +20,14 @@ Price: 4000
 
 
 
-Registration: REG3
-Make: Lambo
-Model: Zitron
-Colour: Pink
-Number of Doors: 3
-Engine Size: 1.2L
-Description: Sweet Ride
-Price: 543543
+
+
+
+
+
+
+
+
 
 
 
@@ -75,14 +75,14 @@ Price: 4350
 
 
 
-Registration: REG8
-Make: Mini
-Model: Cooper
-Colour: Green
-Number of Doors: 2
-Engine Size: 2.0L
-Description: Old Motor?
-Price: 0
+
+
+
+
+
+
+
+
 
 
 
