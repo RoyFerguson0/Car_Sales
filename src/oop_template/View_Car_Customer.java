@@ -9,14 +9,16 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static javax.swing.JOptionPane.QUESTION_MESSAGE;
-
 /**
  *
  * @author 50004216
  */
 public class View_Car_Customer extends javax.swing.JFrame {
     private javax.swing.DefaultListModel listCars;
+
+
+
+
     /**
      * Creates new form View_Car
      */
@@ -28,7 +30,6 @@ public class View_Car_Customer extends javax.swing.JFrame {
         String eachLine;
         int numberLinesFile = 0;
         int numberLines = 1;
-        String answer = (String) JOptionPane.showInputDialog(null, "Enter Customer ID: ", "Customer ID", JOptionPane.PLAIN_MESSAGE);
 
         try {
             File carTextFile = new File("storage/Car_Details.txt");
@@ -67,6 +68,7 @@ public class View_Car_Customer extends javax.swing.JFrame {
             numberLines++;
         }
         lstCarDetails.setModel(listCars);
+
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
@@ -90,11 +92,6 @@ public class View_Car_Customer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lstCarDetails.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstCarDetails);
 
         lblViewCarsTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -125,7 +122,7 @@ public class View_Car_Customer extends javax.swing.JFrame {
                 .addComponent(lblViewCarsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );

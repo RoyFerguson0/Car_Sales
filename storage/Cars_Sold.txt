@@ -1,0 +1,12 @@
+Registration: REG7
+Make: Nissan
+Model: Sport Mode
+Colour: Silver
+Number of Doors: 3
+Engine Size: 1.8L
+Description: New Motor? Fresh on the Market
+Price: 654000
+Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+
+
+
