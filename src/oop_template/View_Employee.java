@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,6 +40,7 @@ public class View_Employee extends javax.swing.JFrame {
         lstEmployee = new javax.swing.JList<>();
         btnEmpReturnMenu = new javax.swing.JButton();
         btnLoadEmpDetails = new javax.swing.JButton();
+        btnEditEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,6 +65,13 @@ public class View_Employee extends javax.swing.JFrame {
             }
         });
 
+        btnEditEmployee.setText("Edit Employee");
+        btnEditEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditEmployeeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,14 +79,17 @@ public class View_Employee extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLoadEmpDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnEmpReturnMenu)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditEmployee))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(224, 224, 224)
-                                .addComponent(btnEmpReturnMenu))
-                            .addComponent(lblEmployeeList)))
-                    .addComponent(btnLoadEmpDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblEmployeeList)
+                                .addGap(121, 121, 121)))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,9 +101,11 @@ public class View_Employee extends javax.swing.JFrame {
                 .addComponent(btnLoadEmpDetails)
                 .addGap(4, 4, 4)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEmpReturnMenu)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmpReturnMenu)
+                    .addComponent(btnEditEmployee))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,6 +163,19 @@ public class View_Employee extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoadEmpDetailsActionPerformed
 
+    private void btnEditEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEmployeeActionPerformed
+    if (lstEmployee.getSelectedValue() != null) {
+         appData.Employee_Details = lstEmployee.getSelectedValue();
+         this.dispose();
+         Modify_Employee modifyEmployeeForm = new Modify_Employee();
+         modifyEmployeeForm.setEmployeeDetails(appData.Employee_Details);
+         modifyEmployeeForm.setVisible(true);
+     } else {
+         JOptionPane.showMessageDialog(null, "Please select an employee before continuing.", "Error", JOptionPane.PLAIN_MESSAGE);
+     }
+    }//GEN-LAST:event_btnEditEmployeeActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -185,6 +212,7 @@ public class View_Employee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditEmployee;
     private javax.swing.JButton btnEmpReturnMenu;
     private javax.swing.JButton btnLoadEmpDetails;
     private javax.swing.JScrollPane jScrollPane1;

@@ -5,8 +5,14 @@
 package oop_template;
 
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -26,7 +32,23 @@ public class Modify_Employee extends javax.swing.JFrame {
     public Modify_Employee() {
         initComponents();
         setLocationRelativeTo(null);
+          
     }
+    
+
+public void setEmployeeDetails(Employee_Details employeeDetails) {
+    txtEmployeeID.setText(Integer.toString(employeeDetails.getEmployeeID()));
+    txtEmpTitle.setText(employeeDetails.getTitle());
+    txtEmpForename.setText(employeeDetails.getForename());
+    txtEmpSurname.setText(employeeDetails.getSurname());
+    txtEmpGender.setText(employeeDetails.getGender());
+    txtEmpJobTitle.setText(employeeDetails.getJobTitle());
+    txtEmpContract.setText(Integer.toString(employeeDetails.getContractedHours()));
+    txtEmpHourlyRate.setText(Integer.toString(employeeDetails.getHourlyRate()));
+}
+
+
+    
     
    private void inputLettersOnly(JTextField textField) {
     String input = textField.getText();
@@ -339,31 +361,84 @@ public class Modify_Employee extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEmpReset1ActionPerformed
 
     private void btnEmpSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpSaveActionPerformed
-        // TODO add your handling code here:
-         // Check if all text fields are filled
+    // Check if all text fields are filled
     if(txtEmployeeID.getText().isEmpty() || txtEmpTitle.getText().isEmpty() || txtEmpForename.getText().isEmpty()
             || txtEmpSurname.getText().isEmpty() || txtEmpGender.getText().isEmpty() || txtEmpJobTitle.getText().isEmpty()
             || txtEmpContract.getText().isEmpty() || txtEmpHourlyRate.getText().isEmpty()) {
         // Display a pop-up message if any text field is empty
         JOptionPane.showMessageDialog(null, "Please fill in all fields.");
     } else {
-       try {
-            // Create a FileWriter object that writes to a file called "employee_data.txt"
-            FileWriter emptxtfile = new FileWriter("storage/employee_data.txt", true);
-            // Write the data to the file
-            emptxtfile.write(txtEmployeeID.getText() + "," + txtEmpTitle.getText() + "," + txtEmpForename.getText() + ","
-                    + txtEmpSurname.getText() + "," + txtEmpGender.getText() + "," + txtEmpJobTitle.getText() + ","
-                    + txtEmpContract.getText() + "," + txtEmpHourlyRate.getText() + "\n");
-            // Close the FileWriter object
-            emptxtfile.close();
-            // Display a pop-up message to confirm the data has been saved
-            JOptionPane.showMessageDialog(null, "Employee data saved to file.");
+        // Check if the employee ID already exists in file
+        boolean idExists = false;
+        try {
+            Scanner scanner = new Scanner(new File("storage/employee_data.txt"));
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] data = line.split(",");
+                if (data[0].equals(txtEmployeeID.getText())) {
+                    idExists = true;
+                    break;
+                }
+            }
+            scanner.close();
         } catch(IOException ex) {
-            // Display a pop-up message if there was an error writing to the file
-            JOptionPane.showMessageDialog(null, "Error writing to file.");
+            // Display a pop-up message if there is an error reading the file
+            JOptionPane.showMessageDialog(null, "Error reading file.");
         }
-    
+        
+        if (idExists) {
+            // Ask the user if they want to overwrite the current employee data
+            int choice = JOptionPane.showConfirmDialog(null, "Employee ID already exists. Do you want to overwrite the current employee data?", 
+                                                        "Confirm Overwrite", JOptionPane.YES_NO_OPTION);
 
+            if (choice == JOptionPane.YES_OPTION) {
+                try {
+                    // Read the contents of the file into a list
+                    List<String> lines = Files.readAllLines(Paths.get("storage/employee_data.txt"), StandardCharsets.UTF_8);
+
+                    // Read over the lines and modify the old employee data
+                    for (int i = 0; i < lines.size(); i++) {
+                        String[] parts = lines.get(i).split(",");
+                        if (parts[0].equals(txtEmployeeID.getText())) {
+                            lines.set(i, txtEmployeeID.getText() + "," + txtEmpTitle.getText() + "," + txtEmpForename.getText() + ","
+                                    + txtEmpSurname.getText() + "," + txtEmpGender.getText() + "," + txtEmpJobTitle.getText() + ","
+                                    + txtEmpContract.getText() + "," + txtEmpHourlyRate.getText());
+                            break;
+                        }
+                    }
+
+                    // Write the updated contents back to the file
+                    Files.write(Paths.get("storage/employee_data.txt"), lines, StandardCharsets.UTF_8);
+
+                    // Display a pop-up message to confirm the data has been saved
+                    JOptionPane.showMessageDialog(null, "Employee data overwritten.");
+                } catch (IOException ex) {
+                    // Display a pop-up message if there was an error writing to the file
+                    JOptionPane.showMessageDialog(null, "Error writing to file.");
+                }
+            } else {
+                // Clear employee ID field to allow user to enter a new ID
+                txtEmployeeID.setText("");
+                // Display a pop-up message to inform the user to enter a new ID
+                JOptionPane.showMessageDialog(null, "Please choose a different employee ID.");
+            }
+        } else {
+            try {
+                // Create a FileWriter object that writes to a file called "employee_data.txt"
+                FileWriter emptxtfile = new FileWriter("storage/employee_data.txt", true);
+                // Write the data to the file
+                emptxtfile.write(txtEmployeeID.getText() + "," + txtEmpTitle.getText() + "," + txtEmpForename.getText() + ","
+                        + txtEmpSurname.getText() + "," + txtEmpGender.getText() + "," + txtEmpJobTitle.getText() + ","
+                        + txtEmpContract.getText() + "," + txtEmpHourlyRate.getText() + "\n");
+                // Close the FileWriter object
+                emptxtfile.close();
+                // Display a pop-up message to confirm the data has been saved
+                JOptionPane.showMessageDialog(null, "Employee data saved to file.");
+            } catch(IOException ex) {
+                // Display a pop-up message if there was an error writing to the file
+                JOptionPane.showMessageDialog(null, "Error writing to file.");
+            }
+        }
     }
 
     }//GEN-LAST:event_btnEmpSaveActionPerformed
