@@ -138,6 +138,10 @@ public class View_Car_Sold extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Employee Menu Button to take you back to Employee Main Menu
+     * @author Roy Ferguson(50004216)
+     */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         
         //close search frame and open Employee Main Menu
