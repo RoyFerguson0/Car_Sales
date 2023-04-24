@@ -23,14 +23,18 @@ import java.util.stream.Stream;
 public class Search_Car extends javax.swing.JFrame {
 
     /**
-     * Creates new form Car_Search
+     * Creates form Car_Search
+     * @author Roy Ferguson(50004216)
      */
     public Search_Car() {
         initComponents();
+        // Set Form Position to Middle 
         setLocationRelativeTo(null);
-
+        
+        // Getting Company Logo Image
         ImageIcon icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/RJFMotorsLogo.jpeg")));
-
+        
+        // Setting Copany Logo Image in lblLogoImage
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(lblLogoImage.getWidth(), lblLogoImage.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
@@ -149,11 +153,16 @@ public class Search_Car extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Search Button to Check if Reg Exists or Not 
+     * If reg exists in Cars Sold Text File (Cars_Sold.txt) - Will Not Go any Further
+     * If Reg Doesn't exist in Cars Available file (Car_Details.txt) - Will Open modify car form
+     * if Reg does exists in cars available file (Car_Details.txt) - Will Open modify car form with data
+     * @author Roy Ferguson(50004216)
+     */
     private void btnCarSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarSearchActionPerformed
-        // TODO add your handling code here:
 
-
-        // Checking if the textbox is empty
+        // Checking if the reg textbox is empty
         if (txtRegNumber.getText().equalsIgnoreCase("")){
             JOptionPane.showMessageDialog(null, "Fill all Fields in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtRegNumber.grabFocus();
@@ -164,12 +173,9 @@ public class Search_Car extends javax.swing.JFrame {
             // Also save Registration in a variable 'String'
             appData.Car_Details.setRegistration(txtRegNumber.getText().replace(" ",""));
             String Reg = appData.Car_Details.getRegistration();
+
             
-            
-            
-            
-            
-            
+            // Create (Cars_Sold.txt) - Check if it exists already or not
             try {
                 File carSoldFile = new File("storage/Cars_Sold.txt");
                 if (carSoldFile.createNewFile()) {
@@ -177,6 +183,8 @@ public class Search_Car extends javax.swing.JFrame {
                 } else {
                     System.out.println("File aleardy exists");
                 }
+                
+                // Variables used for Reading Through text file
                 String[] words2 = null;
                 String eachLine2;
                 int count2 = 0;
@@ -190,7 +198,11 @@ public class Search_Car extends javax.swing.JFrame {
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
                 }
+                
+                // Creating a reader of file - buffered reader
                 BufferedReader line2 = new BufferedReader(fr2);
+                
+                // Looping through the file reading each line 
                 while (true) {
                     try {
                         if (!((eachLine2 = line2.readLine()) != null)) break;
@@ -198,90 +210,71 @@ public class Search_Car extends javax.swing.JFrame {
                         throw new RuntimeException(e);
                     }
                     lines2++;
-
-                    
                     words2 = eachLine2.split("\n");
                     for (String word : words2) {
                         System.out.println("EachLine: " + eachLine2);
+                        
+                        // When text file line equals the reg im looking for will add 1 to counter (count2).
+                        // Also saving the line number registration was found
                         if (word.equals("Registration: " + Reg)) {
                             count2++;
                             RegistationLine2 = lines2;
 
                         }
-                    }
-                }
+                    } // End For Loop
+                } // End While Loop
                 
+                // If reg exists in (Cars_Sold.txt) will output and error message.
                 if (count2 != 0) {
                     JOptionPane.showMessageDialog(null, "ERROR - Registration Exists in Cars Sold!!!!","ERROR!!!!!", JOptionPane.PLAIN_MESSAGE);
                 }else{
-//            
-//            
-//            } catch (IOException e) {
-//                System.out.println("An error occurred");
-//                e.printStackTrace();
-//            }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            try {
-                File carTextFile = new File("storage/Car_Details.txt");
-                if (carTextFile.createNewFile()) {
-                    System.out.println("File Created" + carTextFile.getName());
-                } else {
-                    System.out.println("File aleardy exists");
-                }
-                String[] words = null;
-                String eachLine;
-                int count = 0;
-                int lines = 0;
-                int RegistationLine = 0;
-
-
-                FileReader fr = null;
-                try {
-                    fr = new FileReader("storage/Car_Details.txt");
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-                BufferedReader line = new BufferedReader(fr);
-                while (true) {
+//                  // If Reg Doesn't Exist in (Cars_Sold.txt)
+           
                     try {
-                        if (!((eachLine = line.readLine()) != null)) break;
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    lines++;
-
-                    
-                    words = eachLine.split("\n");
-                    for (String word : words) {
-                        System.out.println("EachLine: " + eachLine);
-                        if (word.equals("Registration: " + Reg)) {
-                            count++;
-                            RegistationLine = lines;
-
+                        File carTextFile = new File("storage/Car_Details.txt");
+                        if (carTextFile.createNewFile()) {
+                            System.out.println("File Created" + carTextFile.getName());
+                        } else {
+                            System.out.println("File aleardy exists");
                         }
-                    }
-                }
-                int value = 0;
-                if (count != 0) {
-                    System.out.println("The given word is present");
-                    value = JOptionPane.showConfirmDialog(null, "The Registration: " + Reg + " is in Text File, Do you wish to continue?", "Question", JOptionPane.YES_NO_OPTION);
-                    System.out.println(value);
+                        String[] words = null;
+                        String eachLine;
+                        int count = 0;
+                        int lines = 0;
+                        int RegistationLine = 0;
+
+
+                        FileReader fr = null;
+                        try {
+                            fr = new FileReader("storage/Car_Details.txt");
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                        BufferedReader line = new BufferedReader(fr);
+                        while (true) {
+                            try {
+                                if (!((eachLine = line.readLine()) != null)) break;
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            lines++;
+
+
+                            words = eachLine.split("\n");
+                            for (String word : words) {
+                                System.out.println("EachLine: " + eachLine);
+                                if (word.equals("Registration: " + Reg)) {
+                                    count++;
+                                    RegistationLine = lines;
+
+                                }
+                            }
+                        }
+                    int value = 0;
+                    if (count != 0) {
+                        System.out.println("The given word is present");
+                        value = JOptionPane.showConfirmDialog(null, "The Registration: " + Reg + " is in Text File, Do you wish to continue?", "Question", JOptionPane.YES_NO_OPTION);
+                        System.out.println(value);
                     // Need to add an JOptionPane asking if they want to rewrite data
                     // ReWriting The Exact lines of Code
 //                Scanner input = new Scanner(System.in);

@@ -41,6 +41,11 @@ public class Main_Menu extends javax.swing.JFrame {
 
         btnCustomerView.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnCustomerView.setText("View Available Motors");
+        btnCustomerView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomerViewActionPerformed(evt);
+            }
+        });
 
         btnLogon.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnLogon.setText("Login");
@@ -104,6 +109,14 @@ public class Main_Menu extends javax.swing.JFrame {
         this.dispose();
         new Contact_Us().setVisible(true);
     }//GEN-LAST:event_btnContactUsActionPerformed
+
+    
+    private void btnCustomerViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerViewActionPerformed
+        
+        //close main menu, open Available Cars
+        this.dispose();
+        new View_Car().setVisible(true);
+    }//GEN-LAST:event_btnCustomerViewActionPerformed
 
     /**
      * @param args the command line arguments
