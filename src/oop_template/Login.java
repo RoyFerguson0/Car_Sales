@@ -5,6 +5,9 @@
 package oop_template;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -127,21 +130,38 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
+        //creating the varibales 
     String username = txtUserName.getText();
     String password = txtPassword.getText();
-    
-    // Checks if the entered username and password are correct
-    if (username.equals("admin") && password.equals("password")) {
+    boolean loginSuccessful = false;
+    //Creating a try block to read through the file
+    try {
+        Scanner scanner = new Scanner(new File("storage/employee_data.txt"));
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] parts = line.split(",");
+            String employeeName = parts[2];
+            //If statement to check if the username and password match the file
+            if (username.equals(employeeName) && password.equals("password")) {
+                loginSuccessful = true;
+                break;
+            }
+        }
+        scanner.close();
+        //catch statement to pring error if file is not found
+    } catch (FileNotFoundException e) {
+        JOptionPane.showMessageDialog(this, "Unable to read employee data!");
+    }
+    //if statement to print Login message and take the user to Main Menu
+    if (loginSuccessful) {
         JOptionPane.showMessageDialog(this, "Login successful!");
         
         Employee_Main_Menu employeeMainMenu = new Employee_Main_Menu();
-        // Makes the current frame invisible
+        // Makes the current frame invisible...
         this.setVisible(false);
-        // Makes the Employee_Main_Menu frame visible
         employeeMainMenu.setVisible(true);
-        
     } else {
-        JOptionPane.showMessageDialog(this, "Invalid username or password. Please try again.");
+        JOptionPane.showMessageDialog(this, "Incorrect username or password!");
     }
     
 
