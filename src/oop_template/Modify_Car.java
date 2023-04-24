@@ -36,6 +36,8 @@ public class Modify_Car extends javax.swing.JFrame {
      */
     public Modify_Car() {
         initComponents();
+        
+      
         // Setting Form Position to Center
          setLocationRelativeTo(null);
         System.out.println(appData.Car_Details.getModel());
@@ -371,7 +373,7 @@ public class Modify_Car extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
                         .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17))
         );
@@ -551,16 +553,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                 count++;
 
                                 numLines = lines;
-//                            int takeaway = numLines + 8;
-//                            System.out.println(takeaway);
-//                            while (numLines != takeaway){
-//                                System.out.println("This line is: " + numLines);
-//                                System.out.println("Word" + eachLine);
-//                            }
-//                            for(int i = numLines; i < takeaway; i++){
-//                                System.out.println("This line is: " + numLines);
-//                                System.out.println("Word" + eachLine);
-//                            }
+
                             }
                         }
                     }
@@ -611,26 +604,6 @@ public class Modify_Car extends javax.swing.JFrame {
                         }
 
 
-                        ////////////////////////////////
-                        ///////// This Works - Reading Lines///////////
-                        ////////////////////////////////
-//                    System.out.println(numLines);
-//                    for(int i = 0; i < 8; i++){
-//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
-//                        System.out.println(line32);
-//                        numLines++;
-//                    }
-
-//                    String strLine = "";
-//                    ArrayList <String> list = new ArrayList<String>();
-//                    for(int j = numLines; j < (numLines + 8); j++){
-//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
-//                        while(strLine == Reg){
-//                            strLine = br.readLine();
-//                            list.add(strLine);
-//                        }
-//                    }
-//                    System.out.println(list);
                         fr.close();
                     } else {
                         System.out.println("New Word");
@@ -740,7 +713,7 @@ public class Modify_Car extends javax.swing.JFrame {
                     while ((eachLine = line.readLine()) != null) {
                         lines++;
 
-                        // System.out.println("Each Line of Data \n" + eachLine);
+                        
                         words = eachLine.split("\n");
                         for (String word : words) {
 
@@ -748,16 +721,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                 count++;
 
                                 numLines = lines;
-//                            int takeaway = numLines + 8;
-//                            System.out.println(takeaway);
-//                            while (numLines != takeaway){
-//                                System.out.println("This line is: " + numLines);
-//                                System.out.println("Word" + eachLine);
-//                            }
-//                            for(int i = numLines; i < takeaway; i++){
-//                                System.out.println("This line is: " + numLines);
-//                                System.out.println("Word" + eachLine);
-//                            }
+
                             }
                         }
                     }
@@ -768,12 +732,6 @@ public class Modify_Car extends javax.swing.JFrame {
                         // Need to add an JOptionPane asking if they want to rewrite data
                         // ReWriting The Exact lines of Code
                         
-//                                    List<String> lines = FileUtils.readLines(file);
-//                                    List<String> updatedLines = lines.stream().filter(s -> !s.contains(searchString)).collect(Collectors.toList());
-//                                    FileUtils.writeLines(file, updatedLines, false);
-
-//                    Scanner input = new Scanner(System.in);
-//                    int value = input.nextInt();
                         if (reWriteLinesValue == 0) {
                             Path path = Paths.get("storage/Car_Details.txt");                          
                             List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
@@ -813,36 +771,16 @@ public class Modify_Car extends javax.swing.JFrame {
                             txtEngine.setText("");
                             txtDescription.setText("");
                             txtPrice.setText("");
+
                         }
 
-
-                        ////////////////////////////////
-                        ///////// This Works - Reading Lines///////////
-                        ////////////////////////////////
-//                    System.out.println(numLines);
-//                    for(int i = 0; i < 8; i++){
-//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
-//                        System.out.println(line32);
-//                        numLines++;
-//                    }
-
-//                    String strLine = "";
-//                    ArrayList <String> list = new ArrayList<String>();
-//                    for(int j = numLines; j < (numLines + 8); j++){
-//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
-//                        while(strLine == Reg){
-//                            strLine = br.readLine();
-//                            list.add(strLine);
-//                        }
-//                    }
-//                    System.out.println(list);
                         fr.close();
                     } else {
                         System.out.println("New Word");
                         JOptionPane.showMessageDialog(null, "Regstration doesn't exist in file?", "Important?", JOptionPane.PLAIN_MESSAGE);
                         
                     }
-                    // fr.close();
+                    
 
 
                 } catch (IOException e) {
@@ -860,12 +798,13 @@ public class Modify_Car extends javax.swing.JFrame {
         int index = cboCarImage.getSelectedIndex();
         Image pic;
         String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
-        "/pkgPictures/millfield.jpg", "/pkgPictures/TQ.jpg"};
+        "/images/Honda_Civic_Type_R_Sportline_2023.jpeg", "/images/FordFocus2022.jpeg"};
         System.out.println(index);
         switch (index) {
             case 1:
                 pic =
                 Toolkit.getDefaultToolkit().getImage(getClass().getResource(picSrc[index]));
+                
                 break;
             case 2:
                 pic =
@@ -880,11 +819,19 @@ public class Modify_Car extends javax.swing.JFrame {
             return;
         }
         
-//        if(chkResize.isSelected())
-//        {
-//        pic = pic.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), 2);
-//        }
-        lblPic.setIcon(new ImageIcon(pic));
+
+        // Used to load the image from the images directory within the project
+           ImageIcon icon = new ImageIcon(getClass().getResource(picSrc[index]));
+           
+            //Gets the image 
+           Image img = icon.getImage();
+           //Used to scale the image to fit within the label
+            Image imgScale = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), Image.SCALE_SMOOTH);
+            //creates a new image with the new scale
+            ImageIcon scaledIcon = new ImageIcon(imgScale);
+            //sets the scaled image within the label
+            lblPic.setIcon(scaledIcon);
+
     }//GEN-LAST:event_cboCarImageActionPerformed
 
     private void btnSoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoldActionPerformed

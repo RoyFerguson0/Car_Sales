@@ -48,6 +48,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         btnViewCustomer = new javax.swing.JButton();
         btnSearchCustomer = new javax.swing.JButton();
         lblCustomerLogoImage = new javax.swing.JLabel();
+        pnlCar = new javax.swing.JPanel();
+        btnViewCustomer1 = new javax.swing.JButton();
+        btnSearchCustomer1 = new javax.swing.JButton();
+        lblCustomerLogoImage1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -156,15 +160,63 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        pnlCar.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Customer Details")));
+
+        btnViewCustomer1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnViewCustomer1.setText("View Customer");
+        btnViewCustomer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewCustomer1ActionPerformed(evt);
+            }
+        });
+
+        btnSearchCustomer1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnSearchCustomer1.setText("<html>\nSearch <br>Customer\n</html>");
+        btnSearchCustomer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSearchCustomer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCustomer1ActionPerformed(evt);
+            }
+        });
+
+        lblCustomerLogoImage1.setText("(customer logo image)");
+
+        javax.swing.GroupLayout pnlCarLayout = new javax.swing.GroupLayout(pnlCar);
+        pnlCar.setLayout(pnlCarLayout);
+        pnlCarLayout.setHorizontalGroup(
+            pnlCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnViewCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCustomerLogoImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        pnlCarLayout.setVerticalGroup(
+            pnlCarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnViewCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearchCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCustomerLogoImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
@@ -172,23 +224,26 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(70, 70, 70))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(13, 13, 13)
                         .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -236,6 +291,14 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSearchEmployeeActionPerformed
 
+    private void btnViewCustomer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCustomer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewCustomer1ActionPerformed
+
+    private void btnSearchCustomer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchCustomer1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -274,12 +337,16 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnModifyEmployee;
     private javax.swing.JButton btnSearchCustomer;
+    private javax.swing.JButton btnSearchCustomer1;
     private javax.swing.JButton btnSearchEmployee;
     private javax.swing.JButton btnViewCustomer;
+    private javax.swing.JButton btnViewCustomer1;
     private javax.swing.JButton btnViewEmployee;
     private javax.swing.JLabel lblCustomerLogoImage;
+    private javax.swing.JLabel lblCustomerLogoImage1;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel pnlCar;
     private javax.swing.JPanel pnlCustomer;
     private javax.swing.JPanel pnlEmployeeImage;
     // End of variables declaration//GEN-END:variables

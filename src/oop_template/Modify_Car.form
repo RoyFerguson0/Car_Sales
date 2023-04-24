@@ -76,7 +76,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                       <Component id="lblTesting" min="-2" pref="68" max="-2" attributes="0"/>
-                      <EmptySpace pref="374" max="32767" attributes="0"/>
+                      <EmptySpace pref="365" max="32767" attributes="0"/>
                       <Component id="btnEmpMenu" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
               </Group>

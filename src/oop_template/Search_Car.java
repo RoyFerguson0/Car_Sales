@@ -158,6 +158,78 @@ public class Search_Car extends javax.swing.JFrame {
             // Also save Registration in a variable 'String'
             appData.Car_Details.setRegistration(txtRegNumber.getText().replace(" ",""));
             String Reg = appData.Car_Details.getRegistration();
+            
+            
+            
+            
+            
+            
+            try {
+                File carSoldFile = new File("storage/Cars_Sold.txt");
+                if (carSoldFile.createNewFile()) {
+                    System.out.println("File Created " + carSoldFile.getName());
+                } else {
+                    System.out.println("File aleardy exists");
+                }
+                String[] words2 = null;
+                String eachLine2;
+                int count2 = 0;
+                int lines2 = 0;
+                int RegistationLine2 = 0;
+
+
+                FileReader fr2 = null;
+                try {
+                    fr2 = new FileReader("storage/Cars_Sold.txt");
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                BufferedReader line2 = new BufferedReader(fr2);
+                while (true) {
+                    try {
+                        if (!((eachLine2 = line2.readLine()) != null)) break;
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    lines2++;
+
+                    
+                    words2 = eachLine2.split("\n");
+                    for (String word : words2) {
+                        System.out.println("EachLine: " + eachLine2);
+                        if (word.equals("Registration: " + Reg)) {
+                            count2++;
+                            RegistationLine2 = lines2;
+
+                        }
+                    }
+                }
+                
+                if (count2 != 0) {
+                    System.out.println("Error");
+                }else{
+//            
+//            
+//            } catch (IOException e) {
+//                System.out.println("An error occurred");
+//                e.printStackTrace();
+//            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
             try {
                 File carTextFile = new File("storage/Car_Details.txt");
@@ -188,7 +260,7 @@ public class Search_Car extends javax.swing.JFrame {
                     }
                     lines++;
 
-                    // System.out.println("Each Line of Data \n" + eachLine);
+                    
                     words = eachLine.split("\n");
                     for (String word : words) {
                         System.out.println("EachLine: " + eachLine);
@@ -218,97 +290,6 @@ public class Search_Car extends javax.swing.JFrame {
                         String lineDescription = "";
                         String linePrice = "";
 
-
-//                    BufferedReader reader;
-//
-//                    try {
-//                        reader = new BufferedReader(new FileReader("storage/Car_Details.txt"));
-//                        String line3 = reader.readLine();
-//
-//                        while (line3 != null) {
-//                            System.out.println(line3);
-//                            // read next line
-//
-//                            line3 = reader.readLine();
-//                        }
-//
-//                        reader.close();
-//
-//
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-
-
-//
-//                    Path path = Paths.get("storage/Car_Details.txt");
-//                    List<String> lines1 = null;
-//                    try {
-//                        lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
-////                    lines1.set(numLines + 1, txtModel.getText());
-////                    System.out.println("Output for Make: " + lines1);
-//                    System.out.println(lines1);
-//                    String part1 = lines1.get(0);
-//                    String part2 = lines1.get(1);
-////
-//                    System.out.println("Part1 " + part1);
-//                    System.out.println("Part2 " + part2);
-//
-//                    String[] output0 = new String[lines];
-//
-//                    String[] output = new String[lines];
-//                    String line5 = lines1.toString();
-//                    if(line5.contains(":")){
-//                        output = line5.split(":");
-//                    }
-//                    System.out.println("array output is: ");
-//                    System.out.println(Arrays.toString(output));
-//                    System.out.println();
-//                    System.out.println();
-//                    int position = 1;
-//
-//                    for(int i = 0; i <output.length; i ++){
-//                        output0[0] = output[i];
-//                        System.out.println(output0[0]);
-//                    }
-//                    System.out.println("array zero");
-//                    System.out.println(Arrays.toString(output0));
-//                    System.out.println();
-//                    System.out.println("Clean Array");
-//                    String[] cleanedAray = Arrays.stream(output0).filter(Objects::nonNull).toArray(String[]::new);
-//                    System.out.println(Arrays.toString(cleanedAray));
-//
-//                    String reg = "";
-
-
-//                    try (Stream<String> all_lines = Files.lines(Paths.get("storage/Car_Details.txt"))) {
-//                        reg = all_lines.skip(newlines-1).findFirst().get(); // Reg
-////                        make = all_lines.skip(newlines).findFirst().get();  // Make
-////                        model = all_lines.skip(newlines+1).findFirst().get();
-////                        colour = all_lines.skip(newlines+2).findFirst().get();
-////                        doors = all_lines.skip(newlines+3).findFirst().get();
-////                        enginesize = all_lines.skip(newlines+4).findFirst().get();
-////                        description = all_lines.skip(newlines+5).findFirst().get();
-////                        price = all_lines.skip(newlines+6).findFirst().get();
-//
-////                        System.out.println("\n");
-////                        System.out.println(reg);
-////                        System.out.println(make);
-////                        System.out.println(model);
-////                        System.out.println(colour);
-////                        System.out.println(doors);
-////                        System.out.println(enginesize);
-////                        System.out.println(description);
-////                        System.out.println(price);
-////                        output1 = new String[]{reg, make, model, colour, doors, enginesize, description, price};
-////                        System.out.println("\n");
-////                        System.out.println(Arrays.toString(output1));
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
                         try {
                             // Reading the specific lines from the Registration id already in Text File
                             lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
@@ -350,111 +331,9 @@ public class Search_Car extends javax.swing.JFrame {
                         }
 
                         System.out.println("\n\n");
-//                    int lineNumber = 0;
-//                    String regTest = "";
-//                    String makeTest = "";
-//                    String modelTest = "";
-//                    String colourTest = "";
-//                    String doorsTest = "";
-//                    String enginesizeTest = "";
-//                    String descriptionTest = "";
-//                    String priceTest = "";
-//                    String testError = "";
-//                    try {
-//                        FileReader readfile = new FileReader("storage/Car_Details.txt");
-//                        BufferedReader readbuffer = new BufferedReader(readfile);
-//                        for (lineNumber = newlines; lineNumber < (newlines+8); lineNumber++) {
-//                            if (lineNumber == newlines) {
-//                                regTest = readbuffer.readLine();
-//                            } else if(lineNumber == newlines+1){
-//                                makeTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+2){
-//                                modelTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+3){
-//                                colourTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+4){
-//                                doorsTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+5){
-//                                enginesizeTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+6){
-//                                descriptionTest = readbuffer.readLine();
-//                            }else if (lineNumber == newlines+7){
-//                                priceTest = readbuffer.readLine();
-//                            }else{
-//                                testError = "Errors";
-//                            }
-//
-//                        }
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                    System.out.println(" The specific Line is: " + regTest);
-//                    System.out.println(" The specific Line is: " + makeTest);
-//                    System.out.println(" The specific Line is: " + modelTest);
-//                    System.out.println(" The specific Line is: " + colourTest);
-//                    System.out.println(" The specific Line is: " + doorsTest);
-//                    System.out.println(" The specific Line is: " + enginesizeTest);
-//                    System.out.println(" The specific Line is: " + descriptionTest);
-//                    System.out.println(" The specific Line is: " + priceTest);
-//                    System.out.println(" The specific Line is: " + testError);
-//
-//                    String[] outputTestArray = new String[]{regTest,makeTest,modelTest,colourTest,doorsTest,enginesizeTest,descriptionTest,priceTest};
-//                    System.out.println(Arrays.toString(outputTestArray));
-//                    String convertArray = Arrays.toString(outputTestArray);
-//                    System.out.println("Conver Array");
-//                    System.out.println(convertArray);
-//                    String[] newArray = convertArray.split(": ");
-//                    String convertArray2 = Arrays.toString(newArray);
-//                    System.out.println("Conver Array 22222");
-//                    System.out.println(convertArray2);
-//                    String[] secondNewArray = convertArray.split(",");
-//                    System.out.println(secondNewArray[0]);
-//                    System.out.println(secondNewArray[1]);
-////                    String[] newArray = new String[16];
-////                    for(int j = 0; j < 16; j++){
-////                        newArray = convertArray.split(": ");
-////                    }
-//                    for (String s : newArray) {
-//                        System.out.println("Testing: ==== " + s);
-//                    }
-//                    System.out.println("New Array");
-//                    System.out.println(Arrays.toString(newArray));
-//
-//                    System.out.println(newArray[0]);
-//                    System.out.println(newArray[1]);
-//                    System.out.println(newArray[2]);
-//                    appData.Car_Details.setMake(newArray[3]);
-//                    System.out.println(appData.Car_Details.getMake());
-                        //     System.out.println(Arrays.toString(output1));
 
-
-//                    Files.write(path, lines1, StandardCharsets.UTF_8);
-//                    lines1.set(numLines + 1, txtModel.getText());
-//                    Files.write(path, lines1, StandardCharsets.UTF_8);
-//                    lines1.set(numLines + 2, txtColour.getText());
-//                    Files.write(path, lines1, StandardCharsets.UTF_8);
                     }
-                    ////////////////////////////////
-                    ///////// This Works - Reading Lines///////////
-                    ////////////////////////////////
-//                    System.out.println(numLines);
-//                    for(int i = 0; i < 8; i++){
-//                        String line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numLines-1));
-//                        System.out.println(line32);
-//                        numLines++;
-//                    }
 
-//                    String strLine = "";
-//                    ArrayList <String> list = new ArrayList<String>();
-//                    for(int j = numLines; j < (numLines + 8); j++){
-//                        BufferedReader br = new BufferedReader(new FileReader("storage/Car_Details.txt"));
-//                        while(strLine == Reg){
-//                            strLine = br.readLine();
-//                            list.add(strLine);
-//                        }
-//                    }
-//                    System.out.println(list);
-                    //   fr.close();
                 } else if (value == 1) {
 
                 }else{
@@ -471,17 +350,7 @@ public class Search_Car extends javax.swing.JFrame {
 
                 this.dispose();
                 new Modify_Car().setVisible(true);
-                // write data
-                // Creating the File Writer and Buffer Writer
-          //      FileWriter carFile = new FileWriter("storage/Car_Details.txt",true);
-           //     BufferedWriter output = new BufferedWriter(carFile);
-
-                // Write String to Text File - Next Empty Line
-         //       output.write(Reg + "\n" + Make + "\n" + Model + "\n" + Colour + "\n" + Doors + "\n" + EngineSize + "\n" + Description + "\n" + Price + "\n");
-
-         //       lblTesting.setText("Write Successful");
-
-        //        output.close();
+                
             }
             // fr.close();
             } catch (IOException e) {
@@ -489,7 +358,13 @@ public class Search_Car extends javax.swing.JFrame {
                 e.printStackTrace();
             }
 
-
+// here
+            }
+            
+            } catch (IOException e) {
+                System.out.println("An error occurred");
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_btnCarSearchActionPerformed
 
