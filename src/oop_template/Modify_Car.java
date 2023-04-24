@@ -148,7 +148,7 @@ public class Modify_Car extends javax.swing.JFrame {
         lblModifyCar = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
-        btnEmpMenu = new javax.swing.JButton();
+        btnSearchCar = new javax.swing.JButton();
         lblTesting = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
 
@@ -319,6 +319,13 @@ public class Modify_Car extends javax.swing.JFrame {
             }
         });
 
+        btnSearchCar.setText("⬅");
+        btnSearchCar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchCarActionPerformed(evt);
+            }
+        });
+
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,7 +353,7 @@ public class Modify_Car extends javax.swing.JFrame {
                         .addGap(231, 231, 231)
                         .addComponent(btnDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSearchCar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addGroup(layout.createSequentialGroup()
                 .addGap(98, 98, 98)
@@ -374,7 +381,7 @@ public class Modify_Car extends javax.swing.JFrame {
                         .addGap(116, 116, 116)
                         .addComponent(lblTesting, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSearchCar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17))
         );
 
@@ -519,7 +526,68 @@ public class Modify_Car extends javax.swing.JFrame {
             int validateDoors = appData.Car_Details.getDoors();
             if (validateDoors <= 6 && validateDoors >= 1) {
 
+                
+                
+                try {
+                File carSoldFile = new File("storage/Cars_Sold.txt");
+                if (carSoldFile.createNewFile()) {
+                    System.out.println("File Created " + carSoldFile.getName());
+                } else {
+                    System.out.println("File aleardy exists");
+                }
+                String[] words2 = null;
+                String eachLine2;
+                int count2 = 0;
+                int lines2 = 0;
+                int RegistationLine2 = 0;
 
+
+                FileReader fr2 = null;
+                try {
+                    fr2 = new FileReader("storage/Cars_Sold.txt");
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                BufferedReader line2 = new BufferedReader(fr2);
+                while (true) {
+                    try {
+                        if (!((eachLine2 = line2.readLine()) != null)) break;
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    lines2++;
+
+                    
+                    words2 = eachLine2.split("\n");
+                    for (String word : words2) {
+                        System.out.println("EachLine: " + eachLine2);
+                        if (word.equals("Registration: " + Reg)) {
+                            count2++;
+                            RegistationLine2 = lines2;
+
+                        }
+                    }
+                }
+                
+                if (count2 != 0) {
+                    JOptionPane.showMessageDialog(null, "ERROR - Registration Exists in Cars Sold!!!!","ERROR!!!!!", JOptionPane.PLAIN_MESSAGE);
+                }else{
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 // Creating a file
                 try {
                     File carTextFile = new File("storage/Car_Details.txt");
@@ -643,6 +711,14 @@ public class Modify_Car extends javax.swing.JFrame {
                     System.out.println("An error occurred");
                     e.printStackTrace();
                 }
+                
+                // here
+                }
+            
+            } catch (IOException e) {
+                System.out.println("An error occurred");
+                e.printStackTrace();
+            }
             }else{
                 JOptionPane.showMessageDialog(null, "Number of Doors - Not in Range? 1-6", "Error?", JOptionPane.PLAIN_MESSAGE);
             }
@@ -1412,6 +1488,14 @@ public class Modify_Car extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSoldActionPerformed
 
+    private void btnSearchCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCarActionPerformed
+        // TODO add your handling code here:
+        
+        //close modify frame and open search car
+        this.dispose();
+        new Search_Car().setVisible(true);
+    }//GEN-LAST:event_btnSearchCarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1456,9 +1540,9 @@ public class Modify_Car extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnSearchCar;
     private javax.swing.JButton btnSold;
     private javax.swing.JComboBox<String> cboCarImage;
     private javax.swing.JLabel jLabel1;
