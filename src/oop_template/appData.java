@@ -16,8 +16,10 @@ import java.util.List;
  */
 public class appData {
     public static Car_Details Car_Details = new Car_Details();
+    
     public static Customer_Details Customer_Details = new Customer_Details();
     public static List<Customer_Details> allCustomerDetails = new ArrayList();
+    
     public static Employee_Details Employee_Details = new Employee_Details();
     
     public static void loadAllCustomerDetails(){

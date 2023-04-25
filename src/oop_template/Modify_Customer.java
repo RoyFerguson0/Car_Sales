@@ -358,7 +358,25 @@ public class Modify_Customer extends javax.swing.JFrame {
         if(isCustomerIDValid && isCustomerTitleValid && isCustomerForenameValid && isCustomerSurnameValid
                              && isCustomerGenderValid && isCustomerMobileValid && isCustomerAddressValid){
             //all valid, saving to appData, file, then clearing text fields
-            //appData.Customer_Details.setCustomerID(txtCustomerID());
+            appData.loadAllCustomerDetails();
+            for( int c = 0; c < appData.allCustomerDetails.size(); c++){
+                Customer_Details customerDetails = appData.allCustomerDetails.get(c);
+                String customerID = Integer.toString(customerDetails.getCustomerID());
+                if (customerID.equals(txtCustomerID.getText())){
+                    appData.allCustomerDetails.remove(c);
+                }
+            }
+            
+            Customer_Details customerDetails = new Customer_Details();
+                customerDetails.setCustomerID(Integer.parseInt(txtCustomerID.getText()));
+                customerDetails.setCustomerTitle(txtCustTitle.getText());
+                customerDetails.setCustomerForename(txtCustForename.getText());
+                customerDetails.setCustomerSurname(txtCustSurname.getText());
+                customerDetails.setCustomerGender(txtCustGender.getText());
+                customerDetails.setCustomerMobile(txtCustMobile.getText());
+                customerDetails.setCustomerAddress(txtCustAddress.getText());
+                
+                appData.allCustomerDetails.add(customerDetails);
             
             try{
                 File customerTextFile = new File("storage/Customer_Details.txt");
@@ -367,19 +385,22 @@ public class Modify_Customer extends javax.swing.JFrame {
                 } else {
                     System.out.println("This file already exists.");
                 }
-                //always has to end with a line break
-                String line = txtCustomerID.getText() + "," 
-                            + txtCustTitle.getText() + ","
-                            + txtCustForename.getText() + ","
-                            + txtCustSurname.getText() + ","
-                            + txtCustGender.getText() + ","
-                            + txtCustMobile.getText() + ","
-                            + txtCustAddress.getText();
-                
+                //false makes it clear the file rather than appending it
                 FileWriter customerDetailsFile = new FileWriter("storage/Customer_Details.txt",false);
                 BufferedWriter bWriter = new BufferedWriter(customerDetailsFile);
-                bWriter.write(line);
-                bWriter.newLine();
+                for(Customer_Details customer : appData.allCustomerDetails){
+                    //always has to end with a line break
+                String line = customer.getCustomerID() + "," 
+                            + customer.getCustomerTitle() + ","
+                            + customer.getCustomerForename() + ","
+                            + customer.getCustomerSurname() + ","
+                            + customer.getCustomerGender() + ","
+                            + customer.getCustomerMobile() + ","
+                            + customer.getCustomerAddress();
+                
+                        bWriter.write(line);
+                        bWriter.newLine();
+                }
                 bWriter.close();
                 
                 
