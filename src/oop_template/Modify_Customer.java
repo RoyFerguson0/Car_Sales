@@ -369,14 +369,14 @@ public class Modify_Customer extends javax.swing.JFrame {
                 }
                 //always has to end with a line break
                 String line = txtCustomerID.getText() + "," 
-                            + txtCustTitle.getText() + ", "
-                            + txtCustForename.getText() + ", "
-                            + txtCustSurname.getText() + ", "
-                            + txtCustGender.getText() + ", "
-                            + txtCustMobile.getText() + ", "
+                            + txtCustTitle.getText() + ","
+                            + txtCustForename.getText() + ","
+                            + txtCustSurname.getText() + ","
+                            + txtCustGender.getText() + ","
+                            + txtCustMobile.getText() + ","
                             + txtCustAddress.getText();
                 
-                FileWriter customerDetailsFile = new FileWriter("storage/Customer_Details.txt",true);
+                FileWriter customerDetailsFile = new FileWriter("storage/Customer_Details.txt",false);
                 BufferedWriter bWriter = new BufferedWriter(customerDetailsFile);
                 bWriter.write(line);
                 bWriter.newLine();
