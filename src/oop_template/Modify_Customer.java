@@ -23,6 +23,16 @@ public class Modify_Customer extends javax.swing.JFrame {
     private boolean isCustomerMobileValid = false;
     private boolean isCustomerAddressValid = false;
     
+    public void setAllValid(){
+        isCustomerIDValid = true;
+        isCustomerTitleValid = true;
+        isCustomerForenameValid = true;
+        isCustomerSurnameValid = true;
+        isCustomerGenderValid = true;
+        isCustomerMobileValid = true;
+        isCustomerAddressValid = true;
+    }
+    
     /**
      * Creates new form Modify_Customer
      */
@@ -39,6 +49,7 @@ public class Modify_Customer extends javax.swing.JFrame {
         txtCustMobile.setText(appData.Customer_Details.getCustomerMobile());
         txtCustAddress.setText(appData.Customer_Details.getCustomerAddress());
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

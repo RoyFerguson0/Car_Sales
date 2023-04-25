@@ -8,7 +8,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -206,7 +208,9 @@ public class Search_Customer extends javax.swing.JFrame {
                 if(customerID.equals(txtCustomerID.getText())){
                     appData.Customer_Details = customer;
                         this.dispose();
-                        new Modify_Customer().setVisible(true);
+                        Modify_Customer modifyCustomer = new Modify_Customer();
+                        modifyCustomer.setAllValid();
+                        modifyCustomer.setVisible(true);
                         break;
                     
                 }

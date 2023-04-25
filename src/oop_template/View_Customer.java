@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author anastasiaridge
+ * @author anastasiaridge 50017135
  */
 public class View_Customer extends javax.swing.JFrame {
 
@@ -164,7 +164,10 @@ public class View_Customer extends javax.swing.JFrame {
         if(lstCustomer.getSelectedValue() != null){
             appData.Customer_Details = lstCustomer.getSelectedValue();
         this.dispose();
-        new Modify_Customer().setVisible(true);
+        //new Modify_Customer().setVisible(true);
+        Modify_Customer modifyCustomer = new Modify_Customer();
+                        modifyCustomer.setAllValid();
+                        modifyCustomer.setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(null, "Please select a customer before continuing.", "Error",JOptionPane.PLAIN_MESSAGE);
