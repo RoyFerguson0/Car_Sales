@@ -178,52 +178,23 @@ public class Search_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
-        //List<Customer_Details> customerList = new ArrayList<>();
         // set this to null because if no customer is found, we don't want to navigate
         appData.Customer_Details = null;
-        try{
-            //load the file
-            BufferedReader reader;
-            reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            
-            String currentLine = "";
-            
-            //https://stackoverflow.com/questions/62614024/how-to-implement-hasnext-method-with-bufferedreader-stringtokenizer
-            
-            //iterate through file line by line using while loop until last line which will be null, loop stops
-            while((currentLine = reader.readLine()) != null){
-                
-                String[] customerParts = currentLine.split(",");
-                
-                Customer_Details customer = new Customer_Details();
-                customer.setCustomerID(Integer.parseInt(customerParts[0]));
-                customer.setCustomerTitle(customerParts[1]);
-                customer.setCustomerForename(customerParts[2]);
-                customer.setCustomerSurname(customerParts[3]);
-                customer.setCustomerGender(customerParts[4]);
-                customer.setCustomerMobile(customerParts[5]);
-                customer.setCustomerAddress(customerParts[6]);
-                
-                String customerID = String.valueOf(customer.getCustomerID());
-                if(customerID.equals(txtCustomerID.getText())){
-                    appData.Customer_Details = customer;
-                        this.dispose();
-                        Modify_Customer modifyCustomer = new Modify_Customer();
-                        modifyCustomer.setAllValid();
-                        modifyCustomer.setVisible(true);
-                        break;
-                    
-                }
-                //customerList.add(customer);
+        appData.loadAllCustomerDetails();
+        for(Customer_Details customer: appData.allCustomerDetails){
+            String customerID = String.valueOf(customer.getCustomerID());
+            if(customerID.equals(txtCustomerID.getText())){
+                appData.Customer_Details = customer;
+                this.dispose();
+                Modify_Customer modifyCustomer = new Modify_Customer();
+                modifyCustomer.setAllValid();
+                modifyCustomer.setVisible(true);
+                break;
             }
-            }
-        //if error occurs, nothing will print
-        catch(IOException e){
-            System.out.println("");
         }
-                
-        //show popup error message
-        //System.out.println("Test");
+        //CREATE POPUP
+        System.out.println("Test");
+        
     }//GEN-LAST:event_btnCustomerSearchActionPerformed
 
     /**

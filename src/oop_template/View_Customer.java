@@ -113,43 +113,13 @@ public class View_Customer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed
-        /* declaring variable
-           load data from customer details text file
-        */
-        BufferedReader reader;
-        //clearing the list so that duplicate data doesn't occur
-        customerList.clear();
-        try{
-            //load the file
-            reader = new BufferedReader (new FileReader("storage/Customer_Details.txt"));
-            
-            String currentLine = "";
-            
-            //https://stackoverflow.com/questions/62614024/how-to-implement-hasnext-method-with-bufferedreader-stringtokenizer
-            
-            //iterate through file line by line using while loop until last line which will be null, loop stops
-            while((currentLine = reader.readLine()) != null){
-                
-                String[] customerParts = currentLine.split(",");
-                
-                Customer_Details customer = new Customer_Details();
-                customer.setCustomerID(Integer.parseInt(customerParts[0]));
-                customer.setCustomerTitle(customerParts[1]);
-                customer.setCustomerForename(customerParts[2]);
-                customer.setCustomerSurname(customerParts[3]);
-                customer.setCustomerGender(customerParts[4]);
-                customer.setCustomerMobile(customerParts[5]);
-                customer.setCustomerAddress(customerParts[6]);
-                
-                
-                customerList.addElement(customer);
-            }
-            lstCustomer.setModel(customerList);
+        appData.loadAllCustomerDetails();
+        
+        for(Customer_Details customerDetails: appData.allCustomerDetails){
+            customerList.addElement(customerDetails);
         }
-        //if error occurs, nothing will print
-        catch(IOException e){
-            System.out.println("");
-        }
+        lstCustomer.setModel(customerList);
+       
     }//GEN-LAST:event_btnLoadCustomerDetailsActionPerformed
 
     private void btnReturnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnEmpMenuActionPerformed
