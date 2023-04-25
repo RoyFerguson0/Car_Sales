@@ -21,7 +21,9 @@ public class Car_Details {
     private String engine_size;
     private String description;
     private int price;
-
+    
+    // Testing
+    private String imageLocation;
 
 
     // Objects Behaviours
@@ -73,8 +75,17 @@ public class Car_Details {
     }
 
 
+    /// Testing
+    
+    // Set Image Location - String
+    public void setImageLocation(String imageLocation){
+        this.imageLocation = imageLocation;
+    }
 
-
+    // Get Image Location 
+    public String getImageLocation(){
+        return imageLocation;
+    }
 
     ///////////////////////////////
     ///////// Getters /////////////

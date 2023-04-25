@@ -863,16 +863,21 @@ public class Modify_Car extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
-     * 
+     * The combo box is being used so you are able to select image to represent 
+     * the motor which is being added to the system.
      * @Roy Ferguson(50004216)
      */
     private void cboCarImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCarImageActionPerformed
-        // TODO add your handling code here:
+        
+        // When you select an image from drop down list it look at it as an array e.g. 0,1,2,3,4 etc
         int index = cboCarImage.getSelectedIndex();
         Image pic;
+        
+        // Populating the array with images 
         String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
         "/images/Honda_Civic_Type_R_Sportline_2023.jpeg", "/images/FordFocus2022.jpeg"};
-        System.out.println(index);
+        
+        // Using switch statement to set the image to variable image created above.
         switch (index) {
             case 1:
                 pic =
@@ -892,18 +897,19 @@ public class Modify_Car extends javax.swing.JFrame {
             return;
         }
         
-
+        System.out.println(pic);
+        System.out.println(picSrc[index]);
         // Used to load the image from the images directory within the project
-           ImageIcon icon = new ImageIcon(getClass().getResource(picSrc[index]));
-           
-            //Gets the image 
-           Image img = icon.getImage();
-           //Used to scale the image to fit within the label
-            Image imgScale = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), Image.SCALE_SMOOTH);
-            //creates a new image with the new scale
-            ImageIcon scaledIcon = new ImageIcon(imgScale);
-            //sets the scaled image within the label
-            lblPic.setIcon(scaledIcon);
+       ImageIcon icon = new ImageIcon(getClass().getResource(picSrc[index]));
+
+        //Gets the image 
+       Image img = icon.getImage();
+       //Used to scale the image to fit within the label
+        Image imgScale = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), Image.SCALE_SMOOTH);
+        //creates a new image with the new scale
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        //sets the scaled image within the label
+        lblPic.setIcon(scaledIcon);
 
     }//GEN-LAST:event_cboCarImageActionPerformed
 
