@@ -40,6 +40,7 @@ public class View_Customer extends javax.swing.JFrame {
         btnLoadCustomerDetails = new javax.swing.JButton();
         btnReturnEmpMenu = new javax.swing.JButton();
         btnEditCustomer = new javax.swing.JButton();
+        btnModifyCust = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -68,10 +69,19 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
+        btnEditCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnEditCustomer.setText("Edit Customer");
         btnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditCustomerActionPerformed(evt);
+            }
+        });
+
+        btnModifyCust.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnModifyCust.setText("Add New");
+        btnModifyCust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyCustActionPerformed(evt);
             }
         });
 
@@ -80,17 +90,21 @@ public class View_Customer extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnReturnEmpMenu)
-                        .addGap(222, 222, 222)
-                        .addComponent(btnEditCustomer))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblViewCustomer)
-                        .addComponent(btnLoadCustomerDetails)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModifyCust)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEditCustomer)
+                        .addGap(29, 29, 29))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblViewCustomer)
+                            .addComponent(btnLoadCustomerDetails)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(30, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,11 +115,13 @@ public class View_Customer extends javax.swing.JFrame {
                 .addComponent(btnLoadCustomerDetails)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReturnEmpMenu)
-                    .addComponent(btnEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnModifyCust, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnReturnEmpMenu))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,7 +139,7 @@ public class View_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoadCustomerDetailsActionPerformed
 
     private void btnReturnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnEmpMenuActionPerformed
-        //return to employee enu, close view customer
+        //return to employee menu, close view customer
         this.dispose();
         new Employee_Main_Menu().setVisible(true);
              
@@ -143,6 +159,12 @@ public class View_Customer extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please select a customer before continuing.", "Error",JOptionPane.PLAIN_MESSAGE);
         }
     }//GEN-LAST:event_btnEditCustomerActionPerformed
+
+    private void btnModifyCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCustActionPerformed
+        // 'add new' customer, modify customer frame opened
+        this.dispose();
+        new Modify_Customer().setVisible(true);
+    }//GEN-LAST:event_btnModifyCustActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +204,7 @@ public class View_Customer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditCustomer;
     private javax.swing.JButton btnLoadCustomerDetails;
+    private javax.swing.JButton btnModifyCust;
     private javax.swing.JButton btnReturnEmpMenu;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblViewCustomer;

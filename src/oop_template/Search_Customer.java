@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,6 +45,7 @@ public class Search_Customer extends javax.swing.JFrame {
         btnCustomerSearch = new javax.swing.JButton();
         lblCustomerIDCheck = new javax.swing.JLabel();
         btnEmpMenu = new javax.swing.JButton();
+        btnModifyCust = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -117,6 +119,14 @@ public class Search_Customer extends javax.swing.JFrame {
             }
         });
 
+        btnModifyCust.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnModifyCust.setText("Add New");
+        btnModifyCust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyCustActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,9 +140,13 @@ public class Search_Customer extends javax.swing.JFrame {
                         .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pnlCustomerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEmpMenu))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnEmpMenu)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnModifyCust)
+                                .addGap(33, 33, 33)))))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -145,7 +159,9 @@ public class Search_Customer extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pnlCustomerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEmpMenu)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmpMenu)
+                    .addComponent(btnModifyCust))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -178,7 +194,7 @@ public class Search_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
-        // set this to null because if no customer is found, we don't want to navigate
+        // set this to null because if no customer is found, we don't want to search
         appData.Customer_Details = null;
         appData.loadAllCustomerDetails();
         for(Customer_Details customer: appData.allCustomerDetails){
@@ -192,10 +208,17 @@ public class Search_Customer extends javax.swing.JFrame {
                 break;
             }
         }
-        //CREATE POPUP
-        System.out.println("Test");
+        //show error message
+        JOptionPane.showMessageDialog(null, "Customer ID not found. Please enter an existing ID.");
         
     }//GEN-LAST:event_btnCustomerSearchActionPerformed
+
+    private void btnModifyCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCustActionPerformed
+        // 'add new' open modify customer page
+        this.dispose();
+        new Modify_Customer().setVisible(true);
+        
+    }//GEN-LAST:event_btnModifyCustActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,6 +258,7 @@ public class Search_Customer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomerSearch;
     private javax.swing.JButton btnEmpMenu;
+    private javax.swing.JButton btnModifyCust;
     private javax.swing.JLabel lblCustomerID;
     private javax.swing.JLabel lblCustomerIDCheck;
     private javax.swing.JLabel lblLogoImage;
