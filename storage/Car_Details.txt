@@ -54,15 +54,15 @@ Price: 2300
 Images: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 
 
-Registration: REG17
-Make: Toyota
-Model: Corolla SR
-Colour: Black
-Number of Doors: 5
-Engine Size: 1.6L
-Description: Fastest Motor on the Road. Better Get Out the Way????
-Price: 4350
-Images: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
+
+
+
+
+
+
+
+
+
 
 
 Registration: REG18

@@ -978,10 +978,10 @@ public class Modify_Car extends javax.swing.JFrame {
             appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
             appData.Car_Details.setDescription(txtDescription.getText().trim());
             appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
-            int index = cboCarImage.getSelectedIndex();
-            String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
-                    "/images/Honda_Civic_Type_R_Sportline_2023.jpeg", "/images/FordFocus2022.jpeg"};
-            appData.Car_Details.setImageLocation(picSrc[index]);
+//            int index = cboCarImage.getSelectedIndex();
+//            String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
+//                    "/images/Honda_Civic_Type_R_Sportline_2023.jpeg", "/images/FordFocus2022.jpeg"};
+//            appData.Car_Details.setImageLocation(picSrc[index]);
 
             // Convert the Numbers to string can saving text to string objects
             String Reg = appData.Car_Details.getRegistration();

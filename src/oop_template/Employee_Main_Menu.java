@@ -40,9 +40,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             lblCarImage.setIcon(scaledIcon2);
             
             
-            //lblCustomerLogoImage
-            //Access the image within the images folder
-            ImageIcon customerLogo = new ImageIcon(getClass().getResource("/images/CustomerImage.png"));
+        //    lblCustomerLogoImage
+        //    Access the image within the images folder
+            ImageIcon customerLogo = new ImageIcon(getClass().getResource("/images/CustomerImage.jpeg"));
             //assign an image variable to the picture
             Image customerLogoVar = customerLogo.getImage();
            //Scale the picture to fit within the labal
