@@ -1,57 +1,57 @@
-Registration: REG4
-Make: Fiearri
-Model: SportRS
-Colour: Purple
-Number of Doors: 2
-Engine Size: 2.3L
-Description: Hottest Ride about No Lie?
-Price: 900000
-Image: /images/FordFocus2022.jpeg
-
-
-Registration: REG5
-Make: Audi
-Model: Sport M8
-Colour: Cyan
-Number of Doors: 3
-Engine Size: 1.5L
-Description: Fast Motor
-Price: 2300
-Images: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
-
-
-Registration: REG6
-Make: Toyota
-Model: Corolla SR
-Colour: Black
-Number of Doors: 5
-Engine Size: 1.6L
-Description: Fastest Motor on the Road. Better Get Out the Way????
-Price: 4350
-Images: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 
 
 
-Registration: REG15
-Make: Fiearri
-Model: SportRS
-Colour: Purple
-Number of Doors: 2
-Engine Size: 2.3L
-Description: Hottest Ride about No Lie?
-Price: 900000
-Image: /images/FordFocus2022.jpeg
 
 
-Registration: REG16
-Make: Audi
-Model: Sport M8
-Colour: Cyan
-Number of Doors: 3
-Engine Size: 1.5L
-Description: Fast Motor
-Price: 2300
-Images: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,6 +86,14 @@ Engine Size: 3
 Description: test
 Price: 1234
 Image: /images/FordFocus2022.jpeg
+
+
+
+
+
+
+
+
 
 
 
