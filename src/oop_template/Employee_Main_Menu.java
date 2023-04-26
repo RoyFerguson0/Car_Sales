@@ -38,6 +38,20 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             ImageIcon scaledIcon2 = new ImageIcon(imgScale2);
             //sets the scaled image within the label
             lblCarImage.setIcon(scaledIcon2);
+            
+            
+            //lblCustomerLogoImage
+            //Access the image within the images folder
+            ImageIcon customerLogo = new ImageIcon(getClass().getResource("/images/CustomerImage.png"));
+            //assign an image variable to the picture
+            Image customerLogoVar = customerLogo.getImage();
+           //Scale the picture to fit within the labal
+            Image customerLogoScale = customerLogoVar.getScaledInstance(lblCustomerLogoImage.getWidth(), lblCustomerLogoImage.getHeight(), Image.SCALE_SMOOTH);
+            //Remakes the image to fit in the labal
+            ImageIcon  customerLogoSized = new ImageIcon(customerLogoScale);
+            //Puts the image in the label
+            lblCustomerLogoImage.setIcon(customerLogoSized);
+            
     }
 
     /**
@@ -145,18 +159,20 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        lblCustomerLogoImage.setText("(customer logo image)");
-
         javax.swing.GroupLayout pnlCustomerLayout = new javax.swing.GroupLayout(pnlCustomer);
         pnlCustomer.setLayout(pnlCustomerLayout);
         pnlCustomerLayout.setHorizontalGroup(
             pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCustomerLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnViewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCustomerLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCustomerLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnViewCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlCustomerLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(lblCustomerLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         pnlCustomerLayout.setVerticalGroup(
@@ -253,9 +269,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 

@@ -4,12 +4,20 @@
  */
 package oop_template;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  *
- * @author anastasiaridge
+ * @author anastasiaridge 50017135
  */
 public class Search_Customer extends javax.swing.JFrame {
-
+    //create boolean for validation
     private boolean isCustomerIDValid = false;
     
     /**
@@ -170,9 +178,23 @@ public class Search_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
-        //close search frame and open view customer frame
-        this.dispose();
-        new View_Customer().setVisible(true);
+        // set this to null because if no customer is found, we don't want to navigate
+        appData.Customer_Details = null;
+        appData.loadAllCustomerDetails();
+        for(Customer_Details customer: appData.allCustomerDetails){
+            String customerID = String.valueOf(customer.getCustomerID());
+            if(customerID.equals(txtCustomerID.getText())){
+                appData.Customer_Details = customer;
+                this.dispose();
+                Modify_Customer modifyCustomer = new Modify_Customer();
+                modifyCustomer.setAllValid();
+                modifyCustomer.setVisible(true);
+                break;
+            }
+        }
+        //CREATE POPUP
+        System.out.println("Test");
+        
     }//GEN-LAST:event_btnCustomerSearchActionPerformed
 
     /**
