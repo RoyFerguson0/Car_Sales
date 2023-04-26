@@ -5,7 +5,7 @@
 package oop_template;
 
 import java.awt.Image;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
@@ -154,8 +154,14 @@ public class Main_Menu extends javax.swing.JFrame {
      */
     private void btnShutDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShutDownActionPerformed
 
-        // Closes the entire application
-       System.exit(0);
+        // Pop up Making sure you want to shut down application
+        int inputtedAnswer = JOptionPane.showConfirmDialog(null,"Are You sure you want to SHUT DOWN?", "Question",JOptionPane.YES_NO_OPTION);
+
+        // If answer is yes - Application is shut down
+        if(inputtedAnswer == 0) {
+            // Closes the entire application
+            System.exit(0);
+        }
     }//GEN-LAST:event_btnShutDownActionPerformed
 
     /**
