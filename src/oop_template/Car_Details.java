@@ -74,18 +74,13 @@ public class Car_Details {
         this.price = price;
     }
 
-
-    /// Testing
-    
     // Set Image Location - String
     public void setImageLocation(String imageLocation){
         this.imageLocation = imageLocation;
     }
 
-    // Get Image Location 
-    public String getImageLocation(){
-        return imageLocation;
-    }
+
+
 
     ///////////////////////////////
     ///////// Getters /////////////
@@ -131,7 +126,10 @@ public class Car_Details {
         return price;
     }
 
-
+    // Get Image Location
+    public String getImageLocation(){
+        return imageLocation;
+    }
 
 
 

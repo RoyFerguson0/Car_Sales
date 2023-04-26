@@ -11,26 +11,30 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author 50004216
+ * @Roy Ferguson(50004216)
  */
 public class View_Car_Sold extends javax.swing.JFrame {
     private javax.swing.DefaultListModel listCars;
 
 
-
-
     /**
      * Creates new form View_Car
+     * @Roy Ferguson(50004216)
      */
     public View_Car_Sold() {
         initComponents();
+        // Setting the screen position to center
         setLocationRelativeTo(null);
 
+        // Creating a list so that you are able to add data to list and view the car details.
         listCars = new javax.swing.DefaultListModel();
+
+        // Variables used to read lines in text file (Cars_Sold.txt)
         String eachLine;
         int numberLinesFile = 0;
         int numberLines = 1;
 
+        // Making sure that the Cars_Sold.txt file exists.
         try {
             File carTextFile = new File("storage/Cars_Sold.txt");
             if (carTextFile.createNewFile()) {
@@ -40,34 +44,40 @@ public class View_Car_Sold extends javax.swing.JFrame {
                 System.out.println("File aleardy exists");
                 JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?",JOptionPane.PLAIN_MESSAGE);
             }
-        FileReader fr = null;
-        try {
-            fr = new FileReader("storage/Cars_Sold.txt");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        BufferedReader line = new BufferedReader(fr);
-        while(true) {
+
+            // Creating a file reader and a buffer reader to read each line in text file.
+            FileReader fr = null;
             try {
-                if (!((eachLine=line.readLine())!=null)) break;
-            } catch (IOException e) {
+                fr = new FileReader("storage/Cars_Sold.txt");
+            } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            numberLinesFile++;
-        }
-        System.out.println(numberLines);
-        for(int i = 0; i < numberLinesFile; i++){
-            String line32 = null;
-            try {
-                line32 = Files.readAllLines(Paths.get("storage/Cars_Sold.txt")).get((numberLines-1));
-                listCars.addElement(line32);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            BufferedReader line = new BufferedReader(fr);
+            while(true) {
+                try {
+                    if (!((eachLine=line.readLine())!=null)) break;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                // Counting the number of lines in the text file
+                numberLinesFile++;
             }
-            System.out.println(line32);
-            numberLines++;
-        }
-        lstCarDetails.setModel(listCars);
+
+            // Reading each line in text file due to the total number of lines in the file gotten from (numberLinesFile).
+            // Adding each line of data to the list.
+            for(int i = 0; i < numberLinesFile; i++){
+                String line32 = null;
+                try {
+                    line32 = Files.readAllLines(Paths.get("storage/Cars_Sold.txt")).get((numberLines-1));
+                    listCars.addElement(line32);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                // Adding one in order to read the next line in text file
+                numberLines++;
+            }
+            // Setting the jList with all the data added to the car list
+            lstCarDetails.setModel(listCars);
 
         } catch (IOException e) {
             System.out.println("An error occurred");
@@ -95,7 +105,7 @@ public class View_Car_Sold extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstCarDetails);
 
         lblViewCarsTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        lblViewCarsTitle.setText("Available Motors");
+        lblViewCarsTitle.setText("Motors Bought");
 
         btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         btnEmpMenu.setText("⬅");
@@ -112,15 +122,16 @@ public class View_Car_Sold extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(lblViewCarsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(71, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblViewCarsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +155,7 @@ public class View_Car_Sold extends javax.swing.JFrame {
      */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         
-        //close search frame and open Employee Main Menu
+        //close view cars sold and open Employee Main Menu
         this.dispose();
         new Employee_Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed

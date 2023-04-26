@@ -11,26 +11,30 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author 50004216
+ * @Roy Ferguson(50004216)
  */
 public class View_Car extends javax.swing.JFrame {
     private javax.swing.DefaultListModel listCars;
 
 
-
-
     /**
      * Creates new form View_Car
+     * @Roy Ferguson(50004216)
      */
     public View_Car() {
         initComponents();
+        // Setting the Screen Position to Center
         setLocationRelativeTo(null);
 
+        // Creating a List - In order to store data
         listCars = new javax.swing.DefaultListModel();
+
+        // Variables Used to read through lines in text file (Car_Details.txt)
         String eachLine;
         int numberLinesFile = 0;
         int numberLines = 1;
 
+        // Making sure that Car_Details.txt exists
         try {
             File carTextFile = new File("storage/Car_Details.txt");
             if (carTextFile.createNewFile()) {
@@ -40,34 +44,40 @@ public class View_Car extends javax.swing.JFrame {
                 System.out.println("File aleardy exists");
                 JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?",JOptionPane.PLAIN_MESSAGE);
             }
-        FileReader fr = null;
-        try {
-            fr = new FileReader("storage/Car_Details.txt");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        BufferedReader line = new BufferedReader(fr);
-        while(true) {
+
+            // Creating a file reader and buffer reader to read all lines in text file
+            FileReader fr = null;
             try {
-                if (!((eachLine=line.readLine())!=null)) break;
-            } catch (IOException e) {
+                fr = new FileReader("storage/Car_Details.txt");
+            } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            numberLinesFile++;
-        }
-        System.out.println(numberLines);
-        for(int i = 0; i < numberLinesFile; i++){
-            String line32 = null;
-            try {
-                line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numberLines-1));
-                listCars.addElement(line32);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            BufferedReader line = new BufferedReader(fr);
+            while(true) {
+                try {
+                    if (!((eachLine=line.readLine())!=null)) break;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                // Getting the total number of lines in file
+                numberLinesFile++;
             }
-            System.out.println(line32);
-            numberLines++;
-        }
-        lstCarDetails.setModel(listCars);
+
+            // Looping through the file reading all lines up to the store number of lines in file.
+            // As you are adding all line data to the list.
+            for(int i = 0; i < numberLinesFile; i++){
+                String line32 = null;
+                try {
+                    line32 = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get((numberLines-1));
+                    listCars.addElement(line32);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                // Adding one in order to read the next line in text file
+                numberLines++;
+            }
+            // Setting the jList with all the data added to the car list
+            lstCarDetails.setModel(listCars);
 
         } catch (IOException e) {
             System.out.println("An error occurred");
@@ -138,9 +148,13 @@ public class View_Car extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Menu button is used to take you back to the main menu
+     * @Roy Ferguson(50004216)
+     */
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
 
-        //close search frame and open Main Menu
+        //close view available cars and open Main Menu
         this.dispose();
         new Main_Menu().setVisible(true);
 

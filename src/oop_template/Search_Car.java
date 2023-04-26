@@ -18,13 +18,13 @@ import java.util.stream.Stream;
 
 /**
  *
- * @author Roy Ferguson
+ * @author Roy Ferguson(50004216)
  */
 public class Search_Car extends javax.swing.JFrame {
 
     /**
      * Creates form Car_Search
-     * @author Roy Ferguson(50004216)
+     * @Roy Ferguson(50004216)
      */
     public Search_Car() {
         initComponents();
@@ -158,7 +158,7 @@ public class Search_Car extends javax.swing.JFrame {
      * If reg exists in Cars Sold Text File (Cars_Sold.txt) - Will Not Go any Further
      * If Reg Doesn't exist in Cars Available file (Car_Details.txt) - Will Open modify car form
      * if Reg does exists in cars available file (Car_Details.txt) - Will Open modify car form with data
-     * @author Roy Ferguson(50004216)
+     * @Roy Ferguson(50004216)
      */
     private void btnCarSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarSearchActionPerformed
 
@@ -379,7 +379,7 @@ public class Search_Car extends javax.swing.JFrame {
 
     /**
      * Employee Menu Button to take you back to Employee Main Menu
-     * @author Roy Ferguson(50004216)
+     * @Roy Ferguson(50004216)
      */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         

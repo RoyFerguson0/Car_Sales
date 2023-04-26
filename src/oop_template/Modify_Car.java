@@ -27,7 +27,7 @@ import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 
 /**
  *
- * @author 50004216
+ * @Roy Ferguson(50004216)
  */
 public class Modify_Car extends javax.swing.JFrame {
 
