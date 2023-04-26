@@ -331,6 +331,7 @@ public class Search_Car extends javax.swing.JFrame {
                                     appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
                                     appData.Car_Details.setImageLocation(regImage[1]);
 
+                                    System.out.println("Car = " + appData.Car_Details.getImageLocation());
                                     // Opening the Modify Car Screen
                                     this.dispose();
                                     new Modify_Car().setVisible(true);

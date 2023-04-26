@@ -47,7 +47,7 @@ public class Modify_Car extends javax.swing.JFrame {
                 !Objects.equals(appData.Car_Details.getModel(), "null") && !Objects.equals(appData.Car_Details.getColour(), "null") &&
                 appData.Car_Details.getDoors() != -1 && !Objects.equals(appData.Car_Details.getEngine_size(), "null") &&
                 !Objects.equals(appData.Car_Details.getDescription(), "null") && appData.Car_Details.getPrice() != -1
-                && !Objects.equals(appData.Car_Details.getImageLocation(),"null")){
+                && !Objects.equals(appData.Car_Details.getImageLocation(), "null")){
             
             // If Not Null you set all the textfields with all the stored values from the Car_Details.java
             txtRegistration.setText(appData.Car_Details.getRegistration());
@@ -64,11 +64,14 @@ public class Modify_Car extends javax.swing.JFrame {
             System.out.println(appData.Car_Details.getImageLocation());
             System.out.println("hi");
             String image = appData.Car_Details.getImageLocation();
+            if(appData.Car_Details.getImageLocation() == null){
+                appData.Car_Details.setImageLocation("NoImage");
+            }
 
-
-            // This will not run Modify Car form first (Have to Run Search) Image will show up
-                  ImageIcon icon = new ImageIcon(getClass().getResource(appData.Car_Details.getImageLocation()));
-            // This line will run the Modify Car form first but when search won't show image
+            if(!appData.Car_Details.getImageLocation().equals("NoImage")) {
+                // This will not run Modify Car form first (Have to Run Search) Image will show up
+                ImageIcon icon = new ImageIcon(getClass().getResource(appData.Car_Details.getImageLocation()));
+                // This line will run the Modify Car form first but when search won't show image
                 //ImageIcon icon = new ImageIcon(appData.Car_Details.getImageLocation());
                 //Gets the image
                 Image img = icon.getImage();
@@ -78,9 +81,9 @@ public class Modify_Car extends javax.swing.JFrame {
                 ImageIcon scaledIcon = new ImageIcon(imgScale);
                 //sets the scaled image within the label
                 lblPic.setIcon(scaledIcon);
+            }
 
 
-                
         }else{
             
             // If Car Details are null 
