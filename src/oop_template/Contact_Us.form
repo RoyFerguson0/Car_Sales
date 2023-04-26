@@ -52,7 +52,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="pnlContact" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnReturnMenu" pref="51" max="32767" attributes="0"/>
+              <Component id="btnReturnMenu" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -70,8 +70,8 @@
     <Container class="javax.swing.JPanel" name="pnlContact">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Contact:"/>
           </Border>
         </Property>
       </Properties>

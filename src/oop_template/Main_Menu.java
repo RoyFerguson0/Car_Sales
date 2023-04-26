@@ -4,6 +4,9 @@
  */
 package oop_template;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Roy Ferguson
@@ -15,6 +18,15 @@ public class Main_Menu extends javax.swing.JFrame {
      */
     public Main_Menu() {
         initComponents();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"));
+            //Gets the image 
+           Image img = icon.getImage();
+           //Used to scale the image to fit within the label
+            Image imgScale = img.getScaledInstance(lblLogoImage.getWidth(), lblLogoImage.getHeight(), Image.SCALE_SMOOTH);
+            //creates a new image with the new scale
+            ImageIcon scaledIcon = new ImageIcon(imgScale);
+            //sets the scaled image within the label
+            lblLogoImage.setIcon(scaledIcon);
     }
 
     /**
@@ -34,7 +46,9 @@ public class Main_Menu extends javax.swing.JFrame {
         btnShutDown = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
+        setSize(new java.awt.Dimension(400, 300));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblTitle.setText("RJA Motors");
@@ -73,9 +87,9 @@ public class Main_Menu extends javax.swing.JFrame {
                             .addComponent(btnCustomerView, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnContactUs, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
+                        .addGap(134, 134, 134)
                         .addComponent(lblTitle)
-                        .addGap(43, 43, 43)
+                        .addGap(47, 47, 47)
                         .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(343, 343, 343)
@@ -85,17 +99,20 @@ public class Main_Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle)
-                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTitle)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCustomerView)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLogon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnContactUs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(btnShutDown, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );

@@ -101,19 +101,21 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnViewEmployee" max="32767" attributes="0"/>
-                              <Component id="btnModifyEmployee" max="32767" attributes="0"/>
-                          </Group>
+                      <Component id="btnSearchEmployee" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnViewEmployee" min="-2" pref="123" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnSearchEmployee" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="lblEmployeeImage" min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,27 +123,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnModifyEmployee" min="-2" pref="57" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnViewEmployee" min="-2" pref="61" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnSearchEmployee" pref="65" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblEmployeeImage" pref="60" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnModifyEmployee">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modify Employee"/>
-            <Property name="horizontalAlignment" type="int" value="10"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifyEmployeeActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btnViewEmployee">
           <Properties>
             <Property name="text" type="java.lang.String" value="View Employee"/>
@@ -157,6 +149,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchEmployeeActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblEmployeeImage">
         </Component>
       </SubComponents>
     </Container>

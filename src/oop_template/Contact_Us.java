@@ -44,7 +44,7 @@ public class Contact_Us extends javax.swing.JFrame {
         lblContactUs.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         lblContactUs.setText("Contact Us");
 
-        pnlContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlContact.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact:"));
 
         lblPhone.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         lblPhone.setText("Phone:");
@@ -145,7 +145,7 @@ public class Contact_Us extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pnlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnReturnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addComponent(btnReturnMenu)
                 .addContainerGap())
         );
 

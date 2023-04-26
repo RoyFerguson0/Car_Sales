@@ -52,6 +52,19 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             //Puts the image in the label
             lblCustomerLogoImage.setIcon(customerLogoSized);
             
+            
+           //Employee Image
+            //Using Employee image from the imags folder
+            ImageIcon employeeLogo = new ImageIcon(getClass().getResource("/images/employeesIMG.jpg"));
+            //creating a variable for the image
+            Image employeeIMG = employeeLogo.getImage();
+            //Setting the image size
+            Image employeeIMGScale = employeeIMG.getScaledInstance(lblEmployeeImage.getWidth(), lblEmployeeImage.getHeight(), Image.SCALE_SMOOTH);
+            //Resizes the logo for the label
+            ImageIcon employeeIMGSize = new ImageIcon(employeeIMGScale);
+            //Using the image in the label
+            lblEmployeeImage.setIcon(employeeIMGSize);
+            
     }
 
     /**
@@ -66,9 +79,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         lblLogoImage = new javax.swing.JLabel();
         pnlEmployeeImage = new javax.swing.JPanel();
-        btnModifyEmployee = new javax.swing.JButton();
         btnViewEmployee = new javax.swing.JButton();
         btnSearchEmployee = new javax.swing.JButton();
+        lblEmployeeImage = new javax.swing.JLabel();
         pnlCustomer = new javax.swing.JPanel();
         btnViewCustomer = new javax.swing.JButton();
         btnSearchCustomer = new javax.swing.JButton();
@@ -89,15 +102,6 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
 
         pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createTitledBorder("Employee Details"));
         pnlEmployeeImage.setName(""); // NOI18N
-
-        btnModifyEmployee.setText("Modify Employee");
-        btnModifyEmployee.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        btnModifyEmployee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnModifyEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModifyEmployeeActionPerformed(evt);
-            }
-        });
 
         btnViewEmployee.setText("View Employee");
         btnViewEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -120,24 +124,26 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
-                        .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnViewEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnModifyEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmployeeImageLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEmployeeImageLayout.setVerticalGroup(
             pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnModifyEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGap(9, 9, 9))
         );
 
         pnlCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Customer Details")));
@@ -277,25 +283,6 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnModifyEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyEmployeeActionPerformed
-        
-        Modify_Employee modifyEmployee = new Modify_Employee();
-        // Makes the Modify_Employee frame visible
-        modifyEmployee.setVisible(true);
-        // Makes the current frame invisible if needed
-        this.setVisible(false);
-    }//GEN-LAST:event_btnModifyEmployeeActionPerformed
-
-    private void btnViewEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmployeeActionPerformed
-        View_Employee viewEmployee = new View_Employee();
-        // Makes the View_Employee frame visible
-        
-        viewEmployee.setVisible(true);
-        // Makes the current frame invisible if needed
-        
-        this.setVisible(false);
-    }//GEN-LAST:event_btnViewEmployeeActionPerformed
-
     private void btnViewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCustomerActionPerformed
         // close employee main menu, open view customer
         this.dispose();
@@ -307,16 +294,6 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.dispose();
         new Search_Customer().setVisible(true);
     }//GEN-LAST:event_btnSearchCustomerActionPerformed
-
-    private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
-        Search_Employee searchEmployee = new Search_Employee();
-        // Makes the View_Employee frame visible
-        
-        searchEmployee.setVisible(true);
-        // Makes the current frame invisible if needed
-        
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSearchEmployeeActionPerformed
 
     private void btnViewCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCarActionPerformed
 
@@ -332,6 +309,26 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         new Search_Car().setVisible(true);
         
     }//GEN-LAST:event_btnSearchCarActionPerformed
+
+    private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
+        Search_Employee searchEmployee = new Search_Employee();
+        // Makes the View_Employee frame visible
+
+        searchEmployee.setVisible(true);
+        // Makes the current frame invisible if needed
+
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSearchEmployeeActionPerformed
+
+    private void btnViewEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmployeeActionPerformed
+        View_Employee viewEmployee = new View_Employee();
+        // Makes the View_Employee frame visible
+
+        viewEmployee.setVisible(true);
+        // Makes the current frame invisible if needed
+
+        this.setVisible(false);
+    }//GEN-LAST:event_btnViewEmployeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,7 +366,6 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnModifyEmployee;
     private javax.swing.JButton btnSearchCar;
     private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JButton btnSearchEmployee;
@@ -378,6 +374,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnViewEmployee;
     private javax.swing.JLabel lblCarImage;
     private javax.swing.JLabel lblCustomerLogoImage;
+    private javax.swing.JLabel lblEmployeeImage;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlCar;
