@@ -65,6 +65,7 @@ public class Modify_Car extends javax.swing.JFrame {
             System.out.println("hi");
             String image = appData.Car_Details.getImageLocation();
 
+
             // This will not run Modify Car form first (Have to Run Search) Image will show up
                   ImageIcon icon = new ImageIcon(getClass().getResource(appData.Car_Details.getImageLocation()));
             // This line will run the Modify Car form first but when search won't show image
@@ -79,6 +80,7 @@ public class Modify_Car extends javax.swing.JFrame {
                 lblPic.setIcon(scaledIcon);
 
 
+                
         }else{
             
             // If Car Details are null 
