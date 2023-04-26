@@ -46,16 +46,16 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             //assign an image variable to the picture
             Image customerLogoVar = customerLogo.getImage();
            //Scale the picture to fit within the labal
-            Image customerLogoScale = customerLogoVar.getScaledInstance(lblCustomerLogoImage.getWidth(), lblCustomerLogoImage.getHeight(), Image.SCALE_SMOOTH);
+            Image customerLogoScale = customerLogoVar.getScaledInstance(lblCustomerImage.getWidth(), lblCustomerImage.getHeight(), Image.SCALE_SMOOTH);
             //Remakes the image to fit in the labal
             ImageIcon  customerLogoSized = new ImageIcon(customerLogoScale);
             //Puts the image in the label
-            lblCustomerLogoImage.setIcon(customerLogoSized);
+            lblCustomerImage.setIcon(customerLogoSized);
             
             
            //Employee Image
             //Using Employee image from the imags folder
-            ImageIcon employeeLogo = new ImageIcon(getClass().getResource("/images/employeesIMG.jpg"));
+            ImageIcon employeeLogo = new ImageIcon(getClass().getResource("/images/employeeIMG.jpeg"));
             //creating a variable for the image
             Image employeeIMG = employeeLogo.getImage();
             //Setting the image size
@@ -85,7 +85,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         pnlCustomer = new javax.swing.JPanel();
         btnViewCustomer = new javax.swing.JButton();
         btnSearchCustomer = new javax.swing.JButton();
-        lblCustomerLogoImage = new javax.swing.JLabel();
+        lblCustomerImage = new javax.swing.JLabel();
         pnlCar = new javax.swing.JPanel();
         btnViewCar = new javax.swing.JButton();
         btnSearchCar = new javax.swing.JButton();
@@ -178,7 +178,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                             .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlCustomerLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(lblCustomerLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblCustomerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         pnlCustomerLayout.setVerticalGroup(
@@ -189,7 +189,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCustomerLogoImage, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addComponent(lblCustomerImage, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -373,7 +373,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnViewCustomer;
     private javax.swing.JButton btnViewEmployee;
     private javax.swing.JLabel lblCarImage;
-    private javax.swing.JLabel lblCustomerLogoImage;
+    private javax.swing.JLabel lblCustomerImage;
     private javax.swing.JLabel lblEmployeeImage;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
