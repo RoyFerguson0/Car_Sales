@@ -9,12 +9,13 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Roy Ferguson
+ * @Roy Ferguson (50004216)
  */
 public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Main_Menu
+     * @Roy Ferguson(50004216)
      */
     public Main_Menu() {
         initComponents();
@@ -73,6 +74,11 @@ public class Main_Menu extends javax.swing.JFrame {
         });
 
         btnShutDown.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnShutDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShutDownActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,19 +127,36 @@ public class Main_Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Button used to open the contact us form.
+     * @Roy Ferguson(50004216)
+     */
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         //close main menu, open contact us page
         this.dispose();
         new Contact_Us().setVisible(true);
     }//GEN-LAST:event_btnContactUsActionPerformed
 
-    
+    /**
+     * Button used to view all available motors as it opens View_Car
+     * @Roy Ferguson(50004216)
+     */
     private void btnCustomerViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerViewActionPerformed
         
         //close main menu, open Available Cars
         this.dispose();
         new View_Car().setVisible(true);
     }//GEN-LAST:event_btnCustomerViewActionPerformed
+
+    /**
+     * Shut Down button to close the entire application.
+     * @Roy Ferguson(50004216)
+     */
+    private void btnShutDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShutDownActionPerformed
+
+        // Closes the entire application
+       System.exit(0);
+    }//GEN-LAST:event_btnShutDownActionPerformed
 
     /**
      * @param args the command line arguments
