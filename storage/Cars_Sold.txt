@@ -84,3 +84,30 @@ Bought By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
 
 
 
+Registration: REG20
+Make: test
+Model: etset
+Colour: etset
+Number of Doors: 1
+Engine Size: 3.2
+Description: test
+Price: 1234
+Image: NoImage
+Bought By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
+
+
+
+Registration: REG21
+Make: test
+Model: test
+Colour: etse
+Number of Doors: 3
+Engine Size: test
+Description: test
+Price: 1234
+Image: /images/FordRanger2022.jpeg
+Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Signed Off By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
+
+
+
