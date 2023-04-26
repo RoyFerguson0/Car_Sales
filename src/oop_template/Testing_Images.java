@@ -236,6 +236,10 @@ private javax.swing.DefaultListModel listCars;
         //sets the scaled image within the label
         lblPic1.setIcon(scaledIcon);
         
+            System.out.println(lblPic);
+            lblPic.setVisible(false);
+
+        
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();

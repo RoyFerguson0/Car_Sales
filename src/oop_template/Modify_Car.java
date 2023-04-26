@@ -21,6 +21,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import static java.awt.Image.SCALE_SMOOTH;
 import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 
 
@@ -45,7 +46,8 @@ public class Modify_Car extends javax.swing.JFrame {
         if(!Objects.equals(appData.Car_Details.getRegistration(), "null") && !Objects.equals(appData.Car_Details.getMake(), "null") &&
                 !Objects.equals(appData.Car_Details.getModel(), "null") && !Objects.equals(appData.Car_Details.getColour(), "null") &&
                 appData.Car_Details.getDoors() != -1 && !Objects.equals(appData.Car_Details.getEngine_size(), "null") &&
-                !Objects.equals(appData.Car_Details.getDescription(), "null") && appData.Car_Details.getPrice() != -1){
+                !Objects.equals(appData.Car_Details.getDescription(), "null") && appData.Car_Details.getPrice() != -1
+                && !Objects.equals(appData.Car_Details.getImageLocation(),"null")){
             
             // If Not Null you set all the textfields with all the stored values from the Car_Details.java
             txtRegistration.setText(appData.Car_Details.getRegistration());
@@ -56,6 +58,27 @@ public class Modify_Car extends javax.swing.JFrame {
             txtEngine.setText(appData.Car_Details.getEngine_size());
             txtDescription.setText(appData.Car_Details.getDescription());
             txtPrice.setText(String.valueOf(appData.Car_Details.getPrice()));
+
+
+            System.out.println(appData.Car_Details.getMake());
+            System.out.println(appData.Car_Details.getImageLocation());
+            System.out.println("hi");
+            String image = appData.Car_Details.getImageLocation();
+
+            // This will not run Modify Car form first (Have to Run Search) Image will show up
+                  ImageIcon icon = new ImageIcon(getClass().getResource(appData.Car_Details.getImageLocation()));
+            // This line will run the Modify Car form first but when search won't show image
+                //ImageIcon icon = new ImageIcon(appData.Car_Details.getImageLocation());
+                //Gets the image
+                Image img = icon.getImage();
+                //Used to scale the image to fit within the label
+                Image imgScale = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), SCALE_SMOOTH);
+                //creates a new image with the new scale
+                ImageIcon scaledIcon = new ImageIcon(imgScale);
+                //sets the scaled image within the label
+                lblPic.setIcon(scaledIcon);
+
+
         }else{
             
             // If Car Details are null 
@@ -68,6 +91,7 @@ public class Modify_Car extends javax.swing.JFrame {
             txtEngine.setText("");
             txtDescription.setText("");
             txtPrice.setText("");
+
         }
 
     }
@@ -658,7 +682,10 @@ public class Modify_Car extends javax.swing.JFrame {
                             // Price
                             lines1.set(numLines + 6, "Price: " + txtPrice.getText());
                             Files.write(path, lines1, StandardCharsets.UTF_8);
-                            
+                            // Image
+                            lines1.set(numLines + 7, "Image: " + appData.Car_Details.getImageLocation());
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
+
                             // pop up to let you know write was successful
                             // then setting the textfields to empty for a new car to be added
                             // or modify another existing car
@@ -671,6 +698,7 @@ public class Modify_Car extends javax.swing.JFrame {
                             txtEngine.setText("");
                             txtDescription.setText("");
                             txtPrice.setText("");
+                            lblPic.setVisible(false);
                         }
                         fr.close();
                         
@@ -690,7 +718,8 @@ public class Modify_Car extends javax.swing.JFrame {
 
                             // Write String to Text File - Next Empty Line
                             output.write("Registration: " + Reg + "\nMake: " + Make + "\nModel: " + Model + "\nColour: " + Colour + "\nNumber of Doors: " + Doors +
-                                    "\nEngine Size: " + EngineSize + "\nDescription: " + Description + "\nPrice: " + Price + "\n\n\n\n");
+                                    "\nEngine Size: " + EngineSize + "\nDescription: " + Description + "\nPrice: " + Price + "\nImage: " +
+                                    appData.Car_Details.getImageLocation() + "\n\n\n\n");
 
                             // Pop up to let you know write was successful
                             // then set all text boxes to empty
@@ -703,6 +732,7 @@ public class Modify_Car extends javax.swing.JFrame {
                             txtEngine.setText("");
                             txtDescription.setText("");
                             txtPrice.setText("");
+                            lblPic.setVisible(false);
 
                             output.close();
                         }
@@ -833,6 +863,9 @@ public class Modify_Car extends javax.swing.JFrame {
                             // Price
                             lines1.set(numLines + 6, "");
                             Files.write(path, lines1, StandardCharsets.UTF_8);
+                            // Image
+                            lines1.set(numLines + 7, "");
+                            Files.write(path, lines1, StandardCharsets.UTF_8);
 
                             // Pop up to let you know lines have been deleted.
                             // Then Setting all textboxes to empty
@@ -868,7 +901,8 @@ public class Modify_Car extends javax.swing.JFrame {
      * @Roy Ferguson(50004216)
      */
     private void cboCarImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCarImageActionPerformed
-        
+
+        lblPic.setVisible(true);
         // When you select an image from drop down list it look at it as an array e.g. 0,1,2,3,4 etc
         int index = cboCarImage.getSelectedIndex();
         Image pic;
@@ -900,16 +934,19 @@ public class Modify_Car extends javax.swing.JFrame {
         System.out.println(pic);
         System.out.println(picSrc[index]);
         // Used to load the image from the images directory within the project
-       ImageIcon icon = new ImageIcon(getClass().getResource(picSrc[index]));
+       ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource(picSrc[index])));
 
         //Gets the image 
        Image img = icon.getImage();
        //Used to scale the image to fit within the label
-        Image imgScale = img.getScaledInstance(lblPic.getWidth(), lblPic.getHeight(), Image.SCALE_SMOOTH);
+        Image imgScale = img.getScaledInstance(159,72, SCALE_SMOOTH);
+
         //creates a new image with the new scale
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         //sets the scaled image within the label
         lblPic.setIcon(scaledIcon);
+
+        appData.Car_Details.setImageLocation(picSrc[index]);
 
     }//GEN-LAST:event_cboCarImageActionPerformed
 
@@ -936,6 +973,10 @@ public class Modify_Car extends javax.swing.JFrame {
             appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
             appData.Car_Details.setDescription(txtDescription.getText().trim());
             appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
+            int index = cboCarImage.getSelectedIndex();
+            String picSrc[] = {"no image","/images/FordRanger2022.jpeg",
+                    "/images/Honda_Civic_Type_R_Sportline_2023.jpeg", "/images/FordFocus2022.jpeg"};
+            appData.Car_Details.setImageLocation(picSrc[index]);
 
             // Convert the Numbers to string can saving text to string objects
             String Reg = appData.Car_Details.getRegistration();
@@ -1054,18 +1095,20 @@ public class Modify_Car extends javax.swing.JFrame {
                                 String lineEngine = "";
                                 String lineDescription = "";
                                 String linePrice = "";
+                                String lineImage = "";
 
 
                                 try {
                                     // Reading the specific lines from the Registration id already in Text File
                                     lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
                                     lineMake = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine);  // Make
-                                    lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Make
-                                    lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Make
-                                    lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Make
-                                    lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Make
-                                    lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Make
-                                    linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Make
+                                    lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Model
+                                    lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Colour
+                                    lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Doors
+                                    lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Engine
+                                    lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Description
+                                    linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Price
+                                    lineImage = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 7);  // Image
 
                                     // Putting the Lines in the Arrays so that i can split the value from it.
                                     String[] regRegistration = lineReg.split(": ");
@@ -1076,6 +1119,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                     String[] regEngine = lineEngine.split(": ");
                                     String[] regDescription = lineDescription.split(": ");
                                     String[] regPrice = linePrice.split(": ");
+                                    String[] regImage = lineImage.split(": ");
 
                                     System.out.println(regMake[1]);
 
@@ -1088,6 +1132,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                     appData.Car_Details.setEngine_size(regEngine[1]);
                                     appData.Car_Details.setDescription(regDescription[1]);
                                     appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
+                                    appData.Car_Details.setImageLocation(regImage[1]);
 
 
                                     // write data
@@ -1100,7 +1145,8 @@ public class Modify_Car extends javax.swing.JFrame {
                                             appData.Car_Details.getMake() + "\nModel: " + appData.Car_Details.getModel() + "\nColour: " +
                                             appData.Car_Details.getColour() + "\nNumber of Doors: " + appData.Car_Details.getDoors() +
                                             "\nEngine Size: " + appData.Car_Details.getEngine_size() + "\nDescription: " +
-                                            appData.Car_Details.getDescription() + "\nPrice: " + appData.Car_Details.getPrice() + "\nBought By: " + lineCustomerId +"\n\n\n\n");
+                                            appData.Car_Details.getDescription() + "\nPrice: " + appData.Car_Details.getPrice() + "\nImage: " + appData.Car_Details.getImageLocation()
+                                            + "\nBought By: " + lineCustomerId +"\n\n\n\n");
 
                                     
                                     JOptionPane.showMessageDialog(null, "Write Successful?", "Writing to File?", JOptionPane.PLAIN_MESSAGE);
@@ -1112,6 +1158,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                     txtEngine.setText("");
                                     txtDescription.setText("");
                                     txtPrice.setText("");
+                                    lblPic.setVisible(false);
 
                                     output.close();
 
@@ -1141,6 +1188,9 @@ public class Modify_Car extends javax.swing.JFrame {
                                     // Price
                                     lines1.set(RegistationLine + 6, "");
                                     Files.write(path, lines1, StandardCharsets.UTF_8);
+                                    // Image
+                                    lines1.set(RegistationLine + 7, "");
+                                    Files.write(path, lines1, StandardCharsets.UTF_8);
 
                                     System.out.println(lines1);
 
@@ -1153,6 +1203,7 @@ public class Modify_Car extends javax.swing.JFrame {
                                     txtEngine.setText("");
                                     txtDescription.setText("");
                                     txtPrice.setText("");
+                                    lblPic.setVisible(false);
 
                                 } catch (IOException e) {
                                     throw new RuntimeException(e);
@@ -1175,6 +1226,7 @@ public class Modify_Car extends javax.swing.JFrame {
                             appData.Car_Details.setEngine_size("null");
                             appData.Car_Details.setDescription("null");
                             appData.Car_Details.setPrice(-1);
+                            appData.Car_Details.setImageLocation("null");
 
                             this.dispose();
                             new Modify_Car().setVisible(true);

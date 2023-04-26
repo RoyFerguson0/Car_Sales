@@ -294,18 +294,20 @@ public class Search_Car extends javax.swing.JFrame {
                                 String lineEngine = "";
                                 String lineDescription = "";
                                 String linePrice = "";
+                                String lineImage = "";
                                 
                                 try {
                                     // Reading the specific lines from the Registration id already in Text File
                                     lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
                                     lineMake = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine);  // Make
-                                    lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Make
-                                    lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Make
-                                    lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Make
-                                    lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Make
-                                    lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Make
-                                    linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Make
-
+                                    lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Model
+                                    lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Color
+                                    lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Doors
+                                    lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Engine
+                                    lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Description
+                                    linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Price
+                                    lineImage = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 7);  // Image
+                                    
                                     // Putting the Lines in the Arrays so that i can split the value from it.
                                     String[] regRegistration = lineReg.split(": ");
                                     String[] regMake = lineMake.split(": ");
@@ -315,6 +317,7 @@ public class Search_Car extends javax.swing.JFrame {
                                     String[] regEngine = lineEngine.split(": ");
                                     String[] regDescription = lineDescription.split(": ");
                                     String[] regPrice = linePrice.split(": ");
+                                    String[] regImage = lineImage.split(": ");
 
                                     
                                     // Setting the Car Details
@@ -326,6 +329,7 @@ public class Search_Car extends javax.swing.JFrame {
                                     appData.Car_Details.setEngine_size(regEngine[1]);
                                     appData.Car_Details.setDescription(regDescription[1]);
                                     appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
+                                    appData.Car_Details.setImageLocation(regImage[1]);
 
                                     // Opening the Modify Car Screen
                                     this.dispose();
@@ -340,7 +344,7 @@ public class Search_Car extends javax.swing.JFrame {
                         } else{
                             // If registration isn't present
                             // It's a New Registration 
-                            // Setting all Car Details to null exept Reg which is being stored.
+                            // Setting all Car Details to null except Reg which is being stored.
                             // For Later Use
                             appData.Car_Details.setRegistration(Reg);
                             appData.Car_Details.setMake("null");
@@ -350,6 +354,7 @@ public class Search_Car extends javax.swing.JFrame {
                             appData.Car_Details.setEngine_size("null");
                             appData.Car_Details.setDescription("null");
                             appData.Car_Details.setPrice(-1);
+                            appData.Car_Details.setImageLocation(("null"));
 
                             // Open Modify Car Form
                             this.dispose();

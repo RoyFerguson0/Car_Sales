@@ -58,3 +58,16 @@ Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
 
 
 
+Registration: REG14
+Make: test
+Model: test
+Colour: test
+Number of Doors: 2
+Engine Size: 2
+Description: test
+Price: 1234
+Image: /images/FordRanger2022.jpeg
+Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+
+
+
