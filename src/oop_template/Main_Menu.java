@@ -64,6 +64,11 @@ public class Main_Menu extends javax.swing.JFrame {
 
         btnLogon.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnLogon.setText("Login");
+        btnLogon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogonActionPerformed(evt);
+            }
+        });
 
         btnContactUs.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         btnContactUs.setText("Contact Us");
@@ -163,6 +168,13 @@ public class Main_Menu extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_btnShutDownActionPerformed
+
+    private void btnLogonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogonActionPerformed
+        
+        //close main menu, open login form
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_btnLogonActionPerformed
 
     /**
      * @param args the command line arguments

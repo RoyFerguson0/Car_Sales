@@ -76,12 +76,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitle = new javax.swing.JLabel();
-        lblLogoImage = new javax.swing.JLabel();
-        pnlEmployeeImage = new javax.swing.JPanel();
-        btnViewEmployee = new javax.swing.JButton();
-        btnSearchEmployee = new javax.swing.JButton();
-        lblEmployeeImage = new javax.swing.JLabel();
+        pnlBackground = new javax.swing.JPanel();
         pnlCustomer = new javax.swing.JPanel();
         btnViewCustomer = new javax.swing.JButton();
         btnSearchCustomer = new javax.swing.JButton();
@@ -90,65 +85,26 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         btnViewCar = new javax.swing.JButton();
         btnSearchCar = new javax.swing.JButton();
         lblCarImage = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
+        lblLogoImage = new javax.swing.JLabel();
+        pnlEmployeeImage = new javax.swing.JPanel();
+        btnViewEmployee = new javax.swing.JButton();
+        btnSearchEmployee = new javax.swing.JButton();
+        lblEmployeeImage = new javax.swing.JLabel();
+        lblEmployeeMenu = new javax.swing.JLabel();
+        btnReturnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        lblTitle.setText("RJA Motors");
+        pnlBackground.setBackground(new java.awt.Color(204, 255, 204));
 
-        lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
-        lblLogoImage.setToolTipText("");
-
-        pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createTitledBorder("Employee Details"));
-        pnlEmployeeImage.setName(""); // NOI18N
-
-        btnViewEmployee.setText("View Employee");
-        btnViewEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewEmployeeActionPerformed(evt);
-            }
-        });
-
-        btnSearchEmployee.setText("Search Employee");
-        btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchEmployeeActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlEmployeeImageLayout = new javax.swing.GroupLayout(pnlEmployeeImage);
-        pnlEmployeeImage.setLayout(pnlEmployeeImageLayout);
-        pnlEmployeeImageLayout.setHorizontalGroup(
-            pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmployeeImageLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlEmployeeImageLayout.setVerticalGroup(
-            pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                .addGap(9, 9, 9))
-        );
-
+        pnlCustomer.setBackground(new java.awt.Color(153, 255, 204));
         pnlCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Customer Details")));
 
-        btnViewCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnViewCustomer.setBackground(new java.awt.Color(0, 0, 0));
+        btnViewCustomer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewCustomer.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCustomer.setText("View Customer");
         btnViewCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +112,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        btnSearchCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnSearchCustomer.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearchCustomer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchCustomer.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchCustomer.setText("<html>\nSearch <br>Customer\n</html>");
         btnSearchCustomer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSearchCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -193,9 +151,12 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        pnlCar.setBackground(new java.awt.Color(153, 255, 204));
         pnlCar.setBorder(javax.swing.BorderFactory.createTitledBorder("Car Details"));
 
-        btnViewCar.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnViewCar.setBackground(new java.awt.Color(0, 0, 0));
+        btnViewCar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewCar.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCar.setText("View Cars Sold");
         btnViewCar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,7 +164,9 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        btnSearchCar.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        btnSearchCar.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearchCar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchCar.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchCar.setText("Search Car");
         btnSearchCar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSearchCar.addActionListener(new java.awt.event.ActionListener() {
@@ -240,43 +203,136 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblTitle.setText("RJA Motors");
+
+        lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
+        lblLogoImage.setToolTipText("");
+
+        pnlEmployeeImage.setBackground(new java.awt.Color(153, 255, 204));
+        pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createTitledBorder("Employee Details"));
+        pnlEmployeeImage.setName(""); // NOI18N
+
+        btnViewEmployee.setBackground(new java.awt.Color(0, 0, 0));
+        btnViewEmployee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewEmployee.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewEmployee.setText("View Employee");
+        btnViewEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewEmployeeActionPerformed(evt);
+            }
+        });
+
+        btnSearchEmployee.setBackground(new java.awt.Color(0, 0, 0));
+        btnSearchEmployee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchEmployee.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchEmployee.setText("Search Employee");
+        btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchEmployeeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEmployeeImageLayout = new javax.swing.GroupLayout(pnlEmployeeImage);
+        pnlEmployeeImage.setLayout(pnlEmployeeImageLayout);
+        pnlEmployeeImageLayout.setHorizontalGroup(
+            pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmployeeImageLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlEmployeeImageLayout.setVerticalGroup(
+            pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEmployeeImage, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGap(9, 9, 9))
+        );
+
+        lblEmployeeMenu.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lblEmployeeMenu.setText("Employee Menu");
+
+        btnReturnMenu.setBackground(new java.awt.Color(0, 0, 0));
+        btnReturnMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnReturnMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnReturnMenu.setText("Return");
+        btnReturnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnMenuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlBackgroundLayout = new javax.swing.GroupLayout(pnlBackground);
+        pnlBackground.setLayout(pnlBackgroundLayout);
+        pnlBackgroundLayout.setHorizontalGroup(
+            pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBackgroundLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnReturnMenu)
+                .addGap(28, 28, 28))
+            .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                        .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEmployeeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitle))
+                        .addGap(25, 25, 25)
+                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+        pnlBackgroundLayout.setVerticalGroup(
+            pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEmployeeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlBackgroundLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnReturnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addComponent(pnlBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pnlCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+            .addComponent(pnlBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -330,6 +386,14 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnViewEmployeeActionPerformed
 
+    
+    private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed
+        
+        // close Employee Menu, open Main Menu
+        this.dispose();
+        new Main_Menu().setVisible(true);
+    }//GEN-LAST:event_btnReturnMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -366,6 +430,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReturnMenu;
     private javax.swing.JButton btnSearchCar;
     private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JButton btnSearchEmployee;
@@ -375,8 +440,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
     private javax.swing.JLabel lblCarImage;
     private javax.swing.JLabel lblCustomerImage;
     private javax.swing.JLabel lblEmployeeImage;
+    private javax.swing.JLabel lblEmployeeMenu;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel pnlBackground;
     private javax.swing.JPanel pnlCar;
     private javax.swing.JPanel pnlCustomer;
     private javax.swing.JPanel pnlEmployeeImage;
