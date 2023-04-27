@@ -39,22 +39,37 @@ public class Main_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlBackground = new javax.swing.JPanel();
+        btnShutDown = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         lblLogoImage = new javax.swing.JLabel();
         btnCustomerView = new javax.swing.JButton();
         btnLogon = new javax.swing.JButton();
         btnContactUs = new javax.swing.JButton();
-        btnShutDown = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 300));
 
+        pnlBackground.setBackground(new java.awt.Color(204, 255, 255));
+
+        btnShutDown.setBackground(new java.awt.Color(0, 0, 0));
+        btnShutDown.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnShutDown.setForeground(new java.awt.Color(255, 255, 255));
+        btnShutDown.setText("Shut Down");
+        btnShutDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShutDownActionPerformed(evt);
+            }
+        });
+
         lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblTitle.setText("RJA Motors");
 
-        btnCustomerView.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnCustomerView.setBackground(new java.awt.Color(0, 0, 0));
+        btnCustomerView.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCustomerView.setForeground(new java.awt.Color(255, 255, 255));
         btnCustomerView.setText("View Available Motors");
         btnCustomerView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +77,9 @@ public class Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        btnLogon.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnLogon.setBackground(new java.awt.Color(0, 0, 0));
+        btnLogon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogon.setForeground(new java.awt.Color(255, 255, 255));
         btnLogon.setText("Login");
         btnLogon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +87,9 @@ public class Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        btnContactUs.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnContactUs.setBackground(new java.awt.Color(0, 0, 0));
+        btnContactUs.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnContactUs.setForeground(new java.awt.Color(255, 255, 255));
         btnContactUs.setText("Contact Us");
         btnContactUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,54 +97,58 @@ public class Main_Menu extends javax.swing.JFrame {
             }
         });
 
-        btnShutDown.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        btnShutDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShutDownActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLogon, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCustomerView, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnContactUs, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(lblTitle)
-                        .addGap(47, 47, 47)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addComponent(btnShutDown, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+        javax.swing.GroupLayout pnlBackgroundLayout = new javax.swing.GroupLayout(pnlBackground);
+        pnlBackground.setLayout(pnlBackgroundLayout);
+        pnlBackgroundLayout.setHorizontalGroup(
+            pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBackgroundLayout.createSequentialGroup()
+                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnLogon, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCustomerView, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnContactUs, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(lblTitle)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnShutDown)))
+                .addGap(29, 29, 29))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        pnlBackgroundLayout.setVerticalGroup(
+            pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBackgroundLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitle))
+                .addGap(18, 18, 18)
                 .addComponent(btnCustomerView)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLogon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnContactUs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(btnShutDown, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(16, 16, 16))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlBackground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -218,5 +241,6 @@ public class Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnShutDown;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel pnlBackground;
     // End of variables declaration//GEN-END:variables
 }

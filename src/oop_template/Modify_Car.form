@@ -4,6 +4,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="resizable" type="boolean" value="false"/>
+    <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[590, 590]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -24,322 +27,334 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-              <Component id="lblModifyCar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="btnReset" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnSave" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                      <Component id="btnSearchCar" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="98" max="32767" attributes="0"/>
-                      <Component id="pnlModifyCar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnSold" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="lblModifyCar" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="pnlModifyCar" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnSold" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnSearchCar" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="pnlModifyCar">
+    <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Details:">
-              <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
-            </TitledBorder>
-          </Border>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblPrice" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblEngine" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblDoors" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblColour" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblModel" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblMake" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblRegistration" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblImage" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtEngine" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtRegistration" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtMake" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtModel" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtColour" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtDescription" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtDoors" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="txtPrice" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="cboCarImage" min="-2" pref="223" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnReset" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSave" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblPic" min="-2" pref="176" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnSearchCar" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="pnlModifyCar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="59" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
+                  <Component id="lblModifyCar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="lblModifyCar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="pnlModifyCar" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblRegistration" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtRegistration" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblMake" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtMake" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblModel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtModel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblColour" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtColour" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearchCar" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblDoors" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDoors" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEngine" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtEngine" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblDescription" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDescription" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtPrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblImage" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cboCarImage" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblPic" min="-2" pref="98" max="-2" attributes="0"/>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblRegistration">
+        <Component class="javax.swing.JLabel" name="lblModifyCar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Registratoin:"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="24" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Modify Car"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblMake">
+        <Container class="javax.swing.JPanel" name="pnlModifyCar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Make: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblModel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Model:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblColour">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Colour:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblDoors">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Doors: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblEngine">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Engine:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblDescription">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Description:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblPrice">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Price:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtRegistration">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtMake">
-          <Events>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMakeKeyReleased"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtModel">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtColour">
-          <Events>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtColourKeyReleased"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtDoors">
-          <Events>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDoorsKeyReleased"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtEngine">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtDescription">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtPrice">
-          <Events>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPriceKeyReleased"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblImage">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Image:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cboCarImage">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Select Image"/>
-                <StringItem index="1" value="Ford Ranger 2022"/>
-                <StringItem index="2" value="Honda Civic Type R Sportline 2023"/>
-                <StringItem index="3" value="Ford Focus 2022"/>
-              </StringArray>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Details:">
+                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
             </Property>
           </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblPrice" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEngine" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDoors" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblColour" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblModel" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMake" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRegistration" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblImage" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtEngine" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtRegistration" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtMake" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtModel" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtColour" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtDescription" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtDoors" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtPrice" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="cboCarImage" min="-2" pref="223" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblPic" min="-2" pref="176" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnSold" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnSold" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblRegistration" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtRegistration" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblMake" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMake" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblColour" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtColour" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblDoors" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDoors" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblEngine" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEngine" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblDescription" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDescription" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblImage" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboCarImage" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblPic" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblRegistration">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registratoin:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblMake">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Make: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblModel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Model:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblColour">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Colour:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDoors">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Doors: "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEngine">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Engine:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDescription">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Description:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrice">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Price:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRegistration">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtMake">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMakeKeyReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtModel">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtColour">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtColourKeyReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtDoors">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDoorsKeyReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEngine">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtDescription">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPrice">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPriceKeyReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblImage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Image:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cboCarImage">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Select Image"/>
+                    <StringItem index="1" value="Ford Ranger 2022"/>
+                    <StringItem index="2" value="Honda Civic Type R Sportline 2023"/>
+                    <StringItem index="3" value="Ford Focus 2022"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCarImageActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPic">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSold">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sold"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoldActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnReset">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reset"/>
+          </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboCarImageActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPic">
+        <Component class="javax.swing.JButton" name="btnSave">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSearchCar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x2b05;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchCarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelete">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lblModifyCar">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="3"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Modify Car"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnReset">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Reset"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnSave">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Save"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnSearchCar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x2b05;"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchCarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnDelete">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Delete"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnSold">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sold"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoldActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

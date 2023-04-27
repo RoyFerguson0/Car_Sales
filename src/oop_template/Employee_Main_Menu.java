@@ -97,13 +97,13 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        pnlBackground.setBackground(new java.awt.Color(204, 255, 204));
+        pnlBackground.setBackground(new java.awt.Color(204, 255, 255));
 
-        pnlCustomer.setBackground(new java.awt.Color(153, 255, 204));
+        pnlCustomer.setBackground(new java.awt.Color(153, 255, 255));
         pnlCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Customer Details")));
 
         btnViewCustomer.setBackground(new java.awt.Color(0, 0, 0));
-        btnViewCustomer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewCustomer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnViewCustomer.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCustomer.setText("View Customer");
         btnViewCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         });
 
         btnSearchCustomer.setBackground(new java.awt.Color(0, 0, 0));
-        btnSearchCustomer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchCustomer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSearchCustomer.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchCustomer.setText("<html>\nSearch <br>Customer\n</html>");
         btnSearchCustomer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -151,11 +151,11 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlCar.setBackground(new java.awt.Color(153, 255, 204));
+        pnlCar.setBackground(new java.awt.Color(153, 255, 255));
         pnlCar.setBorder(javax.swing.BorderFactory.createTitledBorder("Car Details"));
 
         btnViewCar.setBackground(new java.awt.Color(0, 0, 0));
-        btnViewCar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewCar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnViewCar.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCar.setText("View Cars Sold");
         btnViewCar.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +165,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         });
 
         btnSearchCar.setBackground(new java.awt.Color(0, 0, 0));
-        btnSearchCar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchCar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSearchCar.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchCar.setText("Search Car");
         btnSearchCar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -209,12 +209,12 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
         lblLogoImage.setToolTipText("");
 
-        pnlEmployeeImage.setBackground(new java.awt.Color(153, 255, 204));
+        pnlEmployeeImage.setBackground(new java.awt.Color(153, 255, 255));
         pnlEmployeeImage.setBorder(javax.swing.BorderFactory.createTitledBorder("Employee Details"));
         pnlEmployeeImage.setName(""); // NOI18N
 
         btnViewEmployee.setBackground(new java.awt.Color(0, 0, 0));
-        btnViewEmployee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewEmployee.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnViewEmployee.setForeground(new java.awt.Color(255, 255, 255));
         btnViewEmployee.setText("View Employee");
         btnViewEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +224,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         });
 
         btnSearchEmployee.setBackground(new java.awt.Color(0, 0, 0));
-        btnSearchEmployee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSearchEmployee.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSearchEmployee.setForeground(new java.awt.Color(255, 255, 255));
         btnSearchEmployee.setText("Search Employee");
         btnSearchEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -238,17 +238,15 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         pnlEmployeeImageLayout.setHorizontalGroup(
             pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmployeeImageLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(pnlEmployeeImageLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(lblEmployeeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmployeeImageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSearchEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnlEmployeeImageLayout.setVerticalGroup(
             pnlEmployeeImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +264,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         lblEmployeeMenu.setText("Employee Menu");
 
         btnReturnMenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnReturnMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnReturnMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnReturnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnReturnMenu.setText("Return");
         btnReturnMenu.addActionListener(new java.awt.event.ActionListener() {

@@ -52,27 +52,31 @@ public class Search_Car extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitle = new javax.swing.JLabel();
-        lblLogoImage = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         pnlCarSearch = new javax.swing.JPanel();
         lblRegNumber = new javax.swing.JLabel();
         txtRegNumber = new javax.swing.JTextField();
         btnCarSearch = new javax.swing.JButton();
         btnEmpMenu = new javax.swing.JButton();
+        lblTitle = new javax.swing.JLabel();
+        lblLogoImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        lblTitle.setText("RJA Motors");
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
-        lblLogoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RJFMotorsLogo.jpeg"))); // NOI18N
-        lblLogoImage.setToolTipText("");
-
+        pnlCarSearch.setBackground(new java.awt.Color(153, 255, 255));
         pnlCarSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        lblRegNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblRegNumber.setText("Car Registration: ");
 
+        txtRegNumber.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        btnCarSearch.setBackground(new java.awt.Color(0, 0, 0));
+        btnCarSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCarSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnCarSearch.setText("Search");
         btnCarSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,15 +88,14 @@ public class Search_Car extends javax.swing.JFrame {
         pnlCarSearch.setLayout(pnlCarSearchLayout);
         pnlCarSearchLayout.setHorizontalGroup(
             pnlCarSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCarSearchLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(pnlCarSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCarSearch)
-                    .addGroup(pnlCarSearchLayout.createSequentialGroup()
-                        .addComponent(lblRegNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtRegNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCarSearchLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(lblRegNumber)
+                .addGap(18, 18, 18)
+                .addGroup(pnlCarSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCarSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(txtRegNumber))
+                .addGap(33, 33, 33))
         );
         pnlCarSearchLayout.setVerticalGroup(
             pnlCarSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +109,9 @@ public class Search_Car extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        btnEmpMenu.setBackground(new java.awt.Color(0, 0, 0));
         btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        btnEmpMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpMenu.setText("⬅");
         btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,39 +119,53 @@ public class Search_Car extends javax.swing.JFrame {
             }
         });
 
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblTitle.setText("RJA Motors");
+
+        lblLogoImage.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblTitle)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(pnlCarSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)))
+                .addGap(44, 44, 44))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(pnlCarSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEmpMenu)
+                .addGap(54, 54, 54))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitle)
-                        .addGap(29, 29, 29)
-                        .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pnlCarSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(pnlCarSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(btnEmpMenu)
-                .addGap(28, 28, 28))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -430,6 +449,7 @@ public class Search_Car extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCarSearch;
     private javax.swing.JButton btnEmpMenu;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblLogoImage;
     private javax.swing.JLabel lblRegNumber;
     private javax.swing.JLabel lblTitle;

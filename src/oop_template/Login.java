@@ -58,20 +58,24 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        pnlBackground.setBackground(new java.awt.Color(204, 255, 204));
+        pnlBackground.setBackground(new java.awt.Color(204, 255, 255));
 
         lblEmployeeLogin.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblEmployeeLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEmployeeLogin.setText("Login");
 
-        lblUserName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblUserName.setText("Username:");
 
-        lblPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblPassword.setText("Password:");
 
+        txtUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         btnSignIn.setBackground(new java.awt.Color(0, 0, 0));
-        btnSignIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSignIn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSignIn.setForeground(new java.awt.Color(255, 255, 255));
         btnSignIn.setText("Signin");
         btnSignIn.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +85,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         btnReturnMenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnReturnMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnReturnMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnReturnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnReturnMenu.setText("Return");
         btnReturnMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -95,13 +99,13 @@ public class Login extends javax.swing.JFrame {
         pnlBackgroundLayout.setHorizontalGroup(
             pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBackgroundLayout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlBackgroundLayout.createSequentialGroup()
                         .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblPassword))
-                        .addGap(27, 27, 27)
+                            .addComponent(lblPassword)
+                            .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(pnlBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtUserName)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
