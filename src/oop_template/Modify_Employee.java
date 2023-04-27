@@ -146,7 +146,9 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         lblEmpHourlyRate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblEmpHourlyRate.setText("Hourly Rate:");
 
+        btnEmpSave.setBackground(new java.awt.Color(0, 0, 0));
         btnEmpSave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEmpSave.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpSave.setText("Save");
         btnEmpSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +156,9 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
             }
         });
 
+        btnEmpReset1.setBackground(new java.awt.Color(0, 0, 0));
         btnEmpReset1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEmpReset1.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpReset1.setText("Reset");
         btnEmpReset1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,7 +217,9 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
             }
         });
 
+        btnEmpMenu.setBackground(new java.awt.Color(0, 0, 0));
         btnEmpMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEmpMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpMenu.setText("Return Menu");
         btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
