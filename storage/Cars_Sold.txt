@@ -185,3 +185,17 @@ Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
+Registration: REG65
+Make: Ford
+Model: Fiesta Zetec
+Colour: Blue
+Number of Doors: 4
+Engine Size: 1.6L
+Description: Fast Ride?
+Price: 1050
+Image: NoImage
+Bought By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
+Employee Sign Off: 3,Mr,Jack,Holmes,Male,FDSE,40,10
+
+
+

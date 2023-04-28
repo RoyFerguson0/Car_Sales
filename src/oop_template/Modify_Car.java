@@ -488,7 +488,7 @@ public class Modify_Car extends javax.swing.JFrame {
             // Not able to enter in text field if value a number
             txtMake.setEditable(false);
             // Set Error Message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtMake.setText("");
             txtMake.grabFocus();
         }
@@ -514,7 +514,7 @@ public class Modify_Car extends javax.swing.JFrame {
             // Not able to enter in text field if value a number
             txtColour.setEditable(false);
             // Set Error Message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtColour.setText("");
             txtColour.grabFocus();
         }
@@ -539,7 +539,7 @@ public class Modify_Car extends javax.swing.JFrame {
             // Not able to enter in text field if value a letter or special character
             txtDoors.setEditable(false);
             // Set Error Message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtDoors.setText("");
             txtDoors.grabFocus();
 
@@ -564,7 +564,7 @@ public class Modify_Car extends javax.swing.JFrame {
             // Not able to enter in text field if value a letter or special character
             txtPrice.setEditable(false);
             // Set Error Message
-            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtPrice.setText("");
             txtPrice.grabFocus();
         }
@@ -710,7 +710,7 @@ public class Modify_Car extends javax.swing.JFrame {
                     if (count != 0) {
                         
                         // Pop up making sure you want to re-write The Car Registration details
-                        int reWriteLinesValue = JOptionPane.showConfirmDialog(null, Reg + "Exists Already! Do You Want to Rewrite Registration Details?", "Important Question?", JOptionPane.YES_NO_OPTION);
+                        int reWriteLinesValue = JOptionPane.showConfirmDialog(null, Reg + " Exists Already! Do You Want to Rewrite Registration Details?", "Important Question?", JOptionPane.YES_NO_OPTION);
 
                         // ReWriting The Exact lines of Code
                         if (reWriteLinesValue == 0) {
@@ -810,6 +810,8 @@ public class Modify_Car extends javax.swing.JFrame {
                 // If number of doors is not in range
                 // Pop up message
                 JOptionPane.showMessageDialog(null, "Number of Doors - Not in Range? 1-6", "Error?", JOptionPane.PLAIN_MESSAGE);
+                txtDoors.setText("");
+                txtDoors.grabFocus();
             }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -825,19 +827,12 @@ public class Modify_Car extends javax.swing.JFrame {
         if(txtRegistration.getText().equalsIgnoreCase(""))
         {
             // If empty output a message
-            JOptionPane.showMessageDialog(null, "Fill Registration in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Fill in Registration?", "Error Message",JOptionPane.PLAIN_MESSAGE);
         }else {
             // If registration textbox isn't empty
 
             // Saving Data to Objects in Car Details (Setters)
             appData.Car_Details.setRegistration(txtRegistration.getText().replace(" ", ""));
-            appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
-            appData.Car_Details.setModel(txtModel.getText().trim());
-            appData.Car_Details.setColour(txtColour.getText().replace(" ", ""));
-            appData.Car_Details.setDoors(Integer.parseInt(txtDoors.getText().replace(" ", "")));
-            appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
-            appData.Car_Details.setDescription(txtDescription.getText().trim());
-            appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
 
             // Saving Car Registration (Objects) in string variable
             String Reg = appData.Car_Details.getRegistration();
@@ -1024,13 +1019,6 @@ public class Modify_Car extends javax.swing.JFrame {
 
             // Saving Data to Objects
             appData.Car_Details.setRegistration(txtRegistration.getText().replace(" ", ""));
-            appData.Car_Details.setMake(txtMake.getText().replace(" ", ""));
-            appData.Car_Details.setModel(txtModel.getText().trim());
-            appData.Car_Details.setColour(txtColour.getText().replace(" ", ""));
-            appData.Car_Details.setDoors(Integer.parseInt(txtDoors.getText().replace(" ", "")));
-            appData.Car_Details.setEngine_size(txtEngine.getText().replace(" ", ""));
-            appData.Car_Details.setDescription(txtDescription.getText().trim());
-            appData.Car_Details.setPrice(Integer.parseInt(txtPrice.getText().replace(" ", "")));
 
             // Getting the stored registration from setter and saving it in String variable
             String Reg = appData.Car_Details.getRegistration();
@@ -1045,283 +1033,297 @@ public class Modify_Car extends javax.swing.JFrame {
                        // System.out.println("File aleardy exists");
                        // JOptionPane.showMessageDialog(null, "Text File: " + carTextFile + " already exists?", "Text File Already Exists?", JOptionPane.PLAIN_MESSAGE);
                     }
-
-
+                    
                     // Check if Reg Already Exists in Text File (Cars_Sold.txt)
                     // Variables used to read lines in text file
-                    String[] words = null;
-                    String eachLine;
-                    int count = 0;
-                    int lines = 0;
-                    int RegistationLine = 0;
+                    String[] words2 = null;
+                    String eachLine2;
+                    int count2 = 0;
 
                     // Creating File and Buffer Reader
-                    FileReader fr = new FileReader("storage/Car_Details.txt");
-                    BufferedReader line = new BufferedReader(fr);
+                    FileReader fr2 = new FileReader("storage/Cars_Sold.txt");
+                    BufferedReader line2 = new BufferedReader(fr2);
                     // Reading eachline in text file
-                    while ((eachLine = line.readLine()) != null) {
-                        lines++;
-                        words = eachLine.split("\n");
+                    while ((eachLine2 = line2.readLine()) != null) {
+                        words2 = eachLine2.split("\n");
                         // Reading each word in line until it matches the Registration i am looking for.
                         // If reg found will save the line the registration was found.
-                        for (String word : words) {
+                        for (String word : words2) {
                             if (word.equals("Registration: " + Reg)) {
-                                count++;
-
-                                RegistationLine = lines;
-
+                                count2++;
                             }
                         }
                     }
-                    int value = 0;
-                    if (count != 0) {
-                        // If reg exists in (Car_Details.txt)
-                        value = JOptionPane.showConfirmDialog(null, "The Registration: " + Reg + " is in Text File, Do you wish to continue?", "Question", JOptionPane.YES_NO_OPTION);
+                    
+                    if (count2 == 0) {
 
-                        // If your answer is yes - Wish to Continue?
-                        if (value == 0) {
+                        // Check if Reg Already Exists in Text File (Cars_Sold.txt)
+                        // Variables used to read lines in text file
+                        String[] words = null;
+                        String eachLine;
+                        int count = 0;
+                        int lines = 0;
+                        int RegistationLine = 0;
 
-                            // Will Ask you for the customer id
-                            String answer = (String) JOptionPane.showInputDialog(null, "Enter Customer ID: ", "Customer ID", JOptionPane.PLAIN_MESSAGE);
+                        // Creating File and Buffer Reader
+                        FileReader fr = new FileReader("storage/Car_Details.txt");
+                        BufferedReader line = new BufferedReader(fr);
+                        // Reading eachline in text file
+                        while ((eachLine = line.readLine()) != null) {
+                            lines++;
+                            words = eachLine.split("\n");
+                            // Reading each word in line until it matches the Registration i am looking for.
+                            // If reg found will save the line the registration was found.
+                            for (String word : words) {
+                                if (word.equals("Registration: " + Reg)) {
+                                    count++;
 
-                            // Variables used to read lines in (Customer_Details.txt)
-                            int countCustomerID = 0;
-                            int customerid = 0;
-                            int counter = 0;
-                            String lineCustomerId = "";
+                                    RegistationLine = lines;
 
-                            // Creating a buffer reader to read lines in text file (Customer_Details.txt)
-                            BufferedReader reader;
-                            try {
-                                //load the file
-                                reader = new BufferedReader(new FileReader("storage/Customer_Details.txt"));
-
-                                String currentLine = "";
-                                //iterate through file line by line using while loop until last line which will be null, loop stops
-                                while ((currentLine = reader.readLine()) != null) {
-                                    countCustomerID++;
-                                    String[] customerParts = currentLine.split(",");
-
-                                    // Reads the words on each line until the array index 0 (customerParts[0]) equals the answer
-                                    // I inputted which is customer ID.
-                                    // Then saves the line the ID was found
-                                    for (String CustomerID : customerParts) {
-                                        if (CustomerID.equals(answer)) {
-                                            if(answer.equals(customerParts[0])) {
-                                                counter++;
-                                                customerid = countCustomerID;
-                                            }
-                                        }
-                                    }
-                                }// While Ends
-                            //if error occurs, nothing will print
-                            }catch (IOException e) {
-                                System.out.println("");
-                            }
-
-                            // If the Customer ID did exist the counter would have been incremented.
-                            if (counter != 0) {
-                                // Customer Does Exist
-
-                                // It is reading the entire line where customer id was found
-                                try{
-                                    lineCustomerId = Files.readAllLines(Paths.get("storage/Customer_Details.txt")).get(customerid -1);
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
                                 }
+                            }
+                        }
+                        int value = 0;
+                        if (count != 0) {
+                            // If reg exists in (Car_Details.txt)
+                            value = JOptionPane.showConfirmDialog(null, "The Registration: " + Reg + " is in Text File, Do you wish to continue?", "Question", JOptionPane.YES_NO_OPTION);
 
+                            // If your answer is yes - Wish to Continue?
+                            if (value == 0) {
 
-                                // Getting Employee That Signed Off on Purchase
-                                String answer2 = (String) JOptionPane.showInputDialog(null, "Enter Employee ID: ", "Employee ID", JOptionPane.PLAIN_MESSAGE);
+                                // Will Ask you for the customer id
+                                String answer = (String) JOptionPane.showInputDialog(null, "Enter Customer ID: ", "Customer ID", JOptionPane.PLAIN_MESSAGE);
 
-                                // Variables used to read lines in text file (employee_data.txt)
-                                int countEmployeeID = 0;
-                                int employeeid = 0;
-                                int counter2 = 0;
-                                String lineEmployeeId = "";
+                                // Variables used to read lines in (Customer_Details.txt)
+                                int countCustomerID = 0;
+                                int customerid = 0;
+                                int counter = 0;
+                                String lineCustomerId = "";
 
-                                // Reader to read all the lines in the text file (employee_data.txt)
-                                BufferedReader readerEmp;
+                                // Creating a buffer reader to read lines in text file (Customer_Details.txt)
+                                BufferedReader reader;
                                 try {
                                     //load the file
-                                    readerEmp = new BufferedReader(new FileReader("storage/employee_data.txt"));
+                                    reader = new BufferedReader(new FileReader("storage/Customer_Details.txt"));
 
-                                    String currentLine2 = "";
+                                    String currentLine = "";
                                     //iterate through file line by line using while loop until last line which will be null, loop stops
-                                    while ((currentLine2 = readerEmp.readLine()) != null) {
-                                        countEmployeeID++;
-                                        String[] employeeParts = currentLine2.split(",");
+                                    while ((currentLine = reader.readLine()) != null) {
+                                        countCustomerID++;
+                                        String[] customerParts = currentLine.split(",");
 
-                                        // Reads each word in line until the inputted employee number is found in the array position 0
-                                        // If found will increment counter by one and save the line number the employee was found.
-                                        for (String EmployeeID : employeeParts) {
-                                            if (EmployeeID.equals(answer2)) {
-                                                if(answer2.equals(employeeParts[0])) {
-                                                    counter2++;
-                                                    employeeid = countEmployeeID;
+                                        // Reads the words on each line until the array index 0 (customerParts[0]) equals the answer
+                                        // I inputted which is customer ID.
+                                        // Then saves the line the ID was found
+                                        for (String CustomerID : customerParts) {
+                                            if (CustomerID.equals(answer)) {
+                                                if(answer.equals(customerParts[0])) {
+                                                    counter++;
+                                                    customerid = countCustomerID;
                                                 }
                                             }
                                         }
-                                    }// While ends
-                                }
+                                    }// While Ends
                                 //if error occurs, nothing will print
-                                catch (IOException e) {
+                                }catch (IOException e) {
                                     System.out.println("");
                                 }
 
-                                // If the employee id exists in text file (employee_data.txt)
-                                if (counter2 != 0) {
-                                    // Employee Exists
+                                // If the Customer ID did exist the counter would have been incremented.
+                                if (counter != 0) {
+                                    // Customer Does Exist
 
-                                    // Reading the exact line the employee id was found.
+                                    // It is reading the entire line where customer id was found
                                     try{
-                                        lineEmployeeId = Files.readAllLines(Paths.get("storage/employee_data.txt")).get(employeeid -1);
+                                        lineCustomerId = Files.readAllLines(Paths.get("storage/Customer_Details.txt")).get(customerid -1);
                                     } catch (IOException e) {
                                         throw new RuntimeException(e);
                                     }
 
 
-                                    // Variables used to store the Registration ID Data
-                                    String lineReg = "";
-                                    String lineMake = "";
-                                    String lineModel = "";
-                                    String lineColour = "";
-                                    String lineDoors = "";
-                                    String lineEngine = "";
-                                    String lineDescription = "";
-                                    String linePrice = "";
-                                    String lineImage = "";
+                                    // Getting Employee That Signed Off on Purchase
+                                    String answer2 = (String) JOptionPane.showInputDialog(null, "Enter Employee ID: ", "Employee ID", JOptionPane.PLAIN_MESSAGE);
 
+                                    // Variables used to read lines in text file (employee_data.txt)
+                                    int countEmployeeID = 0;
+                                    int employeeid = 0;
+                                    int counter2 = 0;
+                                    String lineEmployeeId = "";
 
+                                    // Reader to read all the lines in the text file (employee_data.txt)
+                                    BufferedReader readerEmp;
                                     try {
-                                        // Reading the specific lines from the Registration id already in Text File (Car_Details.txt)
-                                        lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
-                                        lineMake = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine);  // Make
-                                        lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Model
-                                        lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Colour
-                                        lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Doors
-                                        lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Engine
-                                        lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Description
-                                        linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Price
-                                        lineImage = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 7);  // Image
+                                        //load the file
+                                        readerEmp = new BufferedReader(new FileReader("storage/employee_data.txt"));
 
-                                        // Putting the Lines in the Arrays so that i can split the value from it.
-                                        String[] regRegistration = lineReg.split(": ");
-                                        String[] regMake = lineMake.split(": ");
-                                        String[] regModel = lineModel.split(": ");
-                                        String[] regColour = lineColour.split(": ");
-                                        String[] regDoors = lineDoors.split(": ");
-                                        String[] regEngine = lineEngine.split(": ");
-                                        String[] regDescription = lineDescription.split(": ");
-                                        String[] regPrice = linePrice.split(": ");
-                                        String[] regImage = lineImage.split(": ");
+                                        String currentLine2 = "";
+                                        //iterate through file line by line using while loop until last line which will be null, loop stops
+                                        while ((currentLine2 = readerEmp.readLine()) != null) {
+                                            countEmployeeID++;
+                                            String[] employeeParts = currentLine2.split(",");
 
-
-                                        // Setting the Car Details
-                                        appData.Car_Details.setRegistration(regRegistration[1]);
-                                        appData.Car_Details.setMake(regMake[1]);
-                                        appData.Car_Details.setModel(regModel[1]);
-                                        appData.Car_Details.setColour(regColour[1]);
-                                        appData.Car_Details.setDoors(Integer.parseInt(regDoors[1]));
-                                        appData.Car_Details.setEngine_size(regEngine[1]);
-                                        appData.Car_Details.setDescription(regDescription[1]);
-                                        appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
-                                        appData.Car_Details.setImageLocation(regImage[1]);
-
-
-                                        // write data to text file (Cars_Sold.txt)
-                                        // Creating the File Writer and Buffer Writer
-                                        FileWriter carFile = new FileWriter("storage/Cars_Sold.txt", true);
-                                        BufferedWriter output = new BufferedWriter(carFile);
-
-                                        // Write String to Text File - Next Empty Line
-                                        output.write("Registration: " + appData.Car_Details.getRegistration() + "\nMake: " +
-                                                appData.Car_Details.getMake() + "\nModel: " + appData.Car_Details.getModel() + "\nColour: " +
-                                                appData.Car_Details.getColour() + "\nNumber of Doors: " + appData.Car_Details.getDoors() +
-                                                "\nEngine Size: " + appData.Car_Details.getEngine_size() + "\nDescription: " +
-                                                appData.Car_Details.getDescription() + "\nPrice: " + appData.Car_Details.getPrice() + "\nImage: " + appData.Car_Details.getImageLocation()
-                                                + "\nBought By: " + lineCustomerId + "\nEmployee Sign Off: " + lineEmployeeId + "\n\n\n\n");
-                                        output.close();
-
-                                        // pop up message to let user know that the car has been sold
-                                        JOptionPane.showMessageDialog(null, "Vehicle Sold, Thanks For Purchasing?", "Selling Vehicle?", JOptionPane.PLAIN_MESSAGE);
-
-                                        // Clearing all text boxes so user can enter a new motor to the system
-                                        txtRegistration.setText("");
-                                        txtMake.setText("");
-                                        txtModel.setText("");
-                                        txtColour.setText("");
-                                        txtDoors.setText("");
-                                        txtEngine.setText("");
-                                        txtDescription.setText("");
-                                        txtPrice.setText("");
-                                        lblPic.setVisible(false);
-
-
-                                        // Deleting all the Car Details to do with the specified registration in text file (Car_Details.txt)
-                                        // As the details of car are now stored in cars sold file (Cars_Sold.txt).
-                                        Path path = Paths.get("storage/Car_Details.txt");
-                                        List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
-                                        // Reg
-                                        lines1.set(RegistationLine - 1, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Make
-                                        lines1.set(RegistationLine, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Model
-                                        lines1.set(RegistationLine + 1, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Colour
-                                        lines1.set(RegistationLine + 2, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Number of Doors
-                                        lines1.set(RegistationLine + 3, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Engine Size
-                                        lines1.set(RegistationLine + 4, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Description
-                                        lines1.set(RegistationLine + 5, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Price
-                                        lines1.set(RegistationLine + 6, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-                                        // Image
-                                        lines1.set(RegistationLine + 7, "");
-                                        Files.write(path, lines1, StandardCharsets.UTF_8);
-
-                                    } catch (IOException e) {
-                                        throw new RuntimeException(e);
+                                            // Reads each word in line until the inputted employee number is found in the array position 0
+                                            // If found will increment counter by one and save the line number the employee was found.
+                                            for (String EmployeeID : employeeParts) {
+                                                if (EmployeeID.equals(answer2)) {
+                                                    if(answer2.equals(employeeParts[0])) {
+                                                        counter2++;
+                                                        employeeid = countEmployeeID;
+                                                    }
+                                                }
+                                            }
+                                        }// While ends
                                     }
+                                    //if error occurs, nothing will print
+                                    catch (IOException e) {
+                                        System.out.println("");
+                                    }
+
+                                    // If the employee id exists in text file (employee_data.txt)
+                                    if (counter2 != 0) {
+                                        // Employee Exists
+
+                                        // Reading the exact line the employee id was found.
+                                        try{
+                                            lineEmployeeId = Files.readAllLines(Paths.get("storage/employee_data.txt")).get(employeeid -1);
+                                        } catch (IOException e) {
+                                            throw new RuntimeException(e);
+                                        }
+
+
+                                        // Variables used to store the Registration ID Data
+                                        String lineReg = "";
+                                        String lineMake = "";
+                                        String lineModel = "";
+                                        String lineColour = "";
+                                        String lineDoors = "";
+                                        String lineEngine = "";
+                                        String lineDescription = "";
+                                        String linePrice = "";
+                                        String lineImage = "";
+
+
+                                        try {
+                                            // Reading the specific lines from the Registration id already in Text File (Car_Details.txt)
+                                            lineReg = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine - 1);  // Reg
+                                            lineMake = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine);  // Make
+                                            lineModel = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 1);  // Model
+                                            lineColour = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 2);  // Colour
+                                            lineDoors = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 3);  // Doors
+                                            lineEngine = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 4);  // Engine
+                                            lineDescription = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 5);  // Description
+                                            linePrice = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 6);  // Price
+                                            lineImage = Files.readAllLines(Paths.get("storage/Car_Details.txt")).get(RegistationLine + 7);  // Image
+
+                                            // Putting the Lines in the Arrays so that i can split the value from it.
+                                            String[] regRegistration = lineReg.split(": ");
+                                            String[] regMake = lineMake.split(": ");
+                                            String[] regModel = lineModel.split(": ");
+                                            String[] regColour = lineColour.split(": ");
+                                            String[] regDoors = lineDoors.split(": ");
+                                            String[] regEngine = lineEngine.split(": ");
+                                            String[] regDescription = lineDescription.split(": ");
+                                            String[] regPrice = linePrice.split(": ");
+                                            String[] regImage = lineImage.split(": ");
+
+
+                                            // Setting the Car Details
+                                            appData.Car_Details.setRegistration(regRegistration[1]);
+                                            appData.Car_Details.setMake(regMake[1]);
+                                            appData.Car_Details.setModel(regModel[1]);
+                                            appData.Car_Details.setColour(regColour[1]);
+                                            appData.Car_Details.setDoors(Integer.parseInt(regDoors[1]));
+                                            appData.Car_Details.setEngine_size(regEngine[1]);
+                                            appData.Car_Details.setDescription(regDescription[1]);
+                                            appData.Car_Details.setPrice(Integer.parseInt(regPrice[1]));
+                                            appData.Car_Details.setImageLocation(regImage[1]);
+
+
+                                            // write data to text file (Cars_Sold.txt)
+                                            // Creating the File Writer and Buffer Writer
+                                            FileWriter carFile = new FileWriter("storage/Cars_Sold.txt", true);
+                                            BufferedWriter output = new BufferedWriter(carFile);
+
+                                            // Write String to Text File - Next Empty Line
+                                            output.write("Registration: " + appData.Car_Details.getRegistration() + "\nMake: " +
+                                                    appData.Car_Details.getMake() + "\nModel: " + appData.Car_Details.getModel() + "\nColour: " +
+                                                    appData.Car_Details.getColour() + "\nNumber of Doors: " + appData.Car_Details.getDoors() +
+                                                    "\nEngine Size: " + appData.Car_Details.getEngine_size() + "\nDescription: " +
+                                                    appData.Car_Details.getDescription() + "\nPrice: " + appData.Car_Details.getPrice() + "\nImage: " + appData.Car_Details.getImageLocation()
+                                                    + "\nBought By: " + lineCustomerId + "\nEmployee Sign Off: " + lineEmployeeId + "\n\n\n\n");
+                                            output.close();
+
+                                            // pop up message to let user know that the car has been sold
+                                            JOptionPane.showMessageDialog(null, "Vehicle Sold, Thanks For Purchasing?", "Selling Vehicle?", JOptionPane.PLAIN_MESSAGE);
+
+                                            // Clearing all text boxes so user can enter a new motor to the system
+                                            txtRegistration.setText("");
+                                            txtMake.setText("");
+                                            txtModel.setText("");
+                                            txtColour.setText("");
+                                            txtDoors.setText("");
+                                            txtEngine.setText("");
+                                            txtDescription.setText("");
+                                            txtPrice.setText("");
+                                            lblPic.setVisible(false);
+
+
+                                            // Deleting all the Car Details to do with the specified registration in text file (Car_Details.txt)
+                                            // As the details of car are now stored in cars sold file (Cars_Sold.txt).
+                                            Path path = Paths.get("storage/Car_Details.txt");
+                                            List<String> lines1 = Files.readAllLines(path, StandardCharsets.UTF_8);
+                                            // Reg
+                                            lines1.set(RegistationLine - 1, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Make
+                                            lines1.set(RegistationLine, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Model
+                                            lines1.set(RegistationLine + 1, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Colour
+                                            lines1.set(RegistationLine + 2, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Number of Doors
+                                            lines1.set(RegistationLine + 3, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Engine Size
+                                            lines1.set(RegistationLine + 4, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Description
+                                            lines1.set(RegistationLine + 5, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Price
+                                            lines1.set(RegistationLine + 6, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+                                            // Image
+                                            lines1.set(RegistationLine + 7, "");
+                                            Files.write(path, lines1, StandardCharsets.UTF_8);
+
+                                        } catch (IOException e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }else{
+                                        // Employee Doesn't Exist
+                                        JOptionPane.showMessageDialog(null, "Employee Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
+                                    }
+
+
                                 }else{
-                                    // Employee Doesn't Exist
-                                    JOptionPane.showMessageDialog(null, "Employee Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
+                                    // Customer Doesn't Exist
+                                    JOptionPane.showMessageDialog(null, "Customer Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
                                 }
 
-                            }else{
-                                // Customer Doesn't Exist
-                                JOptionPane.showMessageDialog(null, "Customer Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
-                            }
-                           
-                        } else {
+                            } 
 
-                            // Clearing all text boxes so user can enter a new motor to the system
-                            txtRegistration.setText("");
-                            txtMake.setText("");
-                            txtModel.setText("");
-                            txtColour.setText("");
-                            txtDoors.setText("");
-                            txtEngine.setText("");
-                            txtDescription.setText("");
-                            txtPrice.setText("");
-                            lblPic.setVisible(false);
+
+                        } else{
+                            // Reg Doesn't Exist in (Car_Detail.txt)
+                            JOptionPane.showMessageDialog(null, "Vehicle Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
                         }
-
-
-
-                    } else{
-                        // Reg Doesn't Exist in (Car_Detail.txt)
-                        JOptionPane.showMessageDialog(null, "Vehicle Doesn't Exist?", "Information?", JOptionPane.PLAIN_MESSAGE);
+                    }else{
+                        // Reg Doesn't Exist in (Cars_Sold.txt)
+                        JOptionPane.showMessageDialog(null, "Vehicle Already Sold?", "Information?", JOptionPane.PLAIN_MESSAGE);
                     }
                 } catch (IOException e) {
                     System.out.println("An error occurred");

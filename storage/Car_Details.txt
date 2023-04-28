@@ -66,14 +66,14 @@
 
 
 Registration: REG18
-Make: test
-Model: test
-Colour: test
-Number of Doors: 5
-Engine Size: 4
-Description: test
-Price: 1234
-Image: /images/FordRanger2022.jpeg
+Make: Lambo
+Model: Sport
+Colour: Blue
+Number of Doors: 3
+Engine Size: 3L
+Description: Fastest Motor in the World?
+Price: 105670
+Image: NoImage
 
 
 
@@ -86,6 +86,30 @@ Engine Size: 3
 Description: test
 Price: 1234
 Image: /images/FordFocus2022.jpeg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
