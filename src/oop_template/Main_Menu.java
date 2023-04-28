@@ -189,6 +189,10 @@ public class Main_Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnShutDownActionPerformed
 
+    /**
+     * Login button to take used to sign in page
+     * @Roy Ferguson(50004216)
+     */
     private void btnLogonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogonActionPerformed
         
         //close main menu, open login form

@@ -171,7 +171,7 @@ public class Modify_Car extends javax.swing.JFrame {
         pnlModifyCar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         lblRegistration.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblRegistration.setText("Registratoin:");
+        lblRegistration.setText("Registration:");
 
         lblMake.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMake.setText("Make: ");
@@ -461,6 +461,9 @@ public class Modify_Car extends javax.swing.JFrame {
             txtDescription.setText("");
             txtPrice.setText("");
             lblPic.setVisible(false);
+           
+            lblPic.setSize(213, 131);
+            
         }
 
     }//GEN-LAST:event_btnResetActionPerformed
@@ -993,8 +996,7 @@ public class Modify_Car extends javax.swing.JFrame {
         //Gets the image 
        Image img = icon.getImage();
        //Used to scale the image to fit within the label
-        Image imgScale = img.getScaledInstance(176, 96, SCALE_SMOOTH);
-
+        Image imgScale = img.getScaledInstance(213, 131, SCALE_SMOOTH);
         //creates a new image with the new scale
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         //sets the scaled image within the label

@@ -183,7 +183,7 @@ public class Search_Car extends javax.swing.JFrame {
 
         // Checking if the reg textbox is empty
         if (txtRegNumber.getText().equalsIgnoreCase("")){
-            JOptionPane.showMessageDialog(null, "Fill all Fields in?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Fill Car Registration In?", "Error Message",JOptionPane.PLAIN_MESSAGE);
             txtRegNumber.grabFocus();
         }else{
             // If TextBox is not Empty
