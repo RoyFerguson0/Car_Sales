@@ -18,9 +18,10 @@ import javax.swing.JOptionPane;
  * @author anastasiaridge 50017135
  */
 public class Search_Customer extends javax.swing.JFrame {
+
     //create boolean for validation
     private boolean isCustomerIDValid = false;
-    
+
     /**
      * Creates new form Search_Customer
      */
@@ -179,45 +180,51 @@ public class Search_Customer extends javax.swing.JFrame {
         //input validation: only allow for numbers
         String text = txtCustomerID.getText();
         Boolean isOnlyNumbers = text.matches("^[0-9]*$");
-        if(text.isBlank()){
+        if (text.isBlank()) {
             isCustomerIDValid = false;
             lblCustomerIDCheck.setText("Please enter a value (numbers).");
-        }
-        else if(isOnlyNumbers){
+        } else if (isOnlyNumbers) {
             lblCustomerIDCheck.setText("");
             isCustomerIDValid = true;
-        }
-        else{
+        } else {
             lblCustomerIDCheck.setText("Please enter only numbers.");
             isCustomerIDValid = false;
         }
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
-        // set this to null because if no customer is found, we don't want to search
-        appData.Customer_Details = null;
+        // set this to an empty customer because if no customer is found, we won't have done a search
+        appData.Customer_Details = new Customer_Details();
         appData.loadAllCustomerDetails();
-        for(Customer_Details customer: appData.allCustomerDetails){
+
+        Customer_Details foundCustomer = null;
+        for (Customer_Details customer : appData.allCustomerDetails) {
             String customerID = String.valueOf(customer.getCustomerID());
-            if(customerID.equals(txtCustomerID.getText())){
-                appData.Customer_Details = customer;
-                this.dispose();
-                Modify_Customer modifyCustomer = new Modify_Customer();
-                modifyCustomer.setAllValid();
-                modifyCustomer.setVisible(true);
+            if (customerID.equals(txtCustomerID.getText())) {
+                foundCustomer = customer;
                 break;
             }
         }
-        //show error message
-        JOptionPane.showMessageDialog(null, "Customer ID not found. Please enter an existing ID.");
-        
+        if (foundCustomer == null) {
+            //show error message
+            JOptionPane.showMessageDialog(null, "Customer ID not found. Please enter an existing ID.");
+        } else {
+            this.dispose();
+            appData.Customer_Details = foundCustomer;
+            Modify_Customer modifyCustomer = new Modify_Customer();
+            modifyCustomer.setAllValid();
+            modifyCustomer.setVisible(true);
+        }
+
     }//GEN-LAST:event_btnCustomerSearchActionPerformed
 
     private void btnModifyCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCustActionPerformed
         // 'add new' open modify customer page
         this.dispose();
-        new Modify_Customer().setVisible(true);
-        
+        Modify_Customer modifyCustomer = new Modify_Customer();
+        appData.Customer_Details = new Customer_Details();
+        modifyCustomer.setAllValid();
+        modifyCustomer.setVisible(true);
     }//GEN-LAST:event_btnModifyCustActionPerformed
 
     /**

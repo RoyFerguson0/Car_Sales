@@ -513,6 +513,8 @@ public class Modify_Customer extends javax.swing.JFrame {
 
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         //return to employee menu
+        
+        appData.Customer_Details = new Customer_Details();
         this.dispose();
         new Employee_Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
