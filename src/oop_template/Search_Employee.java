@@ -7,7 +7,12 @@ package oop_template;
 
 
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 
@@ -38,6 +43,7 @@ public class Search_Employee extends javax.swing.JFrame {
 
 
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,6 +91,11 @@ public class Search_Employee extends javax.swing.JFrame {
         btnEmployeeSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEmployeeSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnEmployeeSearch.setText("Search");
+        btnEmployeeSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlEmployeeSearchLayout = new javax.swing.GroupLayout(pnlEmployeeSearch);
         pnlEmployeeSearch.setLayout(pnlEmployeeSearchLayout);
@@ -176,9 +187,13 @@ public class Search_Employee extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtEmployeeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIDActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_txtEmployeeIDActionPerformed
 
+    
+    
+    
+    
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
         // Makes the Employee_Main_Menu frame visible
@@ -188,6 +203,71 @@ public class Search_Employee extends javax.swing.JFrame {
         
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
+
+    private void btnEmployeeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeSearchActionPerformed
+        String employeeIDText = txtEmployeeID.getText().trim();
+    if (employeeIDText.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter an employee ID.");
+        return;
+    }
+
+    if (!employeeIDText.matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid employee ID.");
+        return;
+    }
+
+    int employeeID = Integer.parseInt(employeeIDText);
+    Employee_Details foundEmployee = null;
+
+    try {
+        // Open the employee data file for reading
+        BufferedReader reader = new BufferedReader(new FileReader("storage/employee_data.txt"));
+
+        // Read the file line by line
+        String line;
+        while ((line = reader.readLine()) != null) {
+            // Split the line into fields separated by commas
+            String[] fields = line.split(",");
+
+            // Parse the employee ID from the first field
+            int id = Integer.parseInt(fields[0]);
+
+            // Check if the ID matches the one the user is looking for
+            if (id == employeeID) {
+                // Create a new Employee_Details object and set its properties from the fields in the line
+                foundEmployee = new Employee_Details();
+                foundEmployee.setEmployeeID(id);
+                foundEmployee.setTitle(fields[1]);
+                foundEmployee.setForename(fields[2]);
+                foundEmployee.setSurname(fields[3]);
+                foundEmployee.setGender(fields[4]);
+                foundEmployee.setJobTitle(fields[5]);
+                foundEmployee.setContractedHours(Integer.parseInt(fields[6]));
+                foundEmployee.setHourlyRate(Integer.parseInt(fields[7]));
+
+                // stop the cpde
+                break;
+            }
+        }
+
+        // Close the file
+        reader.close();
+    } catch (IOException e) {
+        // Handle any errors that occur while reading the file
+        JOptionPane.showMessageDialog(null, "Error reading employee data file: " + e.getMessage());
+        return;
+    }
+
+    if (foundEmployee == null) {
+        JOptionPane.showMessageDialog(null, "Employee not found. Please enter an existing ID.");
+    } else {
+        // Open the Modify_Employee frame with the found employee's details
+        this.dispose();
+        Modify_Employee modifyEmployee = new Modify_Employee();
+        modifyEmployee.setEmployeeDetails(foundEmployee);
+        modifyEmployee.setVisible(true);
+    }
+    }//GEN-LAST:event_btnEmployeeSearchActionPerformed
 
     /**
      * @param args the command line arguments
