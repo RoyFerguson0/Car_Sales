@@ -60,6 +60,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lblModifyCustomer = new javax.swing.JLabel();
         pnlModifyCustomer = new javax.swing.JPanel();
         lblCustomerID = new javax.swing.JLabel();
@@ -90,90 +91,97 @@ public class Modify_Customer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lblModifyCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        lblModifyCustomer.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         lblModifyCustomer.setText("Modify Customer");
 
-        pnlModifyCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 12))); // NOI18N
+        pnlModifyCustomer.setBackground(new java.awt.Color(153, 255, 255));
+        pnlModifyCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
-        lblCustomerID.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustomerID.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustomerID.setText("Customer ID:");
 
-        lblCustTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustTitle.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustTitle.setText("Title:");
 
-        lblCustForename.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustForename.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustForename.setText("Forename:");
 
-        lblCustSurname.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustSurname.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustSurname.setText("Surname:");
 
-        lblCustGender.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustGender.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustGender.setText("Gender:");
 
-        lblCustMobile.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustMobile.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustMobile.setText("Mobile:");
 
-        lblCustAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblCustAddress.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblCustAddress.setText("Address:");
 
-        txtCustomerID.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustomerID.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustomerID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustomerIDKeyReleased(evt);
             }
         });
 
-        txtCustTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustTitle.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustTitle.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustTitleKeyReleased(evt);
             }
         });
 
-        txtCustForename.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustForename.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustForename.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustForenameKeyReleased(evt);
             }
         });
 
-        txtCustSurname.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustSurname.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustSurname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustSurnameKeyReleased(evt);
             }
         });
 
-        txtCustGender.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustGender.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustGender.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustGenderKeyReleased(evt);
             }
         });
 
-        txtCustMobile.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustMobile.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustMobile.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustMobileKeyReleased(evt);
             }
         });
 
-        txtCustAddress.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtCustAddress.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtCustAddress.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustAddressKeyReleased(evt);
             }
         });
 
-        btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        btnEmpMenu.setText("->");
+        btnEmpMenu.setBackground(new java.awt.Color(0, 0, 0));
+        btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        btnEmpMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnEmpMenu.setText("➡");
         btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEmpMenuActionPerformed(evt);
             }
         });
 
-        btnCustReset.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnCustReset.setBackground(new java.awt.Color(0, 0, 0));
+        btnCustReset.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        btnCustReset.setForeground(new java.awt.Color(255, 255, 255));
         btnCustReset.setText("Reset");
         btnCustReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +189,9 @@ public class Modify_Customer extends javax.swing.JFrame {
             }
         });
 
-        btnCustSave.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnCustSave.setBackground(new java.awt.Color(0, 0, 0));
+        btnCustSave.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        btnCustSave.setForeground(new java.awt.Color(255, 255, 255));
         btnCustSave.setText("Save");
         btnCustSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,28 +308,36 @@ public class Modify_Customer extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblModifyCustomer)
+                    .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(lblModifyCustomer)
+                .addGap(18, 18, 18)
+                .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(lblModifyCustomer))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblModifyCustomer)
-                .addGap(31, 31, 31)
-                .addComponent(pnlModifyCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -558,6 +576,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     private javax.swing.JButton btnCustReset;
     private javax.swing.JButton btnCustSave;
     private javax.swing.JButton btnEmpMenu;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCustAddress;
     private javax.swing.JLabel lblCustForename;
     private javax.swing.JLabel lblCustGender;
