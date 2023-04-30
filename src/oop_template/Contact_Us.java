@@ -26,6 +26,7 @@ public class Contact_Us extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lblContactUs = new javax.swing.JLabel();
         pnlContact = new javax.swing.JPanel();
         lblPhone = new javax.swing.JLabel();
@@ -41,33 +42,36 @@ public class Contact_Us extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
         lblContactUs.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         lblContactUs.setText("Contact Us");
 
-        pnlContact.setBorder(javax.swing.BorderFactory.createTitledBorder("Contact:"));
+        pnlContact.setBackground(new java.awt.Color(153, 255, 255));
+        pnlContact.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contact:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
-        lblPhone.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblPhone.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblPhone.setText("Phone:");
 
-        lblEmail.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblEmail.setText("Email:");
 
-        lblAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblAddress.setText("Address:");
 
-        lblOpeningHours.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblOpeningHours.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblOpeningHours.setText("Opening Hours:");
 
-        lblPhoneContent.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblPhoneContent.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblPhoneContent.setText("028 1234 5678");
 
-        lblEmailContent.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        lblEmailContent.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblEmailContent.setText("contact@rjamotors.com");
 
-        lblAddressContent.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblAddressContent.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblAddressContent.setText("<html>\n123 Motor Avenue,<br>\nBelfast,<br>\nBT1 1HS,<br>\nNorthern Ireland\n</html>");
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setText("<html>\nMonday - Friday<br>\n9:30am - 5:30pm\n</html>");
 
         javax.swing.GroupLayout pnlContactLayout = new javax.swing.GroupLayout(pnlContact);
@@ -111,7 +115,9 @@ public class Contact_Us extends javax.swing.JFrame {
                 .addGap(56, 56, 56))
         );
 
-        btnReturnMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 12)); // NOI18N
+        btnReturnMenu.setBackground(new java.awt.Color(0, 0, 0));
+        btnReturnMenu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnReturnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnReturnMenu.setText("<html>\nMain<br>\nMenu\n\n</html>");
         btnReturnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,34 +125,42 @@ public class Contact_Us extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblContactUs)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(btnReturnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(lblContactUs)
+                .addGap(33, 33, 33)
+                .addComponent(pnlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReturnMenu)
+                .addGap(15, 15, 15))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(pnlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(lblContactUs)))
-                .addContainerGap(62, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnReturnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(lblContactUs)
-                .addGap(18, 18, 18)
-                .addComponent(pnlContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnReturnMenu)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -196,6 +210,7 @@ public class Contact_Us extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnReturnMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblAddressContent;
     private javax.swing.JLabel lblContactUs;
