@@ -34,26 +34,26 @@ public class View_Customer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstCustomer = new javax.swing.JList<>();
+        jPanel1 = new javax.swing.JPanel();
         lblViewCustomer = new javax.swing.JLabel();
         btnLoadCustomerDetails = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstCustomer = new javax.swing.JList<>();
         btnReturnEmpMenu = new javax.swing.JButton();
-        btnEditCustomer = new javax.swing.JButton();
         btnModifyCust = new javax.swing.JButton();
+        btnEditCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lstCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lstCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jScrollPane2.setViewportView(lstCustomer);
-        lstCustomer.getAccessibleContext().setAccessibleParent(lstCustomer);
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
-        lblViewCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        lblViewCustomer.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         lblViewCustomer.setText("Customer Details:");
 
-        btnLoadCustomerDetails.setFont(new java.awt.Font("Helvetica Neue", 2, 14)); // NOI18N
+        btnLoadCustomerDetails.setBackground(new java.awt.Color(0, 0, 0));
+        btnLoadCustomerDetails.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        btnLoadCustomerDetails.setForeground(new java.awt.Color(255, 255, 255));
         btnLoadCustomerDetails.setText("Load Customer Details");
         btnLoadCustomerDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,15 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
+        lstCustomer.setBackground(new java.awt.Color(153, 255, 255));
+        lstCustomer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstCustomer.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jScrollPane2.setViewportView(lstCustomer);
+        lstCustomer.getAccessibleContext().setAccessibleParent(lstCustomer);
+
+        btnReturnEmpMenu.setBackground(new java.awt.Color(0, 0, 0));
         btnReturnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        btnReturnEmpMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnReturnEmpMenu.setText("⬅");
         btnReturnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,15 +77,9 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
-        btnEditCustomer.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        btnEditCustomer.setText("Edit Customer");
-        btnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditCustomerActionPerformed(evt);
-            }
-        });
-
-        btnModifyCust.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnModifyCust.setBackground(new java.awt.Color(0, 0, 0));
+        btnModifyCust.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModifyCust.setForeground(new java.awt.Color(255, 255, 255));
         btnModifyCust.setText("Add New");
         btnModifyCust.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,30 +87,40 @@ public class View_Customer extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        btnEditCustomer.setBackground(new java.awt.Color(0, 0, 0));
+        btnEditCustomer.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnEditCustomer.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditCustomer.setText("Edit Customer");
+        btnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditCustomerActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnReturnEmpMenu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnModifyCust)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditCustomer)
-                        .addGap(29, 29, 29))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnEditCustomer))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblViewCustomer)
                             .addComponent(btnLoadCustomerDetails)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(30, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(37, 37, 37))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(lblViewCustomer)
                 .addGap(12, 12, 12)
@@ -116,12 +128,23 @@ public class View_Customer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnModifyCust, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnReturnEmpMenu))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -206,6 +229,7 @@ public class View_Customer extends javax.swing.JFrame {
     private javax.swing.JButton btnLoadCustomerDetails;
     private javax.swing.JButton btnModifyCust;
     private javax.swing.JButton btnReturnEmpMenu;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblViewCustomer;
     private javax.swing.JList<Customer_Details> lstCustomer;
