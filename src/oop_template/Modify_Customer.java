@@ -170,7 +170,7 @@ public class Modify_Customer extends javax.swing.JFrame {
         });
 
         btnEmpMenu.setBackground(new java.awt.Color(0, 0, 0));
-        btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        btnEmpMenu.setFont(new java.awt.Font("Helvetica Neue", 0, 22)); // NOI18N
         btnEmpMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpMenu.setText("➡");
         btnEmpMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -244,8 +244,8 @@ public class Modify_Customer extends javax.swing.JFrame {
                     .addComponent(lblCustomerAddressValidation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
                         .addComponent(btnCustSave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblCustomerForenameValidation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtCustAddress, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -297,15 +297,15 @@ public class Modify_Customer extends javax.swing.JFrame {
                 .addComponent(lblCustomerAddressValidation)
                 .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(pnlModifyCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCustReset)
                             .addComponent(btnCustSave))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(pnlModifyCustomerLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(btnEmpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -520,14 +520,20 @@ public class Modify_Customer extends javax.swing.JFrame {
 
     private void txtCustAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustAddressKeyReleased
         //validating input: must allow for both letters and numbers
+        
         String text = txtCustAddress.getText();
-        if(text.isBlank()){
+        Boolean isOnlyNumbersAndLetters = text.matches("^[0-9][a-zA-Z]*$");
+        if (isOnlyNumbersAndLetters){
+            lblCustomerAddressValidation.setText("");
+            isCustomerAddressValid = true;
+        }
+        else if(text.isBlank()){
             isCustomerAddressValid = false;
             lblCustomerAddressValidation.setText("Please enter your address.");
         }
         else{
-            lblCustomerAddressValidation.setText("");
-            isCustomerAddressValid = true;
+            isCustomerAddressValid = false;
+            lblCustomerAddressValidation.setText("Please enter your address.");
         }
     }//GEN-LAST:event_txtCustAddressKeyReleased
 
