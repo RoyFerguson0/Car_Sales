@@ -121,6 +121,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         lblCustAddress.setText("Address:");
 
         txtCustomerID.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        txtCustomerID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCustomerIDActionPerformed(evt);
+            }
+        });
         txtCustomerID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCustomerIDKeyReleased(evt);
@@ -542,6 +547,10 @@ public class Modify_Customer extends javax.swing.JFrame {
         this.dispose();
         new Employee_Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
+
+    private void txtCustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCustomerIDActionPerformed
 
     /**
      * @param args the command line arguments

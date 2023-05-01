@@ -62,6 +62,7 @@ public class Search_Employee extends javax.swing.JFrame {
         txtEmployeeID = new javax.swing.JTextField();
         btnEmployeeSearch = new javax.swing.JButton();
         btnEmpMenu = new javax.swing.JButton();
+        btnAddNewEmp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -109,7 +110,7 @@ public class Search_Employee extends javax.swing.JFrame {
                         .addComponent(lblEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         pnlEmployeeSearchLayout.setVerticalGroup(
             pnlEmployeeSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +134,16 @@ public class Search_Employee extends javax.swing.JFrame {
             }
         });
 
+        btnAddNewEmp.setBackground(new java.awt.Color(0, 0, 0));
+        btnAddNewEmp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAddNewEmp.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddNewEmp.setText("Add New");
+        btnAddNewEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNewEmpActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -142,9 +153,10 @@ public class Search_Employee extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlEmployeeSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnEmpMenu)
-                        .addGap(19, 19, 19)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAddNewEmp)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEmpMenu)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,7 +165,9 @@ public class Search_Employee extends javax.swing.JFrame {
                 .addContainerGap(90, Short.MAX_VALUE)
                 .addComponent(pnlEmployeeSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEmpMenu)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmpMenu)
+                    .addComponent(btnAddNewEmp))
                 .addGap(28, 28, 28))
         );
 
@@ -269,6 +283,12 @@ public class Search_Employee extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnEmployeeSearchActionPerformed
 
+    private void btnAddNewEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewEmpActionPerformed
+        Modify_Employee modifyEmployee = new Modify_Employee();
+        
+        modifyEmployee.setVisible(true);
+    }//GEN-LAST:event_btnAddNewEmpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -305,6 +325,7 @@ public class Search_Employee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddNewEmp;
     private javax.swing.JButton btnEmpMenu;
     private javax.swing.JButton btnEmployeeSearch;
     private javax.swing.JPanel jPanel1;
