@@ -83,7 +83,7 @@ public class Search_Customer extends javax.swing.JFrame {
             }
         });
 
-        lblCustomerIDCheck.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblCustomerIDCheck.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
         lblCustomerIDCheck.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout pnlCustomerSearchLayout = new javax.swing.GroupLayout(pnlCustomerSearch);
