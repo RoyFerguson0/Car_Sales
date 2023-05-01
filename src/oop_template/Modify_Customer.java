@@ -522,8 +522,9 @@ public class Modify_Customer extends javax.swing.JFrame {
         //validating input: must allow for both letters and numbers
         
         String text = txtCustAddress.getText();
-        Boolean isOnlyNumbersAndLetters = text.matches("^[0-9][a-zA-Z]*$");
-        if (isOnlyNumbersAndLetters){
+        Boolean isOnlyNumbers = text.matches("^[0-9]*$");
+        Boolean isOnlyLetters = text.matches("^[a-zA-Z]*$");
+        if (isOnlyNumbers || isOnlyLetters){
             lblCustomerAddressValidation.setText("");
             isCustomerAddressValid = true;
         }
@@ -531,10 +532,7 @@ public class Modify_Customer extends javax.swing.JFrame {
             isCustomerAddressValid = false;
             lblCustomerAddressValidation.setText("Please enter your address.");
         }
-        else{
-            isCustomerAddressValid = false;
-            lblCustomerAddressValidation.setText("Please enter your address.");
-        }
+        
     }//GEN-LAST:event_txtCustAddressKeyReleased
 
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
