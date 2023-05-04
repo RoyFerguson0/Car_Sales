@@ -336,19 +336,30 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * This is button to view the customers, redirects the user to the view customer page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnViewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCustomerActionPerformed
         // close employee main menu, open view customer
         this.dispose();
         new View_Customer().setVisible(true);
     }//GEN-LAST:event_btnViewCustomerActionPerformed
 
+    /**
+     * This is the search customer button, this redirects the user to the search customer page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
         // close main menu, open search customer page
         this.dispose();
         new Search_Customer().setVisible(true);
     }//GEN-LAST:event_btnSearchCustomerActionPerformed
 
+    /**
+     * This is the view car button, this redirects the user to the view car page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnViewCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCarActionPerformed
 
         // close Employee Menu, open View Cars Sold
@@ -356,6 +367,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         new View_Car_Sold().setVisible(true);
     }//GEN-LAST:event_btnViewCarActionPerformed
 
+    /**
+     * This is the search car button, this redirects the user to the search car page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnSearchCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCarActionPerformed
 
         // close Employee Menu, open Search Cars 
@@ -364,6 +379,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSearchCarActionPerformed
 
+    /**
+     * This is the search employee button, this redirects the user to the search employee page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnSearchEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchEmployeeActionPerformed
         Search_Employee searchEmployee = new Search_Employee();
         // Makes the View_Employee frame visible
@@ -374,6 +393,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSearchEmployeeActionPerformed
 
+    /**
+     * This is the view employee button, this redirects the user to the view employee page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnViewEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmployeeActionPerformed
         View_Employee viewEmployee = new View_Employee();
         // Makes the View_Employee frame visible
@@ -384,7 +407,10 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnViewEmployeeActionPerformed
 
-    
+    /**
+     * This is the return to the main menu button, this redirects the user to the main menu.
+     * @author Jack Holmes (50053641)
+     */
     private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed
         
         // close Employee Menu, open Main Menu

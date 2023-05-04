@@ -144,6 +144,10 @@ public class View_Employee extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+     /**
+     * This is the return to the employee main menu button, this redirects the user to the employee main menu.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEmpReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpReturnMenuActionPerformed
         Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
         // Makes the View_Employee frame visible
@@ -154,6 +158,10 @@ public class View_Employee extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpReturnMenuActionPerformed
 
+     /**
+     * This is the load employee details button, this loads the employees details from the text file to a list.
+     * @author Jack Holmes (50053641)
+     */
     private void btnLoadEmpDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadEmpDetailsActionPerformed
         /* declaring variable
            load data from customer details text file
@@ -195,6 +203,10 @@ public class View_Employee extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoadEmpDetailsActionPerformed
 
+     /**
+     * This is the edit employee button, this redirects the user to the modify employee page on the selected employee.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEditEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEmployeeActionPerformed
     if (lstEmployee.getSelectedValue() != null) {
          appData.Employee_Details = lstEmployee.getSelectedValue();

@@ -206,7 +206,10 @@ public class Search_Employee extends javax.swing.JFrame {
 
     
     
-    
+     /**
+     * This is the return to the employee main menu button, this redirects the user to the employee main menu.
+     * @author Jack Holmes (50053641)
+     */
     
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
@@ -218,6 +221,10 @@ public class Search_Employee extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
+     /**
+     * This is the employee search button, this searches for the employee ID in the employee data text file.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEmployeeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeSearchActionPerformed
         String employeeIDText = txtEmployeeID.getText().trim();
     if (employeeIDText.isEmpty()) {
@@ -283,6 +290,10 @@ public class Search_Employee extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnEmployeeSearchActionPerformed
 
+     /**
+     * This is the add new button, this button redirects the user to the modify employee page.
+     * @author Jack Holmes (50053641)
+     */
     private void btnAddNewEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNewEmpActionPerformed
         Modify_Employee modifyEmployee = new Modify_Employee();
         

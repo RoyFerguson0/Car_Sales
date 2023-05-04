@@ -328,7 +328,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * This is the empty button, this empties the text boxes.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEmpReset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpReset1ActionPerformed
         // TODO add your handling code here:
         txtEmployeeID.setText("");
@@ -342,6 +345,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         
     }//GEN-LAST:event_btnEmpReset1ActionPerformed
 
+    /**
+     * This is the save button, this saves the employees details to the text file.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEmpSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpSaveActionPerformed
     // Check if all text fields are filled
     if(txtEmployeeID.getText().isEmpty() || txtEmpTitle.getText().isEmpty() || txtEmpForename.getText().isEmpty()
@@ -425,6 +432,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
 
     }//GEN-LAST:event_btnEmpSaveActionPerformed
 
+    /**
+     * This is the employee menu button, this redirects the user to the employee main menu.
+     * @author Jack Holmes (50053641)
+     */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         Employee_Main_Menu employeeMenu = new Employee_Main_Menu();
         // Makes the View_Employee frame visible
@@ -435,6 +446,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
+    /**
+     * This is the validation for the employee title text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpJobTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpJobTitleKeyReleased
         // TODO add your handling code here:
         String makeOne = txtEmpJobTitle.getText();
@@ -455,7 +470,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
             txtEmpJobTitle.grabFocus();
         }
     }//GEN-LAST:event_txtEmpJobTitleKeyReleased
-
+ /**
+     * This is the validation for the employee ID text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmployeeIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmployeeIDKeyReleased
         // TODO add your handling code here:
         String EmployeeID = txtEmployeeID.getText().replace(" ", "");
@@ -474,7 +492,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
 
         }
     }//GEN-LAST:event_txtEmployeeIDKeyReleased
-
+ /**
+     * This is the validation for the employee title text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpTitleKeyReleased
         // TODO add your handling code here:
         String makeOne = txtEmpTitle.getText();
@@ -496,6 +517,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         }
     }//GEN-LAST:event_txtEmpTitleKeyReleased
 
+    /**
+     * This is the validation for the employee forename text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpForenameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpForenameKeyReleased
         // TODO add your handling code here:
         
@@ -518,6 +543,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         }
     }//GEN-LAST:event_txtEmpForenameKeyReleased
 
+     /**
+     * This is the validation for the employee surname text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpSurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpSurnameKeyReleased
         // TODO add your handling code here:
         String makeOne = txtEmpSurname.getText();
@@ -539,6 +568,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         }
     }//GEN-LAST:event_txtEmpSurnameKeyReleased
 
+     /**
+     * This is the validation for the employee gender text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpGenderKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpGenderKeyReleased
         // TODO add your handling code here:
         String makeOne = txtEmpGender.getText();
@@ -560,6 +593,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         }
     }//GEN-LAST:event_txtEmpGenderKeyReleased
 
+     /**
+     * This is the validation for the employee contract text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpContractKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpContractKeyReleased
         // TODO add your handling code here:
         String EmpContract = txtEmpContract.getText().replace(" ", "");
@@ -579,6 +616,10 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         }
     }//GEN-LAST:event_txtEmpContractKeyReleased
 
+     /**
+     * This is the validation for the employee hourly rate text box
+     * @author Jack Holmes (50053641)
+     */
     private void txtEmpHourlyRateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpHourlyRateKeyReleased
         // TODO add your handling code here:
         String EmpHourlyRate = txtEmpHourlyRate.getText().replace(" ", "");

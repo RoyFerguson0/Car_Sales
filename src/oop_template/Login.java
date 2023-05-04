@@ -19,6 +19,7 @@ public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
+     * @author Jack Holmes (50053641)
      */
     public Login() {
         initComponents();
@@ -161,7 +162,10 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * This is the Sign in button, redirects to the Employee Main Menu
+     * @author Jack Holmes (50053641)
+     */
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
         //creating the varibales 
     String username = txtUserName.getText();
@@ -200,7 +204,10 @@ public class Login extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnSignInActionPerformed
-
+/**
+     * This is the return Main Menu button, this redirects the user to the main menu
+     * @author Jack Holmes (50053641)
+     */
     private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed
         
         Main_Menu mainMenu = new Main_Menu();
