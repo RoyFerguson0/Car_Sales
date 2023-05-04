@@ -104,6 +104,8 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validation input Text Fields - No Digits or Special Characters
+     * @param s returns true or false
+     * @return s
      * @author Roy Ferguson(50004216)
      */
     public static boolean isAlpha(String s) {
