@@ -139,58 +139,58 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         });
 
         txtEmployeeID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmployeeID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmployeeIDActionPerformed(evt);
+        txtEmployeeID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmployeeIDKeyReleased(evt);
             }
         });
 
         txtEmpTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpTitle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpTitleActionPerformed(evt);
+        txtEmpTitle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpTitleKeyReleased(evt);
             }
         });
 
         txtEmpForename.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpForename.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpForenameActionPerformed(evt);
+        txtEmpForename.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpForenameKeyReleased(evt);
             }
         });
 
         txtEmpSurname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpSurname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpSurnameActionPerformed(evt);
+        txtEmpSurname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpSurnameKeyReleased(evt);
             }
         });
 
         txtEmpGender.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpGenderActionPerformed(evt);
+        txtEmpGender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpGenderKeyReleased(evt);
             }
         });
 
         txtEmpJobTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpJobTitle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpJobTitleActionPerformed(evt);
+        txtEmpJobTitle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpJobTitleKeyReleased(evt);
             }
         });
 
         txtEmpContract.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpContract.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpContractActionPerformed(evt);
+        txtEmpContract.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpContractKeyReleased(evt);
             }
         });
 
         txtEmpHourlyRate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtEmpHourlyRate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmpHourlyRateActionPerformed(evt);
+        txtEmpHourlyRate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpHourlyRateKeyReleased(evt);
             }
         });
 
@@ -329,76 +329,6 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmpTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpTitleActionPerformed
-          String input = txtEmpTitle.getText();
-    if (!input.matches("[a-zA-Z]+")) {
-        // If the input contains non-letter characters, show an error message
-        JOptionPane.showMessageDialog(null, "Employee ID must contain only letters.");
-        // Clear the text field
-        txtEmpTitle.setText("");
-    }
-    }//GEN-LAST:event_txtEmpTitleActionPerformed
-
-    private void txtEmpForenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpForenameActionPerformed
-             String input = txtEmpForename.getText();
-    if (!input.matches("[a-zA-Z]+")) {
-        // If the input contains non-letter characters, show an error message
-        JOptionPane.showMessageDialog(null, "Employee Forename must contain only letters.");
-        // Clear the text field
-        txtEmpForename.setText("");
-    }
-    }//GEN-LAST:event_txtEmpForenameActionPerformed
-
-    private void txtEmpSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpSurnameActionPerformed
-                String input = txtEmpSurname.getText();
-    if (!input.matches("[a-zA-Z]+")) {
-        // If the input contains non-letter characters, show an error message
-        JOptionPane.showMessageDialog(null, "Employee Surname must contain only letters.");
-        // Clear the text field
-        txtEmpSurname.setText("");
-    }
-    }//GEN-LAST:event_txtEmpSurnameActionPerformed
-
-    private void txtEmpGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpGenderActionPerformed
-                   String input = txtEmpGender.getText();
-    if (!input.matches("[a-zA-Z]+")) {
-        // If the input contains non-letter characters, show an error message
-        JOptionPane.showMessageDialog(null, "Employee Gender must contain only letters.");
-        // Clear the text field
-        txtEmpGender.setText("");
-    }
-    }//GEN-LAST:event_txtEmpGenderActionPerformed
-
-    private void txtEmpJobTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpJobTitleActionPerformed
-        String input = txtEmpJobTitle.getText();
-    if (!input.matches("[a-zA-Z]+")) {
-        // If the input contains non-letter characters, show an error message
-        JOptionPane.showMessageDialog(null, "Employee Job Title must contain only letters.");
-        // Clear the text field
-        txtEmpJobTitle.setText("");
-    }
-    }//GEN-LAST:event_txtEmpJobTitleActionPerformed
-
-    private void txtEmpContractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpContractActionPerformed
-        String input = txtEmpContract.getText();
-    if (!input.matches("\\d+")) {
-    // If the input contains non-digit characters, show an error message
-    JOptionPane.showMessageDialog(null, "Employee Contract must contain only numbers.");
-    // Clear the text field
-    txtEmpContract.setText("");
-}
-    }//GEN-LAST:event_txtEmpContractActionPerformed
-
-    private void txtEmpHourlyRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpHourlyRateActionPerformed
-              String input = txtEmpHourlyRate.getText();
-    if (!input.matches("\\d+")) {
-    // If the input contains non-digit characters, show an error message
-    JOptionPane.showMessageDialog(null, "Employee Hourly Rate must contain only numbers.");
-    // Clear the text field
-    txtEmpHourlyRate.setText("");
-}
-    }//GEN-LAST:event_txtEmpHourlyRateActionPerformed
-
     private void btnEmpReset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpReset1ActionPerformed
         // TODO add your handling code here:
         txtEmployeeID.setText("");
@@ -505,17 +435,176 @@ public void setEmployeeDetails(Employee_Details employeeDetails) {
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
-    private void txtEmployeeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeIDActionPerformed
-    String input = txtEmployeeID.getText();
-        if (!input.matches("\\d+")) {
-            // If the input contains non-digit characters, show an error message
-            JOptionPane.showMessageDialog(null, "Employee ID must contain only numbers.");
-            // Clear the text field
-            txtEmployeeID.setText("");
+    private void txtEmpJobTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpJobTitleKeyReleased
+        // TODO add your handling code here:
+        String makeOne = txtEmpJobTitle.getText();
+        String EmpJobTitle = makeOne.replace(" ","");
+        
+        // Calling Function
+        if(isAlpha(EmpJobTitle)){
+            // If text is correct
+            txtEmpJobTitle.setText(makeOne);
+            txtEmpJobTitle.setEditable(true);
         }
+        else{
+            // Not able to enter in text field if value a number
+            txtEmpJobTitle.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpJobTitle.setText("");
+            txtEmpJobTitle.grabFocus();
+        }
+    }//GEN-LAST:event_txtEmpJobTitleKeyReleased
 
-    }//GEN-LAST:event_txtEmployeeIDActionPerformed
+    private void txtEmployeeIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmployeeIDKeyReleased
+        // TODO add your handling code here:
+        String EmployeeID = txtEmployeeID.getText().replace(" ", "");
+        // Calling Function
+        if(isNumeric(EmployeeID)){
+            // If text is Good
+            txtEmployeeID.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a letter or special character
+            txtEmployeeID.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmployeeID.setText("");
+            txtEmployeeID.grabFocus();
 
+        }
+    }//GEN-LAST:event_txtEmployeeIDKeyReleased
+
+    private void txtEmpTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpTitleKeyReleased
+        // TODO add your handling code here:
+        String makeOne = txtEmpTitle.getText();
+        String Title = makeOne.replace(" ","");
+        
+        // Calling Function
+        if(isAlpha(Title)){
+            // If text is correct
+            txtEmpTitle.setText(makeOne);
+            txtEmpTitle.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtEmpTitle.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpTitle.setText("");
+            txtEmpTitle.grabFocus();
+        }
+    }//GEN-LAST:event_txtEmpTitleKeyReleased
+
+    private void txtEmpForenameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpForenameKeyReleased
+        // TODO add your handling code here:
+        
+        String makeOne = txtEmpForename.getText();
+        String EmpForename = makeOne.replace(" ","");
+        
+        // Calling Function
+        if(isAlpha(EmpForename)){
+            // If text is correct
+            txtEmpForename.setText(makeOne);
+            txtEmpForename.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtEmpForename.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpForename.setText("");
+            txtEmpForename.grabFocus();
+        }
+    }//GEN-LAST:event_txtEmpForenameKeyReleased
+
+    private void txtEmpSurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpSurnameKeyReleased
+        // TODO add your handling code here:
+        String makeOne = txtEmpSurname.getText();
+        String EmpSurname = makeOne.replace(" ","");
+        
+        // Calling Function
+        if(isAlpha(EmpSurname)){
+            // If text is correct
+            txtEmpSurname.setText(makeOne);
+            txtEmpSurname.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtEmpSurname.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpSurname.setText("");
+            txtEmpSurname.grabFocus();
+        }
+    }//GEN-LAST:event_txtEmpSurnameKeyReleased
+
+    private void txtEmpGenderKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpGenderKeyReleased
+        // TODO add your handling code here:
+        String makeOne = txtEmpGender.getText();
+        String EmpGender = makeOne.replace(" ","");
+        
+        // Calling Function
+        if(isAlpha(EmpGender)){
+            // If text is correct
+            txtEmpGender.setText(makeOne);
+            txtEmpGender.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a number
+            txtEmpGender.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Digits or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpGender.setText("");
+            txtEmpGender.grabFocus();
+        }
+    }//GEN-LAST:event_txtEmpGenderKeyReleased
+
+    private void txtEmpContractKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpContractKeyReleased
+        // TODO add your handling code here:
+        String EmpContract = txtEmpContract.getText().replace(" ", "");
+        // Calling Function
+        if(isNumeric(EmpContract)){
+            // If text is Good
+            txtEmpContract.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a letter or special character
+            txtEmpContract.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpContract.setText("");
+            txtEmpContract.grabFocus();
+
+        }
+    }//GEN-LAST:event_txtEmpContractKeyReleased
+
+    private void txtEmpHourlyRateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpHourlyRateKeyReleased
+        // TODO add your handling code here:
+        String EmpHourlyRate = txtEmpHourlyRate.getText().replace(" ", "");
+        // Calling Function
+        if(isNumeric(EmpHourlyRate)){
+            // If text is Good
+            txtEmpHourlyRate.setEditable(true);
+        }
+        else{
+            // Not able to enter in text field if value a letter or special character
+            txtEmpHourlyRate.setEditable(false);
+            // Set Error Message
+            JOptionPane.showMessageDialog(null, "Cannot Enter Letters or Special Characters?", "Error Message",JOptionPane.PLAIN_MESSAGE);
+            txtEmpHourlyRate.setText("");
+            txtEmpHourlyRate.grabFocus();
+
+        }
+    }//GEN-LAST:event_txtEmpHourlyRateKeyReleased
+    public static boolean isAlpha(String s) {
+        return s != null && s.chars().allMatch(Character::isLetter);
+    }
+    
+    public static boolean isNumeric(String str) {
+        return str != null && str.chars().allMatch(Character::isDigit);
+    }
+   
     /**
      * @param args the command line arguments
      */

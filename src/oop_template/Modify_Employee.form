@@ -307,7 +307,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmployeeIDActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmployeeIDKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpTitle">
@@ -317,7 +317,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpTitleActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpTitleKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpForename">
@@ -327,7 +327,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpForenameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpForenameKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpSurname">
@@ -337,7 +337,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpSurnameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpSurnameKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpGender">
@@ -347,7 +347,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpGenderActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpGenderKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpJobTitle">
@@ -357,7 +357,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpJobTitleActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpJobTitleKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpContract">
@@ -367,7 +367,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpContractActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpContractKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEmpHourlyRate">
@@ -377,7 +377,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmpHourlyRateActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmpHourlyRateKeyReleased"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEmpMenu">
