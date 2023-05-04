@@ -1,70 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Registration: REG18
 Make: Lambo
 Model: Sport
@@ -78,82 +11,26 @@ Image: NoImage
 
 
 Registration: REG19
-Make: test
-Model: test
-Colour: etset
+Make: Volvo
+Model: C30
+Colour: Silver
 Number of Doors: 3
-Engine Size: 3
-Description: test
-Price: 1234
-Image: /images/FordFocus2022.jpeg
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Engine Size: 1.2L
+Description: This is super fast?
+Price: 6000
+Image: NoImage
+
+
+
+Registration: REG22
+Make: Mazda
+Model: MX5
+Colour: Red
+Number of Doors: 6
+Engine Size: 1.5L
+Description: Clown Car
+Price: 3500
+Image: NoImage
 
 
 

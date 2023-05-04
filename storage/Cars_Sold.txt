@@ -6,7 +6,9 @@ Number of Doors: 3
 Engine Size: 1.8L
 Description: New Motor? Fresh on the Market
 Price: 654000
+Image: NoImage
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -18,7 +20,9 @@ Number of Doors: 2
 Engine Size: 2.0L
 Description: Old Motor?
 Price: 0
+Image: NoImage
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -30,7 +34,9 @@ Number of Doors: 3
 Engine Size: 1.2L
 Description: Sweet Ride
 Price: 543543
+Image: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -42,7 +48,9 @@ Number of Doors: 5
 Engine Size: 1.6L
 Description: Lovely Car to Drive
 Price: 4000
+Image: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -54,7 +62,9 @@ Number of Doors: 5
 Engine Size: 1.6L
 Description: There has been no Faults with this Motor
 Price: 4000
+Image: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -68,6 +78,7 @@ Description: test
 Price: 1234
 Image: /images/FordRanger2022.jpeg
 Bought By: 1,Mr, Roy, Ferguson, Male, 68768, 34
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -81,6 +92,7 @@ Description: Fastest Motor on the Road. Better Get Out the Way????
 Price: 4350
 Image: /images/Honda_Civic_Type_R_Sportline_2023.jpeg
 Bought By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 
@@ -94,10 +106,7 @@ Description: test
 Price: 1234
 Image: NoImage
 Bought By: 2,Mrs, Stacey, Brown, Female, 07445, 54h
-
-
-
-
+Employee Sign Off: 10,Mr,Jack,Holmes,Male,FDSE,40,10
 
 
 

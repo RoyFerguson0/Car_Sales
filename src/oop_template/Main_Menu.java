@@ -9,13 +9,13 @@ import javax.swing.*;
 
 /**
  *
- * @Roy Ferguson (50004216)
+ * @author Roy Ferguson (50004216)
  */
 public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Main_Menu
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     public Main_Menu() {
         initComponents();
@@ -154,7 +154,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Button used to open the contact us form.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnContactUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactUsActionPerformed
         //close main menu, open contact us page
@@ -164,7 +164,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Button used to view all available motors as it opens View_Car
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnCustomerViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerViewActionPerformed
         
@@ -175,7 +175,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Shut Down button to close the entire application.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnShutDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShutDownActionPerformed
 
@@ -191,7 +191,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     /**
      * Login button to take used to sign in page
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnLogonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogonActionPerformed
         

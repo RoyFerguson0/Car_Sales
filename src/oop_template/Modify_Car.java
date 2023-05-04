@@ -27,14 +27,14 @@ import static javax.swing.JOptionPane.QUESTION_MESSAGE;
 
 /**
  *
- * @Roy Ferguson(50004216)
+ * @author Roy Ferguson(50004216)
  */
 public class Modify_Car extends javax.swing.JFrame {
 
 
     /**
      * Creates new form Modify_Car
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     public Modify_Car() {
         initComponents();
@@ -104,7 +104,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validation input Text Fields - No Digits or Special Characters
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     public static boolean isAlpha(String s) {
         return s != null && s.chars().allMatch(Character::isLetter);
@@ -113,7 +113,9 @@ public class Modify_Car extends javax.swing.JFrame {
    
     /**
      * Validation input Text Fields - No Letters allowed or special characters
-     * @Roy Ferguson(50004216)
+     * @param str  returns true or false
+     * @return str
+     * @author Roy Ferguson(50004216)
      */
     public static boolean isNumeric(String str) {
         return str != null && str.chars().allMatch(Character::isDigit);
@@ -441,7 +443,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Reset Button Which is used to clear all text boxes.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
 
@@ -470,7 +472,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validating the Make Text Field so that there are no numbers in text
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void txtMakeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMakeKeyReleased
         
@@ -499,7 +501,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validating the Colour Text Field so that there are no numbers in text
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void txtColourKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColourKeyReleased
         
@@ -524,7 +526,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validating the Door Text Field so that there are no letters in text
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void txtDoorsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDoorsKeyReleased
 
@@ -549,7 +551,7 @@ public class Modify_Car extends javax.swing.JFrame {
     
     /**
      * Validating the Price Text Field so that there are no Letters in text.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void txtPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyReleased
 
@@ -574,7 +576,7 @@ public class Modify_Car extends javax.swing.JFrame {
     /**
      * Save Button which is able to save data in text fields to Car_Details.txt
      * If reg already exists it will give the option to re-write over the exact lines of code.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
@@ -818,7 +820,7 @@ public class Modify_Car extends javax.swing.JFrame {
 
     /**
      * Delete button which is used to remove a specific car from the text file (Car_Details.txt)
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -949,7 +951,7 @@ public class Modify_Car extends javax.swing.JFrame {
     /**
      * The combo box is being used so you are able to select image to represent 
      * the motor which is being added to the system.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void cboCarImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCarImageActionPerformed
 
@@ -1005,7 +1007,7 @@ public class Modify_Car extends javax.swing.JFrame {
      * The sold button is for when a motor has been bought by a customer as you are able to take the registration
      * from the motor you want and search the text file for all car details and then put them lines of text
      * into a Cars Sold text file along with the customer information and the employee information.
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnSoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoldActionPerformed
         // TODO add your handling code here:
@@ -1335,7 +1337,7 @@ public class Modify_Car extends javax.swing.JFrame {
 
     /**
      * Search Car button is used to take user back to Search Car Form
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnSearchCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCarActionPerformed
         

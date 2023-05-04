@@ -21,8 +21,6 @@ public class Car_Details {
     private String engine_size;
     private String description;
     private int price;
-    
-    // Testing
     private String imageLocation;
 
 

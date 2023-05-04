@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 
 /**
  *
- * @Roy Ferguson(50004216)
+ * @author Roy Ferguson(50004216)
  */
 public class View_Car_Sold extends javax.swing.JFrame {
     private javax.swing.DefaultListModel listCars;
@@ -19,7 +19,7 @@ public class View_Car_Sold extends javax.swing.JFrame {
 
     /**
      * Creates new form View_Car
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     public View_Car_Sold() {
         initComponents();
@@ -168,7 +168,7 @@ public class View_Car_Sold extends javax.swing.JFrame {
 
     /**
      * Employee Menu Button to take you back to Employee Main Menu
-     * @Roy Ferguson(50004216)
+     * @author Roy Ferguson(50004216)
      */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         
