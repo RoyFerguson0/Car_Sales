@@ -15,6 +15,7 @@ public class Employee_Main_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Employee_Main_Menu
+     * @author Jack Holmes (50053641)
      */
     public Employee_Main_Menu() {
         initComponents();

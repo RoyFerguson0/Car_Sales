@@ -20,6 +20,7 @@ public class View_Employee extends javax.swing.JFrame {
     
     /**
      * Creates new form View_Employee
+     * @author Jack Holmes (50053641)
      */
     public View_Employee() {
         initComponents();

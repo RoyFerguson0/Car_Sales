@@ -28,6 +28,7 @@ public class Modify_Employee extends javax.swing.JFrame {
 
     /**
      * Creates new form Modify_Employee
+     * @author Jack Holmes (50053641)
      */
     public Modify_Employee() {
         initComponents();

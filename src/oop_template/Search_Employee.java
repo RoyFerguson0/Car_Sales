@@ -26,6 +26,7 @@ public class Search_Employee extends javax.swing.JFrame {
 
     /**
      * Creates new form Search_Employee
+     * @author Jack Holmes (50053641)
      */
     public Search_Employee() {
         initComponents();
