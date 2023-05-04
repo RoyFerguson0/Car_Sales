@@ -11,7 +11,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *Create public class View Customer
  * @author anastasiaridge 50017135
  */
 public class View_Customer extends javax.swing.JFrame {
@@ -151,6 +151,11 @@ public class View_Customer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Button to Load Customer Title/Forename/Surname into the list
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnLoadCustomerDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadCustomerDetailsActionPerformed
         appData.loadAllCustomerDetails();
         
@@ -161,6 +166,11 @@ public class View_Customer extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnLoadCustomerDetailsActionPerformed
 
+    /**
+     * Button to return to the Employee Main Menu
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnReturnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnEmpMenuActionPerformed
         //return to employee menu, close view customer
         this.dispose();
@@ -168,6 +178,11 @@ public class View_Customer extends javax.swing.JFrame {
              
     }//GEN-LAST:event_btnReturnEmpMenuActionPerformed
 
+    /**
+     * Button to edit the selected customer's details, and open Modify Customer form
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         //update appData with selected customer, close view customer, open modify customer
         if(lstCustomer.getSelectedValue() != null){
@@ -183,6 +198,11 @@ public class View_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEditCustomerActionPerformed
 
+    /**
+     * Button to Add New Customer, opens Modify Customer form, with empty fields
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnModifyCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCustActionPerformed
         // 'add new' customer, modify customer frame opened
         this.dispose();

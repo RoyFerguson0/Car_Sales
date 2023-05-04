@@ -14,7 +14,7 @@ import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Create public class Search_Customer
  * @author anastasiaridge 50017135
  */
 public class Search_Customer extends javax.swing.JFrame {
@@ -24,6 +24,7 @@ public class Search_Customer extends javax.swing.JFrame {
 
     /**
      * Creates new form Search_Customer
+     * @author  Ana Ridge (50017135)
      */
     public Search_Customer() {
         initComponents();
@@ -190,12 +191,22 @@ public class Search_Customer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Button to return to the Employee Main Menu
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         //need to add check for logged in
         this.dispose();
         new Employee_Main_Menu().setVisible(true);
     }//GEN-LAST:event_btnEmpMenuActionPerformed
 
+    /**
+     * Validation for the Customer ID field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
         //input validation: only allow for numbers
         String text = txtCustomerID.getText();
@@ -212,6 +223,11 @@ public class Search_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
+    /**
+     * Method to Search for matching Customer ID in text file
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerSearchActionPerformed
         // set this to an empty customer because if no customer is found, we won't have done a search
         appData.Customer_Details = new Customer_Details();
@@ -238,6 +254,11 @@ public class Search_Customer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCustomerSearchActionPerformed
 
+    /**
+     * Button to call the selected customer's details and open Modify Customer form
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnModifyCustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyCustActionPerformed
         // 'add new' open modify customer page
         this.dispose();

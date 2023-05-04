@@ -5,8 +5,8 @@
 package oop_template;
 
 /**
- *
- * @author anastasiaridge
+ * Create Contact_Us class
+ * @author anastasiaridge (50017135)
  */
 public class Contact_Us extends javax.swing.JFrame {
 
@@ -167,7 +167,10 @@ public class Contact_Us extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Create button to return to Main Menu
+     * @author Ana Ridge (50017135)
+     */
     private void btnReturnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMenuActionPerformed
         this.dispose();
         new Main_Menu().setVisible(true);

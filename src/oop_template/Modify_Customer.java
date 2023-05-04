@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Create public class Modify_Customer
  * @author anastasiaridge 50017135
  */
 public class Modify_Customer extends javax.swing.JFrame {
@@ -23,6 +23,10 @@ public class Modify_Customer extends javax.swing.JFrame {
     private boolean isCustomerMobileValid = false;
     private boolean isCustomerAddressValid = false;
     
+    /**
+     * Create method setAllValid, containing validation Boolean
+     * @author  Ana Ridge (50017135)
+     */
     public void setAllValid(){
         isCustomerIDValid = true;
         isCustomerTitleValid = true;
@@ -35,6 +39,7 @@ public class Modify_Customer extends javax.swing.JFrame {
     
     /**
      * Creates new form Modify_Customer
+     * @author  Ana Ridge (50017135)
      */
     public Modify_Customer() {
         initComponents();
@@ -350,7 +355,12 @@ public class Modify_Customer extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Button to reset/clear the text boxes
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnCustResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustResetActionPerformed
         // Clear all text fields
         txtCustomerID.setText("");
@@ -362,6 +372,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         txtCustAddress.setText("");
     }//GEN-LAST:event_btnCustResetActionPerformed
 
+    /**
+     * Button to save the customer details to the text file
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnCustSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustSaveActionPerformed
         if(isCustomerIDValid && isCustomerTitleValid && isCustomerForenameValid && isCustomerSurnameValid
                              && isCustomerGenderValid && isCustomerMobileValid && isCustomerAddressValid){
@@ -433,7 +448,12 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnCustSaveActionPerformed
-
+    
+    /**
+     * Validation for the Customer ID field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
         //validating input: only numbers allowed
         String text = txtCustomerID.getText();
@@ -451,7 +471,12 @@ public class Modify_Customer extends javax.swing.JFrame {
             isCustomerIDValid = false;
         }
     }//GEN-LAST:event_txtCustomerIDKeyReleased
-
+    
+    /**
+     * Validation for the Customer Title field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustTitleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustTitleKeyReleased
         //validating input: only letters allowed
         String text = txtCustTitle.getText();
@@ -466,6 +491,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustTitleKeyReleased
 
+    /**
+     * Validation for the Customer Forename field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustForenameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustForenameKeyReleased
         //validating input: only letters allowed
         String text = txtCustForename.getText();
@@ -480,6 +510,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustForenameKeyReleased
 
+    /**
+     * Validation for the Customer Surname field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustSurnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustSurnameKeyReleased
         //validating input: only letters allowed
         String text = txtCustSurname.getText();
@@ -494,6 +529,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustSurnameKeyReleased
 
+    /**
+     * Validation for the Customer Gender field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustGenderKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustGenderKeyReleased
         //validating input: only letters allowed
         String text = txtCustGender.getText();
@@ -508,6 +548,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustGenderKeyReleased
 
+    /**
+     * Validation for the Customer Mobile field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustMobileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustMobileKeyReleased
         //validating input: a string to allow for area codes 
         String text = txtCustMobile.getText();
@@ -523,6 +568,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCustMobileKeyReleased
 
+    /**
+     * Validation for the Customer Address field
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void txtCustAddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustAddressKeyReleased
         //validating input: must allow for both letters and numbers
         
@@ -540,6 +590,11 @@ public class Modify_Customer extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtCustAddressKeyReleased
 
+    /**
+     * Button to return to the Employee Main Menu
+     * @param evt 
+     * @author  Ana Ridge (50017135)
+     */
     private void btnEmpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpMenuActionPerformed
         //return to employee menu
         
